@@ -1,0 +1,42 @@
+Multiplatform
+dos-c134019f58397c71f1587326b7e4f28b20240206103446.png
+
+Multiplatform berarti mendukung lebih dari 1 (satu) platform. Ketika kita membahas tentang aplikasi multiplatform, bisa dikatakan aplikasi tersebut tersedia pada lebih dari 1 (satu) platform atau bahkan bermacam-macam platform. Platform yang dimaksud misalnya Android, iOS, Web, Desktop, dsb. Kotlin merupakan sebuah multiplatform programming language. Kotlin bisa digunakan untuk mengembangkan aplikasi dalam berbagai platform. Namun, sebenarnya tujuan dari multiplatform pada Kotlin sendiri tidak sekedar itu. Kotlin memiliki tujuan yang lebih penting, yaitu berbagi kode antar platform. Dengan dukungan untuk JVM, Android, JavaScript, iOS, Linux, Windows, macOS dan bahkan embedded system seperti STM32, Kotlin mampu mengatasi komponen apa pun yang terdapat pada aplikasi modern.
+
+Banyak developer kira multiplatform artinya membuat sebuah proyek dan langsung bisa dijalankan di atas semua platform. Tidak salah, tetapi tahukah Anda jika model seperti itu memiliki beberapa kekurangan? Sebuah aplikasi modern pasti akan membutuhkan akses ke fitur-fitur tertentu pada platform yang menjalankannya. Misalnya, mengakses fitur pada ponsel seperti gyroscope, motion, GPS, dan lain sebagainya. Melakukan hal tersebut menggunakan framework multiplatform (cross platform) tentunya tak semudah menggunakan bahasa pemrograman khusus untuk platform tertentu (Native). Misalnya, Android menggunakan Java atau Kotlin dan iOS menggunakan Swift atau Objective-C. Belum lagi ketika membahas masalah performa, native pasti jauh lebih unggul dari cross platform.
+
+Kotlin menawarkan konsep multiplatform yang sedikit berbeda. Dengan model code-sharing yang ada, memungkinkan Anda untuk mengelompokkan beberapa kode sesuai fungsi masing-masing. Sebagai contoh, membuat modul A yang berisi kumpulan kode yang dapat diakses oleh semua platform, modul B yang berisi kode spesifik untuk platform tertentu, dan modul C yang ditargetkan untuk platform tertentu, tetapi juga memiliki ketergantungan ke modul lain.
+
+Perhatikan diagram berikut.
+
+dos-8c461b7e872c7ab7f9d855169b1b94d120240206104339.png
+
+Kurang lebih seperti itulah gambaran dari modul yang bisa kita buat pada project Kotlin multiplatform. Modul tersebut dapat kita bagi menjadi 3 (tiga) bagian berikut.
+
+Common Module
+Modul ini berisi kode yang tidak spesifik ke platform apa pun. Kita bisa menempatkan komponen-komponen yang bisa digunakan oleh semua modul pada modul ini.
+
+Platform Module
+Pada modul ini kita bisa menambahkan komponen tertentu yang spesifik untuk satu platform. Biasanya modul ini merupakan implementasi dari common module. 
+
+Regular Module
+Merupakan modul umum yang menargetkan  platform tertentu. Modul ini bisa dependen atau pun menjadi dependensi dari platform module.
+
+Kotlin pun telah menyiapkan beberapa library khusus untuk mendukung proyek multiplatform, di antaranya adalah HTTP, serialization, dan coroutines. Semua library tersebut bisa kita terapkan pada common module dan kemudian diakses oleh modul lainnya. Anda pun tetap bisa menggunakan Kotlin standard library pada semua modul. Tentunya ini akan sangat membantu memudahkan proses pengembangan aplikasi.
+
+Pada akademi ini kita tidak akan mempraktikkan aplikasi Kotlin Multiplatform secara langsung pada sebuah proyek. Melainkan, kita balik ke fokus awal akademi ini yaitu "Memulai Pemrograman dengan Kotlin". Jika Anda penasaran dengan implementasi Kotlin Multiplatform, Anda bisa mempelajarinya pada tautan berikut.
+
+Building Multiplatform Projects with Gradle
+Multiplatform Project: iOS and Android
+Compose Multiplatform (New)
+JetBrains juga memiliki beberapa contoh proyek yang bisa kita pelajari untuk menerapkan Kotlin Multiplatform:
+
+KotlinConf App
+KotlinConf Spinner App
+Dokumentasi resmi dari Kotlin Multiplatform bisa Anda lihat pada tautan ini.
+
+Sebagai informasi tambahan bahwa saat ini Kotlin Multiplatform sudah stabil hingga tingkat produksi. Jadi, saat ini Anda bisa menggunakannya dalam real project. 
+
+dos-a53823a7b480ec7e332e32f093b49d2b20240206103918.png
+
+Silakan baca selengkapnya di Kotlin Multiplatform Is Stable and Production-Ready. 
