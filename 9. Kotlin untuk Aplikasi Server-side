@@ -1,0 +1,43 @@
+Kotlin untuk Aplikasi Server-side
+Terdapat berbagai macam aplikasi server-side, mulai dari aplikasi Web yang menampilkan halaman HTML, Backend yang menghasilkan API untuk aplikasi mobile, dan juga aplikasi yang lebih kompleks seperti Microservice. Semua aplikasi tersebut bisa dikembangkan menggunakan Kotlin. Selain memungkinkan kita untuk menulis kode yang ringkas dan ekspresif, Kotlin juga mempertahankan kompatibilitas dengan teknologi berbasis Java. 
+
+dos-ab48749b9d466a1b8c6dd8581695116f20240206104315.png
+
+Dengan membangun aplikasi server-side menggunakan Kotlin, kita akan mendapatkan beberapa manfaat, antara lain:
+
+Expressiveness
+Fitur-fitur pada Kotlin seperti type-safe builder dan delegated properties akan membantu membangun abstraksi yang kuat dan mudah digunakan.
+
+Scalability
+Dukungan Kotlin untuk coroutines akan membantu kita. Khususnya dalam membangun aplikasi server-side dengan skala yang besar, namun menggunakan perangkat yang sederhana.
+
+Interoperability
+Kotlin sepenuhnya kompatibel dengan semua framework Java. Ini memungkinkan Anda tetap menggunakan teknologi yang sudah ada dan mulai menggunakan bahasa yang lebih modern.
+
+Migration
+Kotlin mendukung proses migrasi secara bertahap, dari Java ke Kotlin. Anda dapat mulai menulis kode baru dengan Kotlin tanpa memodifikasi kode Java yang sudah ada.
+
+Tooling
+Selain dukungan IDE yang powerful, Kotlin menawarkan beberapa plugin untuk framework spesifik seperti Spring.
+
+Tersedia juga berbagai macam framework yang bisa Anda gunakan untuk mempermudah pengembangan aplikasi server-side seperti:
+
+Spring
+Spring merupakan sebuah framework yang sangat terkenal di Java. Spring bisa digunakan pada Kotlin untuk komunikasi ke API dengan lebih ringkas. Tersedia juga Spring Initializr yang memungkinkan kita untuk membuat proyek Spring baru dengan Kotlin.
+
+Vert.x
+Merupakan sebuah framework untuk membuat reactive Web app di JVM. Anda bisa melihat repository-nya di https://github.com/vert-x3/vertx-lang-kotlin.
+
+Ktor
+Ktor adalah sebuah framework yang dikembangkan oleh JetBrains untuk membuat aplikasi Web di Kotlin. Ktor memanfaatkan coroutine untuk skalabilitas yang tinggi dan menawarkan API yang mudah digunakan.
+
+Kotlinx.html
+Merupakan sebuah DSL yang dapat digunakan untuk membuat HTML di aplikasi Web. Kotlinx.html dapat digunakan sebagai alternatif untuk sistem templating tradisional seperti JSP dan FreeMarker.
+
+Exposed
+Sebuah framework SQL yang menyediakan kumpulan DSL yang mudah dibaca untuk menggambarkan struktur database SQL dan melakukan kueri sepenuhnya dengan Kotlin.
+
+Jelas terdapat berbagai kemudahan yang ditawarkan dan juga dukungan framework yang kuat. Para developer tak perlu ragu lagi dalam mencoba menerapkan Kotlin sebagai bahasa pemrograman untuk mengembangkan aplikasi server-side. Anda pun bisa mulai mencobanya dengan mengikuti beberapa dokumentasi berikut.
+
+Creating Web Applications with Http Servlets
+Creating a RESTful Web Service with Spring Boot
