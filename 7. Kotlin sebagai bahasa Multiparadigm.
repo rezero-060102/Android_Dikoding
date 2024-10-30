@@ -1,0 +1,34 @@
+Apa keunikan Kotlin? Salah satunya, Kotlin merupakan sebuah bahasa pemrograman yang bisa ditargetkan untuk berbagai macam platform (Multiplatform) dan juga memiliki beberapa paradigma (Multiparadigm). Oleh karena itu, kita perlu tahu apa maksud dari Multiplatform dan Multiparadigm tersebut.  Mari kita bahas satu per satu. 
+
+
+
+Multiparadigm
+Mungkin sebagian dari kita masih asing dengan istilah multiparadigm di dunia programing. Programming paradigm adalah sebuah cara untuk mengklasifikasikan bahasa pemrograman berdasarkan fitur yang dimilikinya. Paradigma disini berkaitan dengan bagaimana kode dalam sebuah bahasa pemrograman diatur, seperti mengelompokkan kode atau memodifikasinya. Lebih tepatnya, seperti apa struktur kode bisa diterapkan pada bahasa pemrograman tersebut.
+
+Terdapat beberapa paradigma yang umum dimiliki oleh sebuah bahasa pemrograman. Ketika kita ingin mengklasifikasikan bahasa pemrograman berdasarkan cara penulisan sintaksnya, object-oriented programming (OOP) dan functional programming (FP) merupakan 2 (dua) paradigma yang terkenal di kalangan developer. Dari sisi konstruksi, Kotlin sendiri mencakup keduanya. Anda bisa menggunakan gaya OOP maupun FP, bahkan mencampurnya saat menuliskan sintaks Kotlin. Dengan dukungan tinggi untuk fitur-fitur seperti higher-order function, function types, dan lambda, Kotlin adalah pilihan yang tepat untuk Anda mengeksplorasi functional programming. Hampir semua General Purpose Language sekarang sudah mendukung multiparadigm. Untuk lebih jelasnya, mari kita bahas satu per satu kedua paradigma tersebut.
+
+
+
+Object-oriented Programming
+Suatu bahasa pemrograman bisa diklasifikasikan ke dalam OOP jika data dan metode yang digunakan untuk memanipulasinya disimpan sebagai satu unit yang bisa disebut dengan objek. OOP memiliki fitur enkapsulasi yang sempurna. Lebih lanjut, satu-satunya cara yang bisa digunakan agar objek atau pengguna lain dapat mengakses suatu data adalah dengan metode objek. Dengan demikian, cara kerja suatu objek dapat diubah tanpa mempengaruhi kode lain yang menggunakan objek tersebut. 
+
+Kotlin memberikan dukungan yang luas untuk mengembangkan program berorientasi objek. Di dalam OOP kita akan mengenal beberapa konsep seperti object, classes, properties, constructor, dll. Dengan OOP kita bisa memecahkan persoalan yang kompleks menjadi set yang lebih kecil dengan membuat objek. Objek tersebut memiliki 2 (dua) karakteristik utama, yaitu state (keadaan) dan behaviour (perilaku).
+
+Kita akan membahas mengenai komponen-komponen OOP pada Kotlin secara lebih mendalam pada sub-modul tersendiri. Sebagai pembuka, mari kita perhatikan contoh berikut.dos-85aedb5ae72a6a35c69bd74eabd5b2f920240206102836.png
+
+Sepeda motor adalah sebuah objek. Sepeda motor memiliki 2 (dua) roda, tahun produksi, berat, dan kecepatan maksimum, yang mana bisa kita sebut sebagai states. Selain itu, sepeda motor bisa melaju, direm, dan juga berganti gigi. Nah, ketiga hal tersebut bisa kita sebut sebagai behaviour.
+
+Contoh lainnya adalah seekor kuda. Kuda adalah sebuah objek. Kuda memiliki nama, warna, dan juga jenis yang mana merupakan states dari Kuda. Kuda bisa berlari, makan, dan lain sebagainya. Inilah yang kita sebut sebagai behaviour.
+
+Sebuah objek seperti sepeda motor juga bisa memiliki objek-objek kecil di dalamnya, misalnya roda, rem, body, mesin dll. Semuanya bisa saling berhubungan dan berinteraksi. Selain itu, OOP juga berdasar pada konsep Message Passing, yakni sebuah tipe komunikasi antara proses dan objek. Itulah gambaran sederhana konsep OOP yang akan kita pelajari.
+
+
+
+Functional Programming
+Ada begitu banyak persepsi mengenai functional programming. Setiap persepsi tergantung siapa yang mengartikannya. Seorang F-sharp programer akan mengartikan FP sebagai apa yang ada pada F-sharp. Demikian halnya Swift programer akan mengartikan FP sebagai apa yang ada pada Swift. Namun kita bisa menyimpulkan bahwa semua bahasa pemrograman yang mendukung first-class citizen termasuk ke dalam FP. First-class citizen sendiri merupakan sebuah entitas yang mendukung semua operasi yang umumnya tersedia untuk entitas lain. Sebagai contoh, sebuah fungsi yang bisa dikirimkan sebagai parameter. 
+
+Functional programming merupakan paradigma yang sedang hype di kalangan developer saat ini. Paradigma ini memperlakukan komputasi sebagai evaluasi fungsi matematika dan menghindari perubahan keadaan atau state dan data yang bisa berubah. Dalam FP, pemrograman dilakukan dengan expression atau declaration. Sehingga sebuah fungsi menghasilkan nilai yang hanya bergantung pada argumen yang diteruskan ke fungsi tersebut. Menghilangkan efek seperti perubahan state yang tidak tergantung pada fungsi input, dapat membuatnya lebih mudah untuk memahami dan memprediksi behaviour sebuah program. Inilah tujuan utama dari functional programming.
+
+Masih banyak developer yang langsung membayangkan OOP ketika mendengar kata “Kotlin”. Padahal seperti yang telah disebutkan sebelumnya, Kotlin merupakan multiparadigm language. Kotlin memiliki beberapa fitur yang memiliki gaya functional programming, walaupun tidak sepenuhnya functional programming. Mengapa demikian? Sesungguhnya Kotlin adalah sebuah bahasa pemrograman berorientasi objek yang memiliki struktur fungsional. Ini artinya Kotlin juga merupakan sebuah functional programming language.
+
+Functional programming juga bertujuan untuk mempermudah kita memahami sebuah kode. Ide dibalik FP adalah menambahkan dan mengurangi hal tertentu untuk membuat kode kita sedikit lebih mudah dipahami. Kotlin memiliki banyak fitur menarik yang membuatnya bisa disebut dengan functional programming seperti higher-order function, function types, extension functions, lambda, dll. Kita akan membahas kembali mengenai functional programming pada Kotlin dan fitur-fitur tersebut pada sub-modul tersendiri. Siap lanjut?
