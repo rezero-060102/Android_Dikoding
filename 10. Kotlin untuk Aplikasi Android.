@@ -1,0 +1,26 @@
+Kotlin untuk Aplikasi Android
+dos-95183aca4305c6405bf740a878075af020240206104129.png
+
+Berbeda dengan aplikasi server-side, aplikasi mobile biasanya membutuhkan proses pengembangan yang lebih cepat. Selain itu, dengan begitu banyaknya tipe perangkat mobile, developer perlu memastikan bahwa aplikasinya dapat berjalan dengan baik pada semua perangkat. Dengan semua fitur yang Kotlin tawarkan, terpenuhilah semua kebutuhan pada pengembangan aplikasi mobile. Berikut ini adalah beberapa kelebihan mengembangkan aplikasi Android dengan Kotlin.
+
+Compatibility
+Kotlin sepenuhnya kompatibel dengan JDK 6. Ini memastikan bahwa aplikasi yang dibangun dengan Kotlin dapat berjalan pada perangkat Android yang lebih lama tanpa ada masalah. Android Studio pun mendukung penuh pengembangan dengan bahasa Kotlin.
+
+Performance
+Dengan struktur bytecode yang sama dengan Java, aplikasi yang dibangun dengan Kotlin dapat berjalan setara dengan aplikasi yang dibangun dengan Java. Terdapat juga fitur seperti inline function pada Kotlin yang membuat kode yang dituliskan dengan lambda bisa berjalan lebih cepat dibandingkan kode yang sama dan dituliskan dengan Java.
+
+Interoperability
+Anda dapat menggunakan bahasa Kotlin bersamaan dengan bahasa Java, tanpa harus memigrasikan semua kode lama Anda ke Java. Sehingga, Anda dapat memanggil kode Java dari Kotlin dan sebaliknya. Inilah alasan yang menyebabkan Kotlin menjadi cepat diterima oleh developer.
+
+Compilation Time
+Kotlin mendukung kompilasi inkremental yang efisien. Oleh karena itu, proses build biasanya sama atau lebih cepat dibandingkan dengan Java.
+
+Easy Learning
+Kotlin sangat mudah untuk dikuasai, terlebih jika Anda sebelumnya adalah Java Developer.
+
+Big Community
+Kotlin memiliki banyak dukungan dan kontribusi dari komunitas, yang mana pertumbuhannya sangat kencang di seluruh dunia. Lebih dari 95% aplikasi terbaik di Play Store menggunakan Kotlin.
+
+Perkembangan Kotlin pada Android pun bisa dibilang sangat cepat. Bahkan pada acara Google I/O 2019 lalu, Google mengumumkan Kotlin First!, yaitu menetapkan Kotlin sebagai bahasa pemrograman nomor 1 (satu) untuk Android. Hampir semua update pada Android saat ini sudah menggunakan Kotlin pada dokumentasinya. Tim Android juga merilis Android Jetpack yang merupakan sekumpulan library yang dapat digunakan untuk memanfaatkan fitur bahasa Kotlin dengan lebih advanced. Dengan kematangan Kotlin, banyak perusahaan siap menggunakan Kotlin sebagai bahasa pemrograman untuk membangun aplikasi Android.
+
+Semua dokumentasi juga disediakan dengan sangat jelas dan lengkap pada https://developer.android.com/kotlin/ atau https://kotlinlang.org/docs/android-overview.html.
