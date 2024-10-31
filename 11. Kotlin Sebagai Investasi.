@@ -1,0 +1,19 @@
+Kotlin Sebagai Investasi
+Beberapa pertanyaan yang sering muncul dari developer saat ingin mulai belajar Kotlin adalah “Apakah worth it? Apa saja keunggulannya? Mengapa kita harus mempelajarinya?.” Senada dengan itu, kali ini kita akan membahas beberapa keuntungan dan juga alasan mengapa kita harus mempelajari Kotlin.
+
+dos-906a30b566b9b906a19a57c5f280e1fb20240206104236.png
+
+Salah satu alasan JetBrains mengembangkan Kotlin adalah karena mereka tak puas dengan Java dan ingin meningkatkan produktivitas mereka. Seorang Java developer yang sudah mempelajari Kotlin, pasti akan membenarkan pernyataan tersebut. Apa pasal? Karena memang benar Java punya kekurangan pada beberapa aspek. Lalu seberapa besar pengaruh Kotlin dalam produktivitas seorang developer?
+
+Produktivitas memang menjadi salah satu faktor penting yang menjadi alasan mengapa seorang developer harus mempelajari sebuah bahasa pemrograman. Kotlin memiliki beberapa kelebihan yang dapat meningkatkan produktivitas developer. Berikut beberapa kelebihan tersebut:
+
+Ringkas (Concise)
+Selain mudah dipelajari, bahasa pemrograman baru yang satu ini juga mudah untuk dituliskan. Sintaksisnya pun mudah dibaca dan bisa dibilang lebih “manusiawi.” Mungkin karena penamaan fungsi di dalamnya yang mirip dengan bahasa manusia sehari-hari. Kotlin memungkinkan kita untuk mengurangi jumlah penulisan kode boilerplate. Maka jangan heran jika kita sering mendengar istilah “nicer Java”.
+
+Dapat dioperasikan secara bersilangan (Interoperable)
+Apakah Anda seorang Java developer yang ingin berpindah ke Kotlin? Jangan khawatir, Kotlin dan Java sama-sama berjalan di atas JVM. Alhasil, keduanya bisa dijalankan bersamaan dalam 1 (satu) proyek. Tentunya ini sangat menguntungkan. Kita tidak perlu menuliskan ulang kode Java yang sudah ada. Anda cukup menuliskan kode baru dengan Kotlin. Menariknya, selain bisa dijalankan bersamaan, fungsi yang ada pada kedua bahasa tersebut juga bisa saling diakses. Java bisa mengakses fungsi yang ada pada Kotlin. Sebaliknya, Kotlin juga bisa mengakses fungsi yang ada pada Java.
+
+Dukungan tools yang memadai (Tool-friendly)
+Membahas soal produktivitas, tentu tak jauh dari dukungan tools yang diberikan. Saat ini banyak IDE yang mendukung Kotlin. Tersedia juga https://play.kotlinlang.org/ yang memungkinkan Anda mencoba Kotlin secara online. Kita pun tetap bisa menggunakan command line atau terminal. Kita akan mempelajari tentang IDE dan tools lainnya pada modul terpisah.
+
+Dengan keunggulan-keunggulan Kotlin tersebut, bisa kita simpulkan bahwa Kotlin merupakan bahasa pemrograman yang wajib kita pelajari. Bagi seseorang yang baru mengenal pemrograman, mempelajari Kotlin bisa menjadi investasi yang baik. Dukungan multiplatform  memungkinkan kita untuk merambah ke berbagai platform.  Lebih lanjut, konsep OOP dan FP bisa menjadi modal utama seorang programmer untuk mempelajari bahasa pemrograman lain di kemudian hari.
