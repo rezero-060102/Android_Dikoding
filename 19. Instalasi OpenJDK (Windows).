@@ -1,0 +1,33 @@
+Instalasi OpenJDK (Windows)
+Kita telah tuntas membahas sistem operasi Linux dan macOS di submodul sebelumnya. Dalam submodul ini, kita akan membahas instalasi dan konfigurasi OpenJDK untuk sistem operasi Windows. Nah, untuk metode instalasinya sendiri berbeda dengan Linux dan macOS yang menggunakan SDKMAN. Untuk sistem operasi Windows, kita akan menggunakan installer yang sudah disediakan. Sebelum itu mari kita unduh terlebih dahulu berkas instalasinya pada tautan berikut ini.
+
+202107051115115ffb19c958ef8c25a1c9ebe346444375.gif
+
+Kira-kira tampilan dari halaman untuk mengunduh OpenJDK akan seperti di atas. Perhatikan bahwa versi dari OpenJDK harus sesuai dengan spesifikasi arsitektur sistem operasi yang Anda gunakan (32bit atau 64bit). Pastikan Anda mengunduh berkas yang berekstensi .msi.
+
+Setelah proses pengunduhan selesai, langsung saja jalankan berkas instalasi tersebut. Dalam proses instalasi, kita harus mencatat lokasi dari OpenJDK untuk memudahkan dalam mengonfigurasi OpenJDK itu sendiri. Lantas bagaimana cara mengetahui lokasi tersebut? Mudah! Cukup perhatikan lokasi yang tampil pada jendela Destination Folder seperti di bawah ini.
+
+dos-9ba24b07a26414be00c7e706004042c620240120145514.png
+
+Dalam gambar di atas, kita bisa tahu bahwa lokasi JDK akan diinstal pada folder C:\Program Files\Zulu\zulu-8. Jika telah Anda catat, lanjutkan kembali proses instalasi dengan mengikuti panduan yang tampil hingga selesai.
+
+
+
+Konfigurasi JAVA_HOME
+Langkah selanjutnya adalah melakukan konfigurasi lokasi OpenJDK. Ini bertujuan agar proses instalasi IntelliJ IDEA pada submodul berikutnya dapat berjalan dengan baik. Anda tidak perlu mengaturnya jika pada langkah sebelumnya sudah menambahakan variable untuk JAVA_Home. Namun, jika belum, mari sama-sama kita konfigurasi OpenJDK dengan mengikuti beberapa langkah berikut.
+
+Buka Control Panel kemudian masukkan system variable pada kolom pencarian.
+Pilih Edit the system environment variables pada hasil pencarian.
+Pada jendela yang tampil, klik tombol Environment Variables yang berada paling bawah pada jendela yang tampil.
+Fokus pada bagian System variables, klik tombol New.
+Setelah terbuka, masukkan JAVA_HOME pada kolom Variable name dan lokasi instalasi OpenJDK yang sebelumnya sudah dicatat pada Variable value seperti berikut.
+dos:36e49e0a5624a055dd9209fbb4c812fc20220527151920.png
+Selanjutnya klik OK untuk menutup jendela yang tampil.
+Jika dirasa sudah sesuai, tutup jendela Environment Variables dengan mengklik tombol OK. Hasilnya seperti ini.dos-b8d94556f801a8d4b56ec67c12c73cc620240120145913.png
+Catatan: Untuk menambahkan di level System Variable, gunakanlah versi admin (bawah). Jika versi biasa (atas), Anda tidak bisa mengubahnya.
+dos-11655c1a70c302eb5937fae03c03823020240120153702.png
+Terakhir, untuk memastikan apakah instalasi sudah berhasil, jalankan perintah "java -version" pada Command Prompt. Pastikan versi dari Java dapat ditampilkan seperti berikut. 
+
+2020082515004491cef96c4dc00574fd5e2233fe3c5016.gif
+
+Namun, jika yang tampil ternyata adalah pesan "javac is not recognized" atau pesan eror lainnya yang menyebabkan tidak tampilnya versi OpenJDK, pastikan kembali lokasi yang diatur pada Environment Variable sudah benar. Jika dirasa sudah benar, tetapi masih menampilkan eror yang sama, cobalah untuk restart komputer Anda. Namun, jika masih saja terdapat eror, coba jalankan Command Prompt sebagai administrator. Ini dilakukan karena  OpenJDK berlokasi pada spot yang membutuhkan permintaan akses saat ingin digunakan.
