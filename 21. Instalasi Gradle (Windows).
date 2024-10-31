@@ -1,0 +1,31 @@
+nstalasi Gradle (Windows)
+Instalasi Gradle pada sistem operasi Windows sedikit berbeda dengan Linux dan macOS karena di sini kita akan melakukannya secara manual. Mulai dari mengunduh berkas distribusinya, melakukan konfigurasi, sampai mengecek apakah Gradle sudah berhasil diinstal. Mari kita mulai dengan mengunduh berkas distribusi yang akan kita gunakan. Caranya dengan mengikuti beberapa langkah berikut.
+
+Unduh berkas distribusi Gradle pada tautan https://gradle.org/releases/. Anda bisa memilih binary-only atau complete yang disertai dengan dokumentasi.
+dos-1fab5c79900678ddc7a38edf8c31e9fa20240120150422.pngKami menyarankan Anda mengunduh Gradle versi terbaru untuk menghindari kesalahan yang mungkin saja terjadi.
+
+Setelah proses unduhan selesai, ekstrak ke folder yang diinginkan. Sebaiknya tempatkanlah pada folder yang mudah dijangkau (misal pada folder utama C:\gradle). Ini akan mempermudah konfigurasi Environment Variable.
+dos-bbb9b6804bb125edc690546290f147ea20240120152448.png
+
+
+Konfigurasi Environment Variable
+Setelah selesai mengekstrak paket distribusi, selanjutnya kita akan melakukan konfigurasi agar gradle dapat digunakan dengan mudah dan tentunya untuk menghindari eror saat ingin menggunakannya. Sama seperti OpenJDK, konfigurasi gradle akan kita lakukan pada Environment Variable. Oleh karena itu, langsung saja buka kembali jendela Environment Variable dengan cara seperti yang sudah kita pelajari pada submodul instalasi OpenJDK.
+
+Saat jendela Environment Variables sudah terbuka, pada kolom System Variables seperti cuplikan gambar di bawah ini.
+20200828142013ff0068d6b847476ef0f54a8ce4835f1f.pngPilih variable path kemudian klik Edit.
+dos-6f711dfc3059b3edcf8e001c54b486c720240120152933.pngSetelah jendela baru terbuka, Klik tombol New kemudian tambahkan lokasi dari berkas distribusi Gradle seperti contoh berikut.
+
+Misalnya file dari zip saya extract ke C:\gradle-x.x.x\ (dengan 'Gradle' adalah folder baru yang saya buat di dalam Program Files), lalu bukalah folder bin dan copy path dengan cara klik pada bagian ini terlebih dahulu.
+dos-9a6676bf96d7b94deed8fb0c8776e0bb20240120153110.png
+Kemudian paste seperti berikut.
+dos-a4932a0d782bc9470126f19c33411ee520240120153204.png
+Catatan: Untuk pengguna Windows 7, perintah di atas akan sedikit berbeda. Tapi tidak perlu khawatir, caranya cukup mudah. Pada jendela yang tampil seperti di bawah ini:
+202008281428387ea1f018e3cbad0bfe6e63c314c61106.pngTambahkan lokasi paket distribusi Gradle pada baris terakhir yang di awali dengan karakter ; (titik koma). Kurang lebih akan seperti berikut setelah ditambahkan.
+20200828142942e6558fb053058a2801d4cc7297ad1d79.png
+Setelah selesai, klik OK pada jendela yang tampil dan jendela Environment Variable. Untuk memastikan apakah gradle sudah terinstall dengan baik. Anda bisa menjalankan perintah gradle -v pada command prompt seperti berikut.
+
+dos-bb94032f8fe4efb23887688cbca1573b20240120153454.png
+
+Jika terjadi error, pastikan kembali bahwa OpenJDK sudah dikonfigurasi dan dijalankan dengan baik. Sebabnya, Gradle akan menggunakan konfigurasi JAVA_HOME yang berada pada pengaturan Environment Variables. 
+
+Untuk instalasi gradle, kita sudah selesai. Materi berikutnya akan mempelajari bagaimana instalasi IntellIJ IDEA sebagai IDE yang akan kita gunakan. Penasaran seperti apa langkah-langkahnya? Langsung saja menuju materi selanjutnya.
