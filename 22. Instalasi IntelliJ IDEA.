@@ -1,0 +1,42 @@
+Instalasi IntelliJ IDEA
+Sebelum melakukan instalasi IntelliJ IDEA, ketahui terlebih dahulu beberapa syarat di masing-masing sistem operasi sebagai berikut.
+
+Windows
+macOS
+Linux
+Microsoft Windows 10 atau yang terbaru.
+2 GB RAM minimum, 8 GB RAM direkomendasikan
+3.5 GB minimum ruang kosong pada penyimpanan, 5 GB direkomendasikan
+1024x768 minimal resolusi layar, 1920×1080 direkomendasikan
+Pastikan komputer Anda memenuhi syarat di atas. Jika sudah, unduhlah berkas instalasi IntelliJ IDEA berdasarkan sistem operasi dengan versi yang kami sarankan yaitu versi 2023.2.2 Community yang dapat diunduh pada tautan IntelliJ IDEA download page. 
+
+dos-648710ce96a8d525a97b8c2b51b7332620240116151118.png
+
+Selanjutnya ikuti langkah-langkah instalasi sesuai sistem operasi yang digunakan.
+
+Catatan: gunakanlah versi terbaru jika Anda menemukan versi yang berbeda saat ini.
+
+Linux
+Setelah berhasil mengunduh berkas, ekstrak berkas tersebut dengan menggunakan perintah yang dijalankan pada terminal berikut.
+
+tar xvf ideaIC-2023.2.1.tar.gz
+Lanjut, masuk ke dalam folder bin dengan menggunakan perintah di bawah ini.
+
+cd idea-IC-203.6682.168/bin/
+Terakhir, jalankan shell script idea.sh dengan menggunakan perintah berikut.
+
+./idea.sh
+Ikuti instruksi pada jendela yang tampil untuk menyelesaikan proses instalasi.
+
+
+
+Windows dan macOS
+Berbeda dengan Linux, jika menggunakan Windows atau macOS, Anda tidak perlu mengekstrak hasil unduhan. Anda bisa langsung menjalankan berkas idealC-xxxx.x.x.exe (Windows) atau idealC-xxxx.x.x.dmg (macOS). Lalu, ikuti instruksi pada jendela yang tampil untuk menyelesaikan proses instalasi.
+
+
+
+Konfigurasi Intellij IDEA
+Pada dasarnya jika sebelumnya komputer kita sudah terinstal JDK, kita tidak perlu melakukan konfigurasi pada Intellij IDEA. Mengapa demikian? JDK akan secara otomatis terdeteksi sehingga Anda bisa langsung menggunakannya untuk membuat proyek baru.
+
+Untuk mengenal IntelliJ IDEA lebih lanjut, Anda bisa membaca blog berikut: Berkenalan Dengan IntelliJ IDEA
+
