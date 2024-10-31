@@ -1,0 +1,165 @@
+Program Pertama Kotlin
+Jika semua tools sudah siap, kini Anda bisa mulai mencoba untuk membuat dan menjalankan program dengan Kotlin. Seperti yang sudah disampaikan, Kotlin memiliki dukungan tools yang memadai. Ketika ingin membuat sebuah program dengan Kotlin, Anda bisa memilih berbagai macam tools mulai dari yang paling dasar hingga tingkat lanjut.
+
+Pada dasarnya semua program aplikasi bisa dikembangkan hanya dengan bantuan text editor dan build tools. Lalu adanya IDE adalah untuk mempermudah dan mempercepat proses pengembangan. Pada submodul ini, kita akan mempelajari bersama perihal bagaimana membuat program dengan Kotlin dari cara yang paling dasar hingga memanfaatkan bantuan IDE.
+
+
+
+Membuat Program Dengan Gradle
+Guna membuat program dengan Gradle, kita akan membutuhkan sebuah plugin yaitu Gradle Init Build Plugin. Kita tidak perlu menambahkannya secara manual karena plugin tersebut merupakan bawaan dari paket instalasi Gradle.
+
+Sebelum membuat project, terlebih dahulu buat folder baru yang akan digunakan sebagai folder project yang nantinya akan kita buat. Setelah selesai, silakan buka terminal atau command prompt dari dalam folder tersebut.
+
+Untuk Anda yang menggunakan sistem operasi Windows, gunakan pintasan dengan menulisakan cmd pada search bar untuk membuka Command Prompt dari dalam folder project seperti berikut:
+202008251651334650d9c85b8d4516dc9a59231a20c302.gif
+Setelah terminal atau command prompt terbuka, langsung saja jalankan perintah gradle init untuk membuat project baru seperti seperti berikut.
+
+dos-303226005138f7da65bbe80f1de5977120240116152556.png
+
+Untuk pembuatan folder project di atas, berilah nama kotlin-starter. Silakan sesuaikan namanya sesuai kehendak Anda. Lebih lanjut, setelah kita menjalankan perintah seperti di atas, terminal akan menampilkan daftar jenis-jenis proyek yang bisa kita pilih. Kita bisa memilih jenis dari proyek yang ingin kita kembangkan dengan cara memilih angka yang ada pada daftar tersebut. Karena kita akan membuat proyek dengan tipe application, masukkan angka 2 dan tekan enter.
+
+dos-4b16343f841429068c9b07961835ee5b20240116152614.png
+
+Berikutnya kita akan diminta untuk memilih bahasa yang akan digunakan. Karena kita akan membuat proyek dengan Kotlin, langsung saja masukkan angka 4 dan tekan enter. Jika ada pertanyaan tentang membuat multiple subproject untuk aplikasi, pilih no.
+
+dos-1e8ac028129b0894ba8c30787840102420240116152630.png
+
+Setelah itu, Anda juga bisa menentukan tipe dari build script, nama proyek, juga package name, dan Java SDK yang akan digunakan. Selengkapnya bisa Anda lihat pada gambar berikut.
+
+dos-5b5326e74f4b88cd727343e6f564f06a20240116152730.png
+
+Sampai di sini kita telah memiliki proyek Kotlin baru dengan nama kotlin-starter, package name com.dicoding.kotlin dan menggunakan Kotlin DSL sebagai build script-nya. 
+
+auto
+
+Sebenarnya kita bisa meringkas langkah-langkah tersebut dengan cara langsung menuliskan perintah seperti berikut.
+
+gradle init --type kotlin-application --dsl kotlin --project-name kotlin-starter --package com.dicoding.kotlin
+Jika Anda membuka proyek tersebut, Anda akan melihat struktur proyek seperti di bawah ini.
+
+dos-ebed1ef8daaa2f976e8ad581ae04bf2520240116152935.png
+
+Mari kita pelajari satu per satu dari masing-masing berkas tersebut.
+
+
+
+Gradle Wrapper
+Di dalam folder gradle/wrapper/ kita akan menemukan 2 (dua) berkas, yaitu gradle-wrapper.jar dan gradle-wrapper.properties. Berkas Wrapper JAR merupakan sebuah library yang berisi kode untuk mengunduh distribusi Gradle, sedangkan gradle-wrapper.properties adalah sebuah properti untuk mengonfigurasi behaviour dari Wrapper runtime seperti mengatur versi Gradle dari proyek dll. Berikut adalah konfigurasi yang terdapat pada berkas tersebut:
+
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.5-bin.zip
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+Terdapat juga berkas gradlew dan gradlew.bat pada folder root, yaitu sebuah shell script dan Windows batch script yang digunakan untuk menjalankan build dengan Wrapper.
+
+
+
+Build Scripts
+Selanjutnya, di dalam proyek tersebut juga terdapat 2 (dua) berkas gradle scripts yaitu settings.gradle.kts dan build.gradle.kts. Kedua berkas tersebut merupakan Gradle Kotlin DSL yang bisa kita gunakan untuk mengatur konfigurasi dari Gradle. Gradle mendukung 2 (dua) jenis build script yaitu Groovy dan Kotlin DSL. Namun, pada akademi ini kita hanya akan fokus menggunakan Kotlin DSL. Beberapa hal yang menjadi alasan kenapa kita memilih Kotlin DSL adalah sebagai berikut.
+
+Memungkinkan kita untuk memaksimalkan fitur auto-completion pada IDE nantinya.
+Membuat kita tidak perlu mempelajari 2 bahasa (Groovy + Kotlin).
+Untuk DSL Konfigurasi, pengembangan Gradle kedepan akan lebih fokus ke penggunaan Kotlin dibandingkan dengan Groovy.
+Di dalam berkas settings.gradle.kts, kita akan menemukan konfigurasi berikut.
+
+/*
+ * This file was generated by the Gradle 'init' task.
+ *
+ * The settings file is used to specify which projects to include in your build.
+ * For more detailed information on multi-project builds, please refer to https://docs.gradle.org/8.5/userguide/building_swift_projects.html in the Gradle documentation.
+ */
+ 
+plugins {
+    // Apply the foojay-resolver plugin to allow automatic download of JDKs
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
+}
+ 
+rootProject.name = "kotlin-starter"
+include("app")
+Konfigurasi tersebut digunakan untuk mengatur nama dari proyek kita. Ke depannya, kita bisa menambahkan beberapa konfigurasi seperti pengaturan submodul dan sebagainya di dalam berkas ini.
+
+Kemudian mari kita beralih ke berkas build.gradle.kts.
+
+/*
+ * This file was generated by the Gradle 'init' task.
+ *
+ * This generated file contains a sample Kotlin application project to get you started.
+ * For more details on building Java & JVM projects, please refer to https://docs.gradle.org/8.5/userguide/building_java_projects.html in the Gradle documentation.
+ */
+ 
+plugins {
+    // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
+    alias(libs.plugins.jvm)
+ 
+    // Apply the application plugin to add support for building a CLI application in Java.
+    application
+}
+ 
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+ 
+dependencies {
+    // Use the Kotlin JUnit 5 integration.
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
+ 
+    // Use the JUnit 5 integration.
+    testImplementation(libs.junit.jupiter.engine)
+ 
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+ 
+    // This dependency is used by the application.
+    implementation(libs.guava)
+}
+ 
+// Apply a specific Java toolchain to ease working on different environments.
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
+ 
+application {
+    // Define the main class for the application.
+    mainClass.set("com.dicoding.kotlin.AppKt")
+}
+ 
+tasks.named<Test>("test") {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}
+Di dalam berkas tersebut terdapat berbagai macam konfigurasi seperti pengaturan plugins, repositories, dependencies, dan lain sebagainya. Biasanya kita akan sering menggunakan berkas ini ketika ingin menambahkan dependency atau library baru. Pada proyek baru tersebut kita terdapat beberapa library yang secara otomatis sudah ditambahkan.
+
+
+
+Source (src)
+Folder src merupakan tempat kita menyimpan berbagai macam sumber daya untuk pengembangan aplikasi. Di dalamnya, Anda akan melihat 2 (dua) folder, yaitu main dan test.
+
+Mari kita mulai dari folder main terlebih dahulu. Folder ini merupakan folder utama tempat kita meletakkan berkas kode dan resources lainnya. Di dalam folder main terdapat folder Kotlin yang di dalamnya juga terdapat package name dari proyek kita yaitu com.dicoding.kotlin. Pada package name inilah kita bisa menambahkan berkas kode nantinya. Saat ini, kita sudah memiliki 1 berkas bernama App.kt:
+
+
+
+Selanjutnya adalah folder test yang berisi berkas-berkas kode pengujian aplikasi. Sama dengan folder main, di dalam test juga terdapat folder kotlin dan package name dari proyek kita. Di sana terdapat berkas AppTest.kt yang merupakan sebuah kelas pengujian. Berikut kode di dalamnya.
+
+
+
+Semua kode di atas dibuat secara otomatis saat kita membuat proyek dengan Gradle. 
+
+
+
+Menjalankan Program Gradle
+Setelah mengetahui struktur dari proyek yang dibuat, selanjutnya kita akan menjalankan program tersebut. Caranya sangat sederhana. Pada terminal kita cukup menjalankan 1 (satu) perintah Gradle berikut.
+
+gradle run
+Lalu, Gradle akan melakukan proses build pada proyek tersebut. Secara otomatis ia akan mengeksekusi kode di dalam berkas App.kt. Jika berhasil, terminal akan menampilkan pesan seperti di bawah ini.
+
+dos-49040fadad5919db5ca7e38fe743291420240116153537.png
+
+Jika proses build berlangsung lama, itu adalah hal normal karena baru pertama kali dijalankan pada suatu proyek di mana compiler akan mengunduh beberapa library pendukung agar program dapat dijalankan dengan baik.
+
+Langkah-langkah di atas sama persis ketika kita menggunakan sistem operasi Windows sehingga kita tidak perlu khawatir. Namun, pastikan bahwa saat Anda menjalankan perintah gradle init. Perintah tersebut dijalankan dari dalam folder project baru. Jika dijalankan di dalam folder project yang sebelumnya sudah menjalankan perintah tersebut, command prompt akan menampilkan eror dan tak akan berlanjut ke langkah-langkah berikutnya.
+
+Perintah gradle run di atas juga bisa juga Anda gunakan pada system operasi Windows. Berikut contoh jika perintah tersebut dijalankan.
+
