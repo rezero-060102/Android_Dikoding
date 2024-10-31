@@ -1,0 +1,33 @@
+Ekosistem Kotlin
+Berbicara mengenai ekosistem, di Indonesia sendiri Kotlin mulai ramai digunakan sejak tahun 2017. Pada tahun itu, Kotlin ditetapkan sebagai bahasa pemrograman resmi pada salah satu platform yang juga sangat terkenal, yaitu Android. Walaupun sebenarnya sebelum tahun 2017 juga ada developer yang sudah mulai menuliskan kodenya dengan Kotlin.
+
+Selain dikenal sebagai bahasa pemrograman yang ringkas dan praktis, dukungan multiplatform pada Kotlin mampu membuat Kotlin mudah diterima di berbagai kalangan developer. Untuk developer yang mempunyai latar belakang sebagai programer Java, C#, JavaScripts, Scala, maupun Groovy, mereka akan bisa mudah beradaptasi dengan Kotlin, karena Kotlin memang terinspirasi dari beberapa bahasa pemrograman tersebut. Beberapa perusahaan besar seperti Square, Pinterest, Basecamp dan Corda pun sudah menggunakan Kotlin dan dengan bangga mengumumkannya secara publik.
+
+Sejak diumumkannya Kotlin sebagai bahasa pemrograman untuk Android pada Google I/O 2017, tak sedikit developer Android yang mencoba untuk mempelajari Kotlin. Apalagi di tahun 2019 ini semua update terbaru pada Android selalu menggunakan Kotlin pada dokumentasinya. Tentu saja banyak developer Android yang juga sudah beralih dari Java ke Kotlin. Sepertinya pengumuman dari Google tersebut sangat berpengaruh terhadap animo developer Android dalam menggunakan Kotlin. Bahkan sampai ada yang mengira bahwa Google-lah yang mengembangkan Kotlin.
+
+Tak hanya di luar negeri, di Indonesia pun Kotlin dikenal sangat melekat dengan Android. Ini ditunjukkan dengan banyaknya developer yang berdiskusi di komunitas online maupun offline mayoritas adalah developer Android. Antusiasme developer Android di Indonesia untuk belajar Kotlin sangatlah besar. 
+
+Saat ini, banyak aplikasi yang dikembangkan dengan Kotlin. Mulai dari startup yang baru mulai dirintis sampai perusahaan yang sudah memiliki title Unicorn seperti GO-JEK, Tokopedia, dan Bukalapak.
+
+dos-3d4f7e2695257f9b85286f721e75377e20240115163355.png
+
+https://developer.android.com/kotlin
+
+Selanjutnya, hal yang juga sangat berpengaruh pada perkembangan ekosistem Kotlin adalah Komunitas. Baik di luar negeri atau pun di Indonesia, setiap harinya komunitas online selalu ramai dengan diskusi-diskusi seputar Kotlin. Tak jarang juga komunitas yang mengadakan acara offline secara rutin. Ini pertanda komunitas Kotlin, sangat kuat. Dengan banyaknya developer expert yang peduli membagikan ilmunya, akan mempermudah teman-teman developer yang baru untuk mulai belajar Kotlin.
+
+Berikut adalah beberapa kanal komunitas yang bisa Anda ikuti untuk mendapatkan update rutin seputar Kotlin.
+
+Kotlin Indonesia
+Kotlinlang
+Antonioleiva.com
+Kotlin Weekly
+Kotlin.link
+The Daily Kotlin
+Talking Kotlin
+Banyaknya komunitas yang berkontribusi untuk Kotlin membuat bahasa tersebut berkembang sangat pesat. Kotlin dinobatkan sebagai “Fastest growing languages” oleh GitHub Octoverse 2018 mengalahkan Rust, Go, dll.
+
+20190404165926eb9fab41413f9eb8449a55a2dda46441.png
+
+GitHub Octoverse 2018
+
+Kami harap semoga akademi ini juga bisa berkontribusi untuk mengembangkan ekosistem Kotlin di Indonesia.
