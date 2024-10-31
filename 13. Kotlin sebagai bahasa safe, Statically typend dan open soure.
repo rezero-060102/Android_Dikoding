@@ -1,0 +1,35 @@
+Safe
+Seperti apakah pengertian “aman” dalam sebuah bahasa pemrograman? Apakah “aman” artinya kita bisa membuat aplikasi yang tidak mudah dibobol? Tentu tidak. Ketika seorang programer menuliskan banyak kode untuk membangun aplikasi, akan ada saatnya programer tersebut bertemu dengan beberapa masalah. Masalah yang muncul pun bermacam-macam. Mulai dari kode yang eror, proyek tak berhasil di-build, atau bahkan fitur yang tak berfungsi semestinya. Apakah ini yang akan kita bahas? Tidak, kita belum akan membahas masalah-masalah tersebut di sini.
+
+Dengan berjalannya Kotlin di atas JVM, keamanan dari sisi memori lebih terjamin. Begitu pun keamanan dari sisi masalah lain yang bersumber dari kesalahan penggunaan memori yang dialokasikan secara dinamis. Di samping itu Kotlin juga menjamin bahwa tingkat keamanan lebih tinggi dibandingkan dengan Java. Misalnya, ketika ingin mendeklarasikan sebuah tipe pada Kotlin, baik tipe data, argumen, ataupun lainnya, Kotlin mampu menyimpulkan tipe tersebut secara otomatis. Sehingga kita tidak perlu menuliskannya secara eksplisit. Tentunya ini akan sangat membantu, karena banyak juga masalah yang disebabkan oleh kesalahan deklarasi tipe tersebut.
+
+Lebih dari itu, Kotlin mampu memeriksa kesalahan pada saat kompilasi, sehingga memungkinkan kita untuk mencegah kesalahan tersebut. Yang paling hebat, Kotlin menghilangkan NullPointerException yang sering disebut sebagai “The billion dollar mistake” oleh programer Java. Kotlin membedakan antara objek yang boleh null atau tidak boleh null pada saat objek itu dibuat. Tentunya juga menyediakan beberapa solusi untuk penulisannya. Fitur tersebut dikenal dengan Null Safety. Sebagai contoh, kode berikut:
+
+
+
+Secara default, Kotlin mengasumsikan nilai dari sebuah properti tidak boleh null. Oleh karena itu, kode pada baris kedua akan langsung dianggap eror. Namun seringkali kita tidak bisa menghindari bahwa sebuah data ternyata null, apalagi ketika kita mengkonsumsi data yang didapatkan dari server. Kita pun bisa menetapkan sebuah properti nullable dengan menambahkan tanda (?) pada tipe datanya. 
+
+
+
+Properti a sekarang bisa ditetapkan sebagai nullable, dan untuk mengaksesnya kita perlu menerapkan sebuah mekanisme untuk menghindari kesalahan kompilasi. Terdapat beberapa cara yang bisa dilakukan. Semuanya akan dibahas pada sub-modul terpisah.
+
+Statically Typed
+Seperti yang tertulis http://kotlinlang.org dan juga di awal akademi ini, Kotlin termasuk ke dalam bahasa pemrograman statically typed. Artinya setiap ekspresi di dalam sebuah program dapat dikenali pada saat kompilasi. Kompiler juga bisa memastikan bahwa semua fungsi yang ingin diakses terdapat pada objek yang digunakan. Hal ini berbeda dengan beberapa bahasa pemrograman lain yang juga berjalan di atas JVM seperti Groovy dan JRuby. Kedua bahasa tersebut termasuk ke dalam bahasa pemrograman dynamically typed.
+
+Di sisi lain, jika dibandingkan dengan Java yang juga merupakan bahasa pemrograman statically typed, Kotlin memungkinkan kita untuk tidak menuliskan tipe variabel secara eksplisit. Ini akan menghindarkan kita dari kesalahan seperti salah menuliskan tipe data atau yang lainnya. Sebagai contoh:
+
+
+Tanpa menuliskan tipe data String secara eksplisit, kompiler secara otomatis akan mengetahui bahwa variabel company merupakan sebuah String. Sebabnya, variabel tersebut diisi dengan nilai String. Tentunya ini juga membuat kode yang dituliskan menjadi lebih ringkas. Fitur tersebut dinamakan dengan type inference, yaitu sebuah mekanisme yang dijalankan oleh kompiler untuk menyimpulkan tipe dari sebuah context.
+
+Selama ini, terdapat banyak perdebatan mengenai statically typed atau dynamically typed yang bagus dalam hal produktivitas. Tentunya banyak juga perbedaan pendapat dari para developer. Keduanya memiliki keunggulan masing-masing. Berikut adalah beberapa keunggulan dari bahasa pemrograman statically typed:
+
+Mengakses sesuatu akan lebih cepat karena kita tidak perlu mencari tahu fungsi mana yang perlu dipanggil;
+Karena kompiler menjamin kebenaran program, peluang untuk crash saat runtime akan berkurang;
+Statically typed memungkinkan proses refactoring yang lebih mudah, apalagi dengan dukungan tool yang hebat seperti auto complete dan yang lainnya;
+Lebih mudah untuk bekerja dengan relasional database dan sistem lain yang juga bergantung pada statically typed.
+Selain itu, Kotlin juga mendukung function type, yang nanti akan kita pelajari pada sub-modul functional programming.
+
+Free and Open-Sources
+Bagi pegiat open-sources dan developer pada umumnya, hal ini tentunya sangat menguntungkan. Kompiler, library, tools, dan terutama Kotlin itu sendiri bebas untuk diakses gratis. Seperti yang sudah disebutkan di awal akademi, Kotlin mempunyai lisensi Apache 2.0. Anda pun bisa memantau atau berkontribusi untuk pengembangan Kotlin pada repo-nya di https://github.com/jetbrains/kotlin. Beberapa IDE yang bisa Anda gunakan seperti IntelliJ IDEA, Android Studio dan Eclipse juga termasuk ke dalam open-sources software.
+
+Saat ini sudah terdapat ratusan developer yang berkontribusi dengan ribuan commit-nya pada pengembangan Kotlin. Jika Anda tertarik untuk berkontribusi, tersedia juga panduan yang lengkap pada tautan ini. Semakin banyak kontribusi dari developer-developer hebat, tentunya Kotlin akan menjadi kian powerful.
