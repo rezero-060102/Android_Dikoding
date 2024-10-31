@@ -1,0 +1,47 @@
+Pada submodul sebelumnya kita sudah berkenalan dengan Kotlin, mulai dari sejarah, karakteristik yang dimilikinya, hingga ke ekosistemnya di kalangan developer. Kini saatnya kita masuk  topik selanjutnya. Bagaimana cara untuk membangun dan menjalankan program Kotlin?  Di sini kita akan belajar membuat sebuah program dari awal dengan hanya memanfaatkan text editor, terminal, dan build tools, sebelum nantinya menggunakan IDE. Lalu, peralatan apa sajakah yang kita butuhkan? Mari kita siapkan terlebih dahulu.
+
+
+
+Persiapan dan Instalasi
+Pada tahap pertama, tentunya kita perlu menyiapkan beberapa tools yang dibutuhkan untuk membangun program dengan Kotlin. Beberapa tools itu bisa kita kategorikan ke dalam SDK, IDE, dan build tools.
+
+
+
+Software Development Kit (SDK)
+SDK merupakan seperangkat alat pengembangan perangkat lunak yang digunakan untuk mempermudah pengembangan aplikasi dalam platform tertentu. Setiap platform biasanya menyediakan SDK khusus. Misalnya, Android dengan Android SDK-nya, iOS dengan iOS SDK-nya, ataupun Java dengan JDK-nya. Dengan SDK tersebut, developer dapat mengakses fitur khusus dari masing-masing platform. Terdapat juga SDK di luar platform seperti Google SDK, Facebook SDK, dll yang bisa diintegrasikan ke aplikasi.
+
+Untuk Kotlin, karena ia berjalan diatas JVM, maka ia sama seperti Java. Kotlin menggunakan JDK sebagai SDK-nya dan JRE untuk menjalankan program aplikasi.
+
+JDK, JRE dan JVM sendiri terlihat sama karena ketiganya merupakan inti dari bahasa pemrograman Java. Meski terlihat sama, masing-masing dari ketiganya, punya peran sendiri-sendiri. JDK (Java Development Kit) adalah sebuah perangkat lunak yang menyediakan beberapa tools untuk pengembangan dan berkas binary yang diperlukan untuk proses kompilasi dari kode Java ke bytecode.
+
+Selanjutnya, JVM atau Java Virtual Machine bertanggung jawab untuk melakukan konversi bytecode ke dalam bahasa mesin. JVM juga menyediakan fungsi inti dari Java, seperti memory management, garbage collection, security, dan sebagainya. JVM disebut virtual karena memiliki antar muka yang tidak bergantung pada sistem operasi dan perangkat keras yang menjadi dasar dari JVM itu sendiri.
+
+Terakhir, JRE atau Java Runtime Environment merupakan implementasi dari JVM yang menyediakan sebuah platform untuk menjalankan program. Berbeda dengan JDK dan JVM, JRE tidak menyediakan tools untuk pengembangan seperti kompiler, debugger, dan sebagainya; tetapi JRE diperlukan untuk menjalankan program.
+
+Pada dasarnya, setiap JDK yang bisa kita gunakan memiliki basis OpenJDK dan bersifat open-source. Perbedaannya adalah cara JDK tersebut didistribusikan. Contoh distribusinya bisa dari Oracle (OracleJDK), OpenJDK Distribution atau Azul Zulu JDK. 
+
+Pada kelas ini, kita akan menggunakan JDK yang didistribusikan oleh OpenJDK Distribution karena bisa digunakan secara gratis dengan lisensi personal. Nah untuk JRE, kita tidak perlu melakukan instalasi secara terpisah karena sudah terdapat di dalam paket instalasi OpenJDK.
+
+
+
+Build Tools
+Selanjutnya adalah build tools, perangkat lunak yang akan kita gunakan untuk membantu mengotomatisasi proses. Seperti misalnya pemaketan dari proyek yang kita akan kembangkan. Selain kompiler command line dan IntelliJ IDEA, Anda juga dapat menggunakan Ant, Maven, dan Gradle sebagai build tools-nya. Dari ketiga build tools tersebut, Gradle-lah yang paling sering digunakan. Pasalnya, ia cukup fleksibel dalam membantu proses kompilasi.
+
+Gradle sendiri merupakan sebuah perangkat lunak open-sources yang bisa kita gunakan untuk berbagai macam keperluan dalam pengembangan aplikasi [3]. Dalam menuliskan skrip Gradle, kita bisa menggunakan Groovy atau Kotlin DSL. Gradle mendukung proses pengunduhan dan konfigurasi secara otomatis dari sebuah dependensi atau library lain. Selain itu, Gradle berfokus pada fleksibilitas dan kinerja sehingga memungkinkan kita untuk membangun sebuah aplikasi dengan mudah. 
+
+Gradle memiliki beberapa fitur yang cukup penting, seperti performa yang cukup stabil dan sudah didukung oleh beberapa IDE terkenal seperti Eclipse, Android Studio dan Intellij IDEA. Untuk mengetahui lebih dalam tentang keunggulan dalam penggunaan Gradle, silakan membacanya pada tautan ini.
+
+
+
+Integrated Development Environment (IDE)
+Proses pengembangan aplikasi tak lepas dari bantuan IDE. Memang tanpa IDE kita tetap bisa membuat program dengan text editor. Namun, fitur-fitur yang IDE tawarkan akan membuat proses pengembangan menjadi jauh lebih mudah dan efisien. 
+
+Pada umumnya IDE menyediakan beberapa fitur seperti text editor yang akan kita gunakan untuk menulis kode, tools untuk mengotomatisasi proses build dari program yang kita buat dan sebuah debugger yang akan membantu kita mendeteksi dan memperbaiki kesalahan yang terdapat pada program. Terdapat berbagai macam IDE yang mendukung pengembangan dengan bahasa pemrograman Kotlin seperti IntelliJ IDEA, Android Studio, dan Eclipse.
+
+Dari semua IDE tersebut, IntelliJ IDEA dan Android Studio-lah yang paling direkomendasikan. Anda bisa menggunakan IntelliJ IDEA untuk pengembangan aplikasi secara umum dan Android Studio untuk pengembangan aplikasi Android.
+
+dos-56ea2809367071bfa319b39e9849c20120240116104521.png. dos-d64b9a44a50325d9e86fea713cf0ec6220240116104535.png
+
+Pada akademi ini, kita akan fokus menggunakan IntelliJ IDEA. IntelliJ IDEA dikembangkan oleh pengembang yang sama dengan Kotlin, yaitu JetBrains. Tentunya ada kompatibilitas yang lebih antara keduanya. Bahkan, JetBrains juga menyediakan tutorial khusus untuk memulai Kotlin menggunakan IntelliJ IDEA. Anda bisa membacanya di tautan ini. Dengan dukungan fitur yang mumpuni, IntelliJ IDEA dapat membantu kita menyelesaikan program yang sedang kita kembangkan dengan cepat.
+
+Intellij IDEA memiliki dua versi yang dapat kita gunakan untuk pengembangan aplikasi, yaitu versi Ultimate dan Community. Versi Ultimate ditujukan untuk pengembangan aplikasi lebih lanjut. Pada akademi ini, kita akan menggunakan versi Community untuk belajar Kotlin.
