@@ -1,0 +1,24 @@
+Instalasi Gradle (Linux dan macOS)
+Setelah selesai dengan instalasi OpenJDK pada submodul sebelumnya, mari kita lanjut dengan instalasi Gradle. Di sini tidak ada prasyarat khusus. Kita hanya harus memastikan terlebih dahulu apakah OpenJDK ada pada sistem operasi yang akan kita gunakan. Inilah alasan mengapa kita mempraktikkan instalasinya di awal. Sama seperti instalasi OpenJDK, instalasi Gradle akan menggunakan SDKMAN untuk Linux dan macOS.
+
+
+
+Instalasi Gradle via SDKMAN
+Sama seperti instalasi OpenJDK sebelumnya, Untuk bisa melihat daftar versi dari Gradle, Anda bisa menggunakan perintah berikut.
+
+sdk list gradle
+Ketika dijalankan, terminal akan menampilkan hasil seperti berikut.
+
+dos-f61f717f0f0afceeb4d48cacb398bfca20240116114920.png
+
+Tanpa berlama-lama, lansung saja jalankan perintah di bawah ini pada terminal untuk instalasi Gradle. Tunggu hingga proses instalasinya selesai.  
+
+sdk install gradle [versi gradle] 
+Catatan:
+Gunakan versi Gradle terbaru untuk best-practice, contohnya dalam gambar di atas menggunakan versi 8.5 karena versi tersebut terbaru dan stabil.
+
+Cukup mudah bukan? Untuk memastikan Gradle berhasil diinstal, bisa dengan jalankan perintah "gradle -v" pada terminal seperti berikut.
+
+dos-2a951b310cb3f6cd0f3e39567aa0900020240116115224.png
+
+Instalasi selesai! Cukup mudah, bukan? Ini karena kita menggunakan SDKMAN untuk instalasi di mana semua konfigurasi sudah diterapkan secara otomatis ketika proses instalasi berjalan. Lalu, bagaimana dengan instalasi Gradle pada Windows? Yuk lanjut ke submodul selanjutnya untuk proses instalasi dan konfigurasinya.
