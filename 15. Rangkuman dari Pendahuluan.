@@ -1,0 +1,60 @@
+Rangkuman dari Pendahuluan
+Kotlin merupakan bahasa pemrograman open-source yang mudah dipelajari oleh siapapun. Ini bisa dilakukan berkat kejeniusan para developer di JetBrains yang dipimpin langsung oleh Andrey Breslav. Selain mudah dipelajari, Kotlin memungkinkan kita untuk membuat program antar platform yang tentunya ini dapat mengurangi biaya dalam pembuatan program itu sendiri. 
+
+Selain itu dalam sub-modul pendahuluan ini Anda juga telah mengetahui beberapa hal sebagai berikut:
+
+Selain mudah dipelajari, Anda juga dapat ikut berkontribusi di dalamnya karena Kotlin merupakan project open-source.
+
+Kotlin mendukung 2 paradigma (multiparadigm) umum yang akan Anda sering jumpai, yaitu Object-Oriented Programming (OOP) dan Functional Programming (FP). Kedua paradigma tersebut akan sangat membantu proses pengembangan dengan masing-masing fitur yang dimilikinya.
+
+Selain multiparadigm, Kotlin juga mendukung multiplatform yang berbeda dengan bahasa pemrograman mainstream lainnya di mana kita dapat membuat aplikasi mobile (iOS/Android), Web, Desktop, atau Server. Bahkan Kotlin digadang-gadang bisa digunakan untuk Deep Learning dengan KotlinDL yang saat ini sudah berstatus alpha!
+
+Terdapat 3 bagian pada Kotlin Multiplatform, yaitu
+dos-88ebd78fae510af63abb0caa7f27f85220240206113205.png
+
+Common Module
+Modul ini berisi kode yang tidak spesifik ke platform apa pun. Kita bisa menempatkan komponen-komponen yang bisa digunakan oleh semua modul pada modul ini.
+
+Platform Module
+Pada modul ini kita bisa menambahkan komponen tertentu yang spesifik untuk satu platform. Biasanya modul ini merupakan implementasi dari common module. 
+
+Regular Module
+Merupakan modul umum yang menargetkan  platform tertentu. Modul ini bisa dependen atau pun menjadi dependensi dari platform module.
+
+Kotlin mendukung dengan baik dan memiliki beberapa kelebihan dalam mengembangkan aplikasi Android seperti di bawah ini:
+
+Compatibility
+Kotlin sepenuhnya kompatibel dengan JDK 6. Ini memastikan bahwa aplikasi yang dibangun dengan Kotlin dapat berjalan pada perangkat Android yang lebih lama tanpa ada masalah. Android Studio pun mendukung penuh pengembangan dengan bahasa Kotlin.
+
+Performance
+Dengan struktur bytecode yang sama dengan Java, aplikasi yang dibangun dengan Kotlin dapat berjalan setara dengan aplikasi yang dibangun dengan Java. Terdapat juga fitur seperti inline function pada Kotlin yang membuat kode yang dituliskan dengan lambda bisa berjalan lebih cepat dibandingkan kode yang sama dan dituliskan dengan Java.
+
+Interoperability
+Anda dapat menggunakan bahasa Kotlin bersamaan dengan bahasa Java, tanpa harus memigrasikan semua kode lama Anda ke Kotlin. Sehingga Anda dapat memanggil kode Java dari Kotlin dan sebaliknya. Inilah alasan yang menyebabkan Kotlin menjadi cepat diterima oleh developer.
+
+Compilation Time
+Kotlin mendukung kompilasi inkremental yang efisien. Oleh karena itu, proses build biasanya sama atau lebih cepat dibandingkan dengan Java.
+
+Perkembangan Kotlin pada Android pun bisa dibilang sangat cepat. Bahkan pada acara Google I/O 2019 lalu, Google mengumumkan Kotlin First!, yaitu menetapkan Kotlin sebagai bahasa pemrograman nomor 1 (satu) untuk Android. Hampir semua update pada Android saat ini sudah menggunakan Kotlin pada dokumentasinya.
+
+Berikut ini adalah beberapa karakteristik dari bahasa Kotlin
+
+Modern and Concise
+Kotlin dikenal dengan bahasa modern yang ringkas untuk dituliskan. Kotlin mampu memangkas berbaris-baris kode menjadi hanya beberapa baris saja. 
+
+Pragmatic
+Sebuah bahasa pemrograman bisa dikatakan pragmatis jika mampu mengatasi masalah dengan praktis.
+
+Safe
+Anda bisa meminimalisir kesalahan yang sering terjadi ketika menggunakan Java, yaitu NullPointerException.
+
+Statically Typed
+Artinya setiap ekspresi di dalam sebuah program dapat dikenali pada saat kompilasi.
+
+Open source
+Anda juga dapat ikut berkontribusi di dalam pengembangan bahasa Kotlin.
+
+Kotlin pernah berada di posisi pertama dalam Fastest growing languages versi GitHub Octoverse 2018 berkat banyaknya dukungan komunitas dalam pengembangannya.
+
+
+Rangkuman di atas merupakan awal dari perjalanan Anda dalam menyelesaikan kelas ini. Jadi, tetap semangat untuk menuntaskan sub-modul berikutnya ya!
