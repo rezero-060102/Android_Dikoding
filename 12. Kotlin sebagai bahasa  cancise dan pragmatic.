@@ -1,0 +1,35 @@
+Karakteristik Kotlin
+Untuk kenal lebih dalam sebuah bahasa pemrograman, tentu kita harus mengetahui karakteristik dari bahasa tersebut. Kotlin adalah bahasa pemrograman yang ringkas, aman, pragmatis dan difokuskan pada interoperabilitas dengan bahasa Java. Kotlin berjalan lancar dengan semua library dan frameworks Java yang sudah ada. Tentunya Kotlin juga memiliki karakteristik tersendiri yang membuatnya disukai oleh banyak developer. Mari kita bahas bersama beberapa karakteristik tersebut.
+
+
+Modern and Concise
+Kotlin dikenal dengan bahasa modern yang ringkas untuk dituliskan. Kotlin mampu memangkas berbaris-baris kode menjadi hanya beberapa baris saja. Seperti kita ketahui, programmer menghabiskan banyak waktunya untuk membaca dan menuliskan kode. Ketika kita sedang mengembangkan sebuah aplikasi, hal yang pertama kita lakukan pastinya adalah membaca kode. Baik kode dari sebuah dokumentasi atau pun kode yang sudah ada pada proyek yang sedang dikerjakan. Membaca atau menuliskan kode yang ringkas dan mudah dipahami tentunya menjadi sebuah keuntungan sendiri bagi seorang programmer.
+
+Semakin ringkas sebuah kode, maka semakin cepat pula untuk kita pahami. Selain ringkas, faktor lain seperti penamaan fungsi juga akan sangat berpengaruh. Kotlin memiliki fungsi-fungsi bawaan yang namanya mudah diingat. Bahkan pilihan keyword yang terkesan sangat sederhana. Mari kita perhatikan perbandingan antara Kotlin dan Java berikut:
+
+Java:
+
+
+Kotlin:
+
+
+
+
+“Hal apa yang pertama kali Anda lihat ketika melihat 2 (dua) kode di atas?”.
+
+“Kotlin tidak memerlukan semicolon atau tanda titik koma (;)”.
+
+Ya benar, itu adalah salah satu ciri dari Kotlin. Sederhana, tapi tak jarang programmer dibuat pusing karena lupa menambahkan semicolon di akhir kode ketika ngoding dengan Java. Kode di atas memiliki kegunaan yang sama namun dituliskan dengan bahasa pemrograman yang berbeda. Terlihat dengan sangat jelas bahwa kode yang dituliskan dengan Kotlin lebih ringkas dan lebih mudah dipahami, bukan? Nah, itu belum seberapa. Pada akademi ini Anda akan melihat banyak contoh kode yang menunjukan bahwa Kotlin adalah bahasa yang sangat ringkas.
+
+Kotlin juga dibekali dengan beberapa standard library seperti higher-order function, extension function, dll yang membuat penulisan kodenya semakin ringkas. Semuanya akan kita pelajari satu per satu pada akademi ini.
+
+
+
+Pragmatic
+Sebuah bahasa pemrograman bisa dikatakan pragmatis jika mampu mengatasi masalah dengan praktis. Kotlin dikembangkan berdasarkan permasalahan-permasalahan yang sering dialami oleh programmer di JetBrains. Tanpa mengesampingkan saran dan feedback dari komunitas, dalam setiap rilisnya Kotlin selalu memperbarui fitur-fitur yang ada demi solusi praktis bagi programmer.
+
+Selain ringkas ditulis, hal lain yang membuat Kotlin bisa dikatakan pragmatis adalah dukungan tools yang sangat membantu proses penulisan kode. JetBrains menambahkan dukungan Kotlin pada IntelliJ IDEA beserta plugin-plugin yang disesuaikan dengan setiap fitur yang ada pada Kotlin.
+
+Plugin yang ada pun mampu menuntun programmer untuk mempelajari fitur-fitur pada Kotlin. Sebagai contoh, kita bisa mengkonversi kode Java menjadi Kotlin secara otomatis hanya dengan melakukan copy-paste kode saja pada berkas Kotlin. Dengan begitu, secara tidak langsung kita bisa belajar seperti apakah jika sebuah kode pada Java dituliskan dengan Kotlin. Contoh lain, IntelliJ IDEA mampu menampilkan peringatan pada sebuah kode yang penulisannya kurang tepat. Tak hanya itu, setiap peringatan selalu disertai dengan saran perbaikan. Tentunya kita akan belajar bagaimana seharusnya sebuah kode dituliskan pada Kotlin.
+
+Pada submodul selanjutnya kita juga akan mempelajari secara lebih lengkap bagaimana peran IDE dalam mendukung Kotlin sebagai bahasa yang praktis.
