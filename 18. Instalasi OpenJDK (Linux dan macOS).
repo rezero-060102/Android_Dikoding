@@ -1,0 +1,77 @@
+Instalasi OpenJDK (Linux dan macOS)
+Instalasi OpenJDK dapat dilakukan dengan beberapa cara, tergantung dengan sistem operasi yang kita gunakan. OpenJDK dapat berjalan di semua sistem operasi berbasis Linux, macOS, maupun Windows. Untuk mengikuti kelas ini, kita akan menggunakan OpenJDK versi 1.8 yang didistribusikan oleh Azul Zulu untuk menghindari kesalahan yang mungkin saja terjadi. 
+
+Okey, untuk proses instalasinya, akan kita mulai terlebih dahulu untuk sistem operasi Linux dan macOS. Bahasan sistem operasi Windows akan kita simak pada submodul berikutnya. Oleh karena itu, langsung saja ikuti panduan instalasinya berikut.
+
+
+
+Instalasi SDKMAN
+Cara untuk menginstal OpenJDK pada Linux dan macOS bisa dikatakan mirip karena pada dasarnya kedua sistem operasi tersebut berbasiskan Unix. Instalasinya bisa kita lakukan secara manual, melalui PPA atau bisa juga dengan SDKMAN. Dari ketiga cara tersebut, kami merekomendasikan untuk menggunakan SDKMAN.
+
+SDKMAN adalah sebuah tools yang bisa digunakan untuk mengatur versi dari SDK secara paralel. Ia tersedia di sebagian besar sistem operasi berbasiskan Unix, termasuk Linux dan macOS. Apa keunggulannya? Dengan SDKMAN, kita tidak perlu melakukan konfigurasi saat ingin menginstal SDK. Tinggal jalankan perintah instalasi, dan kita bisa langsung menggunakan SDK tersebut.
+
+Sebelum melakukan instalasi OpenJDK dengan SDKMAN, kita akan menginstal terlebih dahulu SDKMAN tersebut. Langung saja ikuti beberapa langkah instalasinya di bawah ini.
+
+1. curl --version
+
+Jika ternyata belum, jalankan perintah berikut pada terminal untuk menginstal curl.
+
+1. sudo apt install curl
+
+Ikuti instruksinya sampai proses instalasi selesai. Untuk macOS, instalasi Curl bisa memanfaatkan homebrew dengan perintah di bawah ini.
+
+1. brew install curl
+
+Catatan: Pastikan Anda sudah menambahkan homebrew ke mac Anda. Silakan kunjungi brew.sh untuk melihat cara instalasinya.
+
+2. Setelah itu, jalankan perintah berikut untuk instalasi SDKMAN.
+
+curl -s "https://get.sdkman.io" | bash
+
+3. Kemudian, jalankan perintah berikut.
+
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+Untuk memastikan SDKMAN berhasil diinstal, gunakan perintah berikut.
+
+sdk version
+
+4. Seharusnya terminal akan menampilkan versi SDKMAN seperti di bawah ini.
+SDKMAN!
+script: 5.18.2
+native: 0.4.6
+Catatan: versi yang digunakan SDKMAN akan menggunakan yang pelaing baru ketika Anda melakukan instalasi.
+
+Instalasi OpenJDK
+Nah, untuk instalasi OpenJDK via SDKMAN, caranya sangat sederhana. Sebelum itu, Anda perlu melihat versi JDK yang dapat diinstal dengan menjalankan perintah berikut.
+
+sdk list java
+Terminal akan menampilkan daftar versi JDK kurang lebih seperti berikut.
+
+Setelah menentukan versi dari sdk tersebut, Anda bisa menginstal versi JDK menggunakan perintah berikut.
+
+sdk install java <another-version>
+Ubah <another-version> dengan versi yang Anda inginkan, misalnya 8.0.392 dari zulu.
+
+sdk install java 8.0.392-zulu
+Tunggulah hingga proses unduhan selesai dilakukan.
+
+dos-75beda7753eb76c8652c881abe32464d20240205125054.png
+
+Lalu, periksa kembali menggunakan perintah berikut.
+
+sdk current java
+
+Terminal akan menampilkan pesan seperti berikut.
+
+dos-379c0e9c41cf0b3eb3f3477c0d9f4a4720240205125135.png
+
+Untuk memastikan apakah kita sudah berhasil melakukan instalasi, Anda bisa menjalankan perintah "java -version". Pastikan terminal menampilkan versi dari OpenJDK kurang lebih seperti berikut.
+
+dos-6063a057ab91338d07dadfb541fcff5320240205125218.png
+
+Yeay! Proses instalasi telah berhasil untuk sistem operasi Linux dan macOS. Di submodul berikutnya, kita akan membahas konfigurasi dan instalasi JDK pada sistem operasi Windows.
+
+
+
+
