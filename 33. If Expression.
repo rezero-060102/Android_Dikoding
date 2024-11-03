@@ -1,0 +1,22 @@
+If Expressions
+Saat mengembangkan sebuah program, kita pasti bertemu dengan alur program yang perlu sebuah kondisi untuk menjalankan sebuah statement atau expression. Contoh ketika kita ingin menginisialisasi nilai dari sebuah variabel berdasarkan suatu kondisi. Untuk menyelesaikannya, gunakan If Expression.
+
+If expression direpresentasikan dengan kata kunci if. If akan kita perlukan untuk menyelesaikan kasus di atas, dimana if akan digunakan untuk menguji suatu kondisi untuk menjalankan sebuah proses. If akan mengeksekusi sebuah statement atau expression jika hasil evaluasi dari expressions yang diberikan pada blok if bernilai true. Sebaliknya, jika bernilai false maka proses yang ditentukan akan dilewatkan.
+
+
+
+Kode di atas adalah contoh sederhana penggunaan if dengan memanfaatkan operator greater than untuk membandingkan nilai. Jika if digunakan untuk mengembalikan nilai atau menetapkan nilai dari sebuah variabel maka if wajib memiliki branch else. Contohnya seperti berikut:
+
+
+
+Else akan dijalankan jika hasil evaluasi pada expression yang diberikan menghasilkan nilai false. If merupakan sebuah expressions yang dapat mengembalikan nilai, sehingga kita dapat menyimpan hasilnya ke dalam sebuah variabel.
+
+
+
+Pada kode di atas, kita hanya menggunakan If untuk menguji 2 (dua) kondisi. Lalu bagaimana jika kita memiliki beberapa kondisi? Kita bisa menggabungkan else dan if seperti berikut:
+
+
+
+Blok else if akan dijalankan jika hasil evaluasi pada branch sebelumnya bernilai false. Jika hasil evaluasi pada branch else if juga bernilai nilai false, maka lanjut ke evaluasi branch selanjutnya.
+
+Perlu diketahui bahwa Kotlin tidak mendukung ternary operator (condition ? then : else), karena peran dari operator tersebut sudah digantikan dengan if expressions.
