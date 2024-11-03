@@ -1,0 +1,14 @@
+Rangkuman dari Persiapan Membangun dan Menjalankan Program Kotlin
+Kita sudah selesai dengan persiapan membangun dan menjalankan program dengan Kotlin. Untuk me-refresh kembali apa yang sudah dipelajari, berikut adalah rangkumannya.
+
+Kotlin menggunakan Java Development Kit (JDK) sebagai SDK-nya.
+Terdapat banyak distribusi JDK yang bisa Anda gunakan, seperti OracleJDK, OpenJDK, Azul Zulu JDK, atau yang lainnya.
+Kotlin berjalan di atas dan mengunakan JVM untuk menjalankan program yang Anda sudah kembangkan.
+Untuk melakukan otomatisasi seperti proses kompilasi, Anda akan menggunakan Gradle sebagai build script dalam pengembangan program.
+Anda bisa menggunakan Groovy atau Kotlin DSL sebagai gradle build script.
+Dalam proses instalasi JDK dan Gradle di Linux dan macOS, Anda akan memanfaatkan SDK Manager yang bernama SDKMAN, sedangkan pada OS Windows menggunakan installer yang sudah disediakan Azul Zulu JDK.
+Dalam menuliskan kode program, Anda bisa memanfaatkan IDE yang dikembangkan oleh JetBrains, yaitu Intellij IDEA. Intellij IDEA terbagi atas 2 (dua) versi, yaitu Ultimate (berbayar) dan Community (gratis).
+dos-8b24eab3a49afcce53624532b5192be120240118105608.png
+Untuk membuat projek Kotlin, bisa dilakukan dengan 2 (dua) cara yaitu melalui terminal atau langsung menggunakan IntelliJ IDEA dengan project wizard-nya.
+
+Setelah melakukan persiapan, sudah siap menuliskan kode Kotlin? Yuk, kita lanjut ke submodul berikutnya.
