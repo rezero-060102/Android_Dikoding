@@ -1,0 +1,54 @@
+String Template
+Di beberapa sub-modul sebelumnya Anda sudah melihat bagaimana sebuah String ditulis seperti berikut:
+
+
+
+Lantas dinamakan apakah mekanisme penulisan String seperti di atas? Kotlin mendukung sebuah fitur bernama String Template. Sebuah fitur yang memungkinkan kita untuk menyisipkan sebuah variabel ke dalam sebuah String tanpa concatenation (penggabungan objek String menggunakan +) seperti berikut:
+
+
+
+Untuk menggunakan string template, kita hanya perlu menambahkan karakter $ sebelum nama variabel yang akan disisipkan seperti berikut:
+
+
+
+Variabel yang dapat disisipkan tidak sebatas String. Kita juga bisa menyisipkan objek lain misal Int atau Double seperti berikut:
+
+
+
+Tidak hanya sampai disitu, Anda juga bisa menyisipkan sebuah expression ke dalam sebuah string template. Caranya, sisipkan expression ke dalam curly braces yang diikuti karakter $.
+
+
+
+Dengan string template, kita lebih mudah membuat objek String yang dinamis.
+
+
+//"First character of $text is $firstChar"
+
+// contoh 1
+//val name = "Kotlin"
+//println("My name is " + name) //    output : My name is Kotlin
+
+// Contoh 2
+//val name = "Kotlin"
+//print("My name is $name")
+//
+///*
+//        output : My name is Kotlin
+//    */
+
+// contoh 3
+
+//val name = "kotlin"
+//val old = 3
+//print("My name is $name, im $old years old")
+//
+//output : My name is Kotlin, im 3 years old
+
+// contoh 4
+//val hour = 7
+//print("Office ${if (hour > 7) "already close" else "is open"}")
+//
+///*
+//        output : Office is open
+//    */
+
