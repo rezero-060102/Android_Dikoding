@@ -1,0 +1,16 @@
+Ketika kita mengembangkan sebuah program kita pasti membutuhkan variabel dengan tipe data yang mampu menyimpan nilai berbentuk teks. Terdapat dua (2) tipe data yang bisa kita gunakan, yaitu Char dan String.
+
+Char
+Characters direpresentasikan menggunakan tipe Char. Untuk mendefinisikan sebuah variabel dengan tipe data Char kita bisa menggunakan tanda kutip tunggal (' ') seperti berikut:
+
+
+
+Tipe data Char hanya dapat kita gunakan untuk menyimpan karakter tunggal. Sebaliknya jika kita memasukkan lebih dari 1 (satu) karakter, akan terjadi eror:
+
+
+
+Yang menarik, kita bisa melakukan operasi increment (++) dan decrement (--) pada sebuah variabel dengan tipe data Char seperti berikut:
+
+
+
+Operasi increment dan decrement sendiri merupakan operasi yang bisa kita gunakan pada tipe data Number. Lalu kenapa kita bisa menggunakannya pada tipe Char? Karena pada dasarnya setiap Characters merupakan representasi dari Unicode. Contoh Unicode A adalah 0041. Ketika kita melakukan increment maka hasilnya adalah 0042 yang mana merupakan Unicode dari B.
