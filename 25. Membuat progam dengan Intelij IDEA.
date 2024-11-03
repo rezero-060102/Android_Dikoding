@@ -1,0 +1,46 @@
+Membuat Program dengan IntelliJ IDEA
+Di submodul sebelumnya kita sudah belajar bagaimana membuat proyek baru dengan memanfaatkan perintah dari Gradle. Selanjutnya, kita akan mencoba membuat proyek baru menggunakan IntelliJ IDEA. Langsung saja, buka IntelliJ IDEA pada komputer Anda. Berikut adalah tampilan utama dari IntelliJ IDEA.
+
+dos-09388707a10dedb28159f0326bae1eef20240118161857.png
+
+Untuk membuat proyek baru, Anda bisa memilih menu New Project. Anda akan melihat jendela baru kurang lebih seperti berikut.
+
+dos-86badde0a7151e1b2dac6cd9456cadee20240118162127.png
+
+Beri nama project sesuai keinginan Anda. Untuk konfigurasi lainnya, biarkan saja sesuai default. Di sini kita membuat project dengan konfigurasi berikut.
+
+Language	Kotlin
+Build system	Gradle
+JDK	Amazon Correto 21.x.x
+Gradle DSL	Kotlin
+GroupId	com.dicoding.kotlin
+Beberapa informasi yang kita masukkan tersebut akan menjadi identitas project yang akan kita kembangkan. Secara default, Intellij IDEA sudah menentukan nama proyek (sesuai dengan ArtifactId) dan juga lokasi proyek. Namun, Anda bisa menggantinya sesuai kebutuhan. Contohnya perihal JDK, sesuaikan dengan versi JDK yang sudah Anda instal sebelumnya.
+
+Jika sudah sesuai, klik tombol Create dan Intellij IDEA akan membuatkan Anda sebuah proyek baru. Berikut adalah tampilan dari proyek tersebut.
+
+dos-649c9aa310794f4582b3f998365c497e20240118163044.png
+
+Catatan: pastikan Anda terhubung dengan internet karena dalam proses pembuatan project akan memperlukannya untuk mengunduh berkas-berkas yang dibutuhkan.
+dos-622b48125e8852cc598bd090d1735eae20240118162829.png
+
+
+
+Menjalankan Program IntelliJ IDEA
+Seperti yang sudah disampaikan sebelumnya, salah satu kelebihan dari menggunakan IDE adalah dukungannya terhadap GUI. Perintah-perintah yang biasanya mengharuskan kita untuk menuliskannya pada terminal kini bisa digantikan dengan tombol interaktif pada IDE. Seperti halnya tombol untuk menjalankan program berikut.
+
+dos-ef9093b12e9e5069871ad26bddb2872620240118163238.png
+
+Tombol dos-d1549a48dc97fa60d8ece834c3c69afe20240118163310.png (run) tersebut hanya akan muncul di samping fungsi dengan nama main(). Klik tombol tersebut atau tekan Alt + Shift + F10 pada Windows untuk menjalankan program. Kompiler pada IntelliJ IDEA akan mengeksekusi kode di dalam fungsi main().  Jika berhasil, IIntelliJ IDEA akan menampilkan panel Run seperti di bawah ini.
+
+dos-8ea2f7de47eb92f79dc93c4b7950f90d20240118163457.png
+
+Mantap! Kode kotlin pertama Anda berjalan di Intellij IDEA. Lebih nyaman menggunakan IDE ini dibandingkan terminal, bukan? Jika Anda perhatikan pada bagian kiri aplikasi, terdapat kumpulan folder yang berisi berkas-berkas dalam project tersebut. Dengan bantuan Intellij IDEA, Anda lebih mudah untuk mengaturnya sesuai kebutuhan. 
+
+Jika ingin melihat secara langsung cara membuat project dan menjalankannya, Anda dapat melihatnya pada video berikut.
+
+
+
+
+
+Catatan:
+Video tersebut dibuat dengan IntteliJ IDEA dibuat dengan versi 2020.3.1. Jika Anda menggunakan versi lain, hasilnya mungkin berbeda, tetapi secara konsep masih sama.
