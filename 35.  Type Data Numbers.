@@ -1,0 +1,92 @@
+Numbers
+Pada sub-modul tipe data kita sudah mempelajari tentang beberapa tipe seperti Character dan String . Sekarang kita akan mempelajari beberapa tipe data yang termasuk ke dalam tipe Number. Number adalah sebuah tipe data yang khusus digunakan untuk menyimpan nilai dalam bentuk numerik.
+
+Di Kotlin, tipe data Number disimpan dengan cara yang berbeda. Beberapa tipe bawaan yang merepresentasikan Numbers adalah Double, Long, Int, Short dan Byte. Setiap tipe data Number memiliki ukuran (satuan Bit) berbeda-beda, tergantung besaran nilai yang dapat simpan.
+
+Int (32 Bit)
+Int adalah tipe data yang umumnya digunakan untuk menyimpan nilai numerik. Int dapat menyimpan data dari range -2^31 sampai +2^31-1. Dengan ukuran 32 Bit kita bisa menggunakannya untuk menyimpan nilai yang besar. Catatannya, tetap lihatlah batasan nilai maksimal yang dapat dimasukkan.
+
+
+Long (64 Bit)
+Long adalah tipe data yang digunakan untuk menyimpan nilai numerik yang lebih besar yaitu dari range -2^63 sampai +2^63-1. Long bisa didefinisikan secara eksplisit:
+
+
+Atau dengan menambahkan suffix L seperti berikut:
+
+
+Short (16 Bit)
+Short merupakan sebuah bilangan bulat yang hanya dapat menyimpan nilai yang kecil karena hanya berukuran 16 Bit.
+
+
+Byte (8 Bit)
+Dengan ukuran yang kecil, Byte hanya mampu menyimpan nilai yang kecil sama halnya seperti Short. Byte biasa digunakan untuk keperluan proses membaca dan menulis data dari sebuah stream file atau jaringan.
+
+
+Double (64 Bit)
+Sama halnya dengan Long yang memiliki ukuran yang besar, Double mampu menyimpan nilai numerik yang besar pula. Pada umumnya Double digunakan untuk menyimpan nilai numerik pecahan sampai dengan maksimal 15-16 angka di belakang koma.
+
+
+Float (32 Bit)
+Sama seperti Double, namun memiliki ukuran yang lebih kecil, yakni hanya sampai 6-7 angka di belakang koma.
+
+
+Untuk mengetahui nilai maksimal yang dapat disimpan oleh suatu tipe Number, kita bisa menggunakan properti MAX_VALUE.  Sementara untuk mengetahui nilai minimal yang dapat disimpan, gunakan properti MIN_VALUE.   
+
+
+
+Jika kita memasukan nilai melebihi nilai maksimal yang dapat disimpan, maka akan terjadi overflow. Nilai yang akan dikembalikan adalah nilai minimal yang dapat disimpan.
+
+
+
+Terdapat beberapa operator matematika pada tipe data Number seperti penjumlahan (+), pengurangan (-), perkalian (*) , pembagian (/) dan modulus (%, atau sisa hasil bagi).
+
+
+
+Perlu diketahui, hasil operasi pembagian pada tipe data Int akan dibulatkan kebawah. Contohnya seperti berikut:
+
+
+
+Sama seperti perhitungan matematika di mana operasi perkalian dan pembagian didahulukan, demikian halnya perhitungan pada Kotlin.
+
+
+
+Operasi 4 * 4 akan dilakukan terlebih dahulu, kemudian diikuti 5 + 16. Jika ingin operasi 5 + 4 dilakukan terlebih dahulu, gunakan tanda kurung:
+
+
+
+Di Kotlin kita tidak bisa melakukan konversi secara langsung. Contoh, ketika ingin melakukan konversi dari tipe data Byte ke tipe data Int.
+
+
+
+Kode akan gagal dikompilasi dengan log eror berikut:
+
+Error:(4, 18) Kotlin: Type mismatch: inferred type is Byte but Int was expected
+
+Untuk mengatasinya, lakukan konversi dengan bantuan beberapa fungsi seperti toInt() berikut:
+
+
+
+Kode di atas menggunakan fungsi toInt() untuk melakukan konversi secara eksplisit dari tipe data Byte ke tipe data Int. Adapun beberapa fungsi konversi yang dapat kita gunakan antara lain:
+
+toByte(): Byte
+
+toShort(): Short
+
+toInt(): Int
+
+toLong(): Long
+
+toFloat(): Float
+
+toDouble(): Double
+
+toChar(): Char
+
+Contoh lain penggunaan konversi adalah sebagai berikut:
+
+
+
+Dengan fungsi konversi di atas, nilai 23 yang semula bertipe String di konversi ke tipe Int yang kemudian dimasukan ke dalam operasi matematika.
+
+Dengan Kotlin kita juga bisa menuliskan nilai numerik yang “readable” dengan menggunakan tanda underscores seperti berikut:
+
