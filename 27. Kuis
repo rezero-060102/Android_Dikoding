@@ -1,0 +1,51 @@
+Kategori : Membangun dan Menjalankan Program Kotlin
+
+Lokasi penyimpanan berbagai macam sumber daya untuk pengembangan aplikasi terletak pada ...
+
+A
+src
+B
+Gradle
+C
+Build script
+D
+Dependency
+1
+Kategori : Membangun dan Menjalankan Program Kotlin
+
+Pengaturan plugins, repositories, dan dependencies terletak pada berkas ...
+
+A
+setting.gradle
+B
+gradle-wrapper.properties
+C
+gradle-wrapper.jar
+D
+build.gradle
+1
+Kategori : Membangun dan Menjalankan Program Kotlin
+
+Perangkat lunak yang menyediakan beberapa tools untuk pengembangan dan berkas binari yang diperlukan untuk proses kompilasi dari kode Java ke bytecode adalah ...
+
+A
+IDE
+B
+SDK
+C
+JVM
+D
+JDK
+1
+Kategori : Membangun dan Menjalankan Program Kotlin
+
+Implementasi dari JVM yang menyediakan sebuah platform untuk menjalankan program adalah ...
+
+A
+Build tools
+B
+JRE
+C
+JDK
+D
+SDK
