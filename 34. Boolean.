@@ -1,0 +1,36 @@
+Boolean
+Pada submodul sebelumnya, kita telah belajar tentang If expressions yang menggunakan Boolean expressions. Lalu, apa itu Boolean? Boolean adalah sebuah tipe data yang hanya memiliki dua nilai, yaitu true dan false. Terdapat 3 (tiga) operator yang dapat digunakan pada Boolean.
+
+
+
+Conjunction atau AND (&&)
+dos-a42fe9a3e91a097fdada4e873ed5df8120240206131809.pngOperator AND (&&) akan mengembalikan nilai true jika semua hasil evaluasi expression yang diberikan bernilai true.
+
+
+
+Cara membaca kode di atas adalah sebagai berikut.
+
+Membuat sebuah variabel bernama isOpen dengan tipe data Boolean.
+Variabel isOpen akan bernilai true (1) ketika nilai variabel nowlebih besar sama dengan (>=) variabel officeOpen dan (&&) variabel nowlebih kecil sama dengan (<=) variabel officeClosed.
+Variabel isOpen akan bernilai false (0) ketika kondisi sebelumnya tidak terpenuhi.
+Fungsi di atas menguji apakah jam sekarang berada di antara jam waktu buka kantor dan jam tutup kantor. If expressions di atas bisa Anda sederhanakan menjadi seperti berikut.
+
+
+
+
+
+Disjunction atau OR (||)
+dos-a1c96414ef9b80717a56903a1ef085f420240206131822.pngBerbeda dengan operator AND (&&), operator OR (||) akan mengembalikan nilai true jika hasil evaluasi dari salah satu expressions yang diberikan bernilai true.
+
+
+
+Variabel isClose di atas bernilai true. Alasannya, hasil evaluasi salah satu expression yang diberikan, bernilai true, yaitu expression disebelah kanan.
+
+
+
+Negation atau NOT (!)
+dos-f3090b2971b69be3bb5898d503122aa120240206131834.pngBerbeda dengan operator AND (&&) dan operator OR(||), operator NOT(!) digunakan untuk melakukan negasi pada hasil evaluasi expression yang diberikan. Contoh, Jika hasil expressions setelah dievaluasi bernilai true, operator NOT akan mengembalikan nilai false.
+
+
+
+Hasil evaluasi expression di atas adalah true. Namun, ketika menggunakan operator NOT, hasilnya akan dinegasikan menjadi nilai false sehingga statement pada branch else-lah yang akan dijalankan.
