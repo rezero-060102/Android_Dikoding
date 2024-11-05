@@ -1,0 +1,137 @@
+Arrays
+Selanjutnya adalah Array, yakni tipe data yang memungkinkan kita untuk menyimpan beberapa objek di dalam sebuah variabel. Array di Kotlin direpresentasikan oleh kelas Array yang memiliki fungsi get dan set serta properti size. Untuk membuat sebuah Array kita bisa memanfaatkan sebuah library function arrayOf() seperti berikut:
+
+
+
+Kita juga dapat memasukkan nilai dengan berbagai jenis tipe data ke dalam arrayOf() misalnya:
+
+
+
+Kotlin juga memungkinkan kita untuk membuat Array dengan tipe data primitif dengan memanfaatkan beberapa fungsi spesifik berikut:
+
+intArrayOf() : IntArray
+
+booleanArrayOf() : BooleanArray
+
+charArrayOf() : CharArray
+
+longArrayOf() : LongArray
+
+shortArrayOf() : ShortArray
+
+byteArrayOf() : ByteArray
+
+Jika kita ingin membuat Array yang hanya bisa dimasukkan nilai dengan tipe data Int, gunakan intArrayOf(), misalnya: 
+
+
+
+Kita juga bisa mendapatkan nilai tunggal dari sekumpulan nilai yang berada di dalam sebuah Array dengan memanfaatkan indexing seperti berikut:
+
+
+
+Nilai 2 pada kode di atas merupakan indeks atau posisi dari nilai tunggal yang ingin kita dapatkan. Perlu diketahui bahwa sebuah indeks selalu dimulai dari 0. Selain mendapatkan nilai tunggal, dengan indexing kita juga bisa mengubah nilai tunggal tersebut. Sebagai contoh:
+
+
+
+
+Daftar Modul
+26% Selesai
+
+Persiapan Belajar
+Pendahuluan
+Persiapan Membangun dan Menjalankan Program Kotlin
+Kotlin Fundamental
+8/17
+Kotlin Fundamental
+Data Types & Variable
+Char
+String
+String Template
+If Expressions
+Boolean
+Numbers
+Arrays
+Nullable Types
+Safe Calls dan Elvis Operator
+Functions
+Anatomi Function
+Named dan Default Argument
+Vararg (Variable Argument)
+Rangkuman dari Kotlin Fundamental
+Kuis Kotlin Fundamental
+Control Flow
+0/9
+Kotlin Object-Oriented Programming
+0/22
+Special Class dan Collection
+0/18
+Kotlin Functional Programming
+0/13
+Kotlin Generics
+0/7
+Berkenalan dengan Coroutines
+0/16
+Penutup
+0/3
+
+
+// contoh progam.
+
+Berikut adalah contoh program Kotlin yang menunjukkan cara membuat array khusus untuk tipe data Int menggunakan intArrayOf(). Program ini akan mendemonstrasikan bagaimana membuat, menambah, dan mengakses elemen-elemen dalam array tersebut.
+
+
+fun main() {
+    // Membuat Array yang hanya bisa menampung nilai dengan tipe data Int
+    val numbers = intArrayOf(1, 2, 3, 4, 5)
+
+    // Menampilkan elemen-elemen Array
+    println("Isi array:")
+    for (number in numbers) {
+        println(number)
+    }
+
+    // Mengakses elemen tertentu dalam array
+    println("\nAkses elemen array:")
+    println("Elemen pertama: ${numbers[0]}")
+    println("Elemen kedua: ${numbers[1]}")
+
+    // Mengubah nilai elemen dalam array
+    numbers[2] = 10
+    println("\nArray setelah mengubah elemen ketiga:")
+    for (number in numbers) {
+        println(number)
+    }
+
+    // Menampilkan ukuran array
+    println("\nUkuran array: ${numbers.size}")
+}
+
+/*
+    Output yang diharapkan:
+        Isi array:
+        1
+        2
+        3
+        4
+        5
+
+        Akses elemen array:
+        Elemen pertama: 1
+        Elemen kedua: 2
+
+        Array setelah mengubah elemen ketiga:
+        1
+        2
+        10
+        4
+        5
+
+        Ukuran array: 5
+*/
+Penjelasan:
+
+intArrayOf(1, 2, 3, 4, 5) membuat array numbers yang hanya bisa menyimpan tipe data Int dengan nilai awal [1, 2, 3, 4, 5].
+Program menampilkan semua elemen dalam array menggunakan loop for.
+Program mengakses elemen-elemen tertentu dalam array menggunakan indeks.
+Elemen ketiga (indeks 2) diubah dari 3 menjadi 10, dan program menampilkan array setelah modifikasi.
+Program juga menampilkan ukuran array dengan numbers.size.
