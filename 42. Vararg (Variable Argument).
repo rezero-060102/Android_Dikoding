@@ -1,0 +1,90 @@
+Vararg (Variable Argument)
+Selain named dan default argument, Kotlin juga memiliki vararg (variable argument). Dengan menggunakan kata kunci vararg, kita juga bisa menyederhanakan beberapa parameter yang memiliki tipe data yang sama menjadi parameter tunggal.
+
+Dengan  vararg sebuah fungsi dapat memiliki jumlah parameter berdasarkan jumlah argumen yang kita masukkan ketika fungsi tersebut dipanggil. Contoh dari penggunaan vararg adalah sebagai berikut.
+
+fun sumNumbers(varagg number: Int): Int {
+    return number.sum()
+}
+
+
+Bisa kita perhatikan pada contoh kode di atas bahwa kata kunci vararg ditempatkan sebelum nama parameter. Ketika ingin memanggil fungsi tersebut, kita bisa melampirkan beberapa argumen seperti berikut.
+
+fun main(){
+    val number = sumNumbers(10, 20, 30, 40)
+    print()number
+}
+
+// Output : 100 
+
+Karena pada dasarnya adalah sebuah Array, kita bisa memanggil fungsi atau properti yang tersedia pada kelas Array dari dalam fungsi tersebut, contohnya seperti properti size.
+
+
+
+Lalu, kapan kita membutuhkan vararg?  Ketika sebuah fungsi yang menggunakannya tidak mengetahui jumlah argumen yang akan disematkan ketika fungsi tersebut dipanggil. Contoh penerapan bisa kita liat pada fungsi String.format(),  di mana fungsi tersebut terdapat parameter yang ditandai dengan vararg dan dapat disematkan beberapa argumen tanpa harus tahu batasannya.
+
+
+Aturan pada Vararg Arguments
+Dalam penggunaannya, terdapat aturan yang perlu kita ketahui. Pertama, di dalam sebuah fungsi, tidak diizinkan untuk memiliki 2 (dua) parameter bertanda vararg.
+
+fun sumNubers(varagr number: Int, vararg number2: Int)
+
+Ketika kode di atas dijalankan, proses kompilasi akan gagal dengan log eror sebagai berikut:
+Kotlin: Multiple vararg-parameters are prohibited
+
+Selanjutnya, jika kita ingin menambahkan parameter baru tanpa kata kunci vararg, parameter yang ditandai dengan vararg sebaiknya berada pada posisi terakhir. Contohnya seperti berikut.
+
+fun main() {
+    sets("Kotlin", 10, 10)
+}
+
+fun sets(name: String, vararg number: Int): Int {
+    ...
+}
+
+Lalu, bagaimana jika kita ingin menempatkan parameter yang ditandai vararg pada posisi pertama? Kita bisa mendefinisikannya secara langsung. Namun, berbeda saat fungsi tersebut dipanggil di mana kita harus menggunakan named argument saat ingin melampirkan argumen untuk parameter yang tidak ditandai dengan vararg. Contohnya seperti berikut.
+
+fun main() {
+  sets(10, 10, name = "Kotlin")
+}
+
+fun sets(vararg number: int, name: String): Int{
+    ...
+}
+
+Kenapa demikian? Saat kita tidak menandai argumen tersebut untuk parameter yang mana, kompiler akan menetapkan jika argumen tersebut untuk parameter yang ditandai dengan vararg.
+
+
+
+Vararg vs Array
+Karena semua argumen ditampung di dalam sebuah Array, akan muncul pertanyaan, "Apa bedanya ketika kita menggunakan Array sebagai tipe parameter?" Misal seperti berikut:
+
+fun sets(number: Array<Int>){
+    ...
+}
+
+Dari sini kita bisa lihat langsung letak perbedaannya di mana. Ketika fungsi di atas dipanggil, fungsi tersebut membutuhkan argumen berupa nilai yang sudah berbentuk Array seperti berikut:
+
+fun main() {
+    val number = arrayOf(10, 20, 30, 40)
+    sets(number)
+}
+
+fun sets(number: Array<Int>){
+    ...
+}
+
+Berbeda ketika kita menggunakan vararg, kita bisa memasukkan argumen satu persatu. Lalu apakah bisa kita memasukkan nilai yang sudah berbentuk Array sebagai argumen untuk parameter yang ditandai dengan vararg?
+
+Tentu bisa! Dengan memanfaatkan spread operator (*) seperti berikut.
+
+fun main() {
+    val number = IntArrayOf(10, 20, 30, 40)
+    sets(10, 20, 20, *number, 10)
+}
+
+fun sets(vararg number: Int): Int {
+    ...
+}
+
+Dalam penggunaannya, spread operator ditempatkan sebelum nama variabel yang ingin dilampirkan.
