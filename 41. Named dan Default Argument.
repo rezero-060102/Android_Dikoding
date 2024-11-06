@@ -1,0 +1,74 @@
+Named dan Default Argument
+Di beberapa kasus pembuatannya, sebuah fungsi bisa menjadi cukup kompleks dengan banyaknya parameter. Alhasil saat ingin memanggil fungsi tersebut, kita harus menghafal posisi dari parameter agar tidak salah dalam melampirkan sebuah argumen.
+
+
+
+Named Argument
+Untuk mengatasi hal ini Kotlin menawarkan sebuah cara. Dengan ini, kita tak perlu lagi menghafal posisi dari sebuah parameter. Karena ketika sebuah fungsi dipanggil, kita bisa menentukan argumen dari parameter mana yang ingin dilampirkan dengan memanggil nama dari parameter tersebut. Misalnya kita mempunyai sebuah fungsi seperti berikut:
+
+fun getFullName(first: String, middle: String, last: String): String {
+        return "$first $middle $last"
+}
+
+
+Nah, dengan memanfaatkan named argument, kita bisa menuliskannya seperti di bawah ini:
+
+fun main() {
+    val fullName = getFullName(first = "Kotlin" , middle = " is " , last = "Awesome")
+    print(fullName)
+}
+
+fun getFullName(First: String, middle: String , last: Strig): String {
+      return "$first, middle, $last"
+}
+
+
+Menariknya lagi, kita bisa mengubah posisi dari argumen ketika dilampirkan, misalnya seperti ini:
+
+fun main() {
+    val fullName = getFullName(first = "Kotlin" , middle = " is " , last = "Awesome")
+    print(fullName)
+}
+
+fun getFullName(First: String, middle: String , last: Strig): String {
+      return "$first, middle, $last"
+}
+
+
+Dengan cara seperti di atas, kita tidak perlu lagi menghafal posisi dari parameter jika ingin melampirkan sebuah argumen. Cukup hafalkan nama dari parameter tersebut.
+
+
+Default Argument
+Tidak sampai di situ, Kotlin juga memungkinkan kita untuk menentukan nilai default dari sebuah parameter. Jika kita melewatkan argumen untuk dilampirkan, maka nilai default tersebut lah yang akan digunakan.
+
+Untuk menambahkan nilai default itu sendiri pun cukup mudah, yaitu dengan cara menempatkannya langsung tepat di samping dari parameter seperti halnya ketika ingin menginisialisasikan sebuah nilai untuk variabel. Contohnya seperti berikut:
+
+fun getFullName(
+              first: String = "Kotlin",
+              middle: String = " Is ",
+              last: String = "Awesome"): String {
+              return "$first $middle $last"
+        return "$first $middle $last"
+}
+              
+
+
+Kita bisa memanggil fungsi di atas seperti biasanya. Tetapi karena parameternya sudah memiliki nilai, maka argumen untuk fungsi tersebut bisa dilewatkan ketika dipanggil.
+
+fun main() {
+  val fullName = getFullName()
+  print(fullName)
+
+}
+
+// Output : Kotlin is Awesome
+
+Menarik bukan? Ketika kita telah menetapkan nilai default, kita tak perlu khawatir saat lupa melampirkan sebuah argumen. Tentunya ini menghindari kita dari eror. Meskipun begitu, kita tetap bisa melampirkan sebuah argumen. Contohnya seperti berikut:
+fun main(){
+  val fullName = getFullName(first = "Dikoding")
+  print(fullName)
+}
+
+// Output : Dikoding is Awesome
+
+Dengan memanfaatkan named dan default argument, kode yang kita tulis lebih mudah dibaca. Ini pun dapat membantu kita dalam menggunakan fungsi yang cukup kompleks.
