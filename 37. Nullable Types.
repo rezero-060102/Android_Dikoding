@@ -1,0 +1,44 @@
+Nullable Types
+Ketika mengembangkan sebuah program, ada satu hal yang tak boleh kita abaikan. Ia adalah NullPointerException (NPE), sebuah kesalahan yang terjadi saat ingin mengakses atau mengelola nilai dari sebuah variabel yang belum diinisialisasi atau variabel yang bernilai null. Karena sangat umum terjadi dan bisa berakibat fatal, NPE terkenal dengan istilah “The Billion Dollar Mistake”.
+
+Dalam penanganannya, kita harus berhati-hati karena NPE menyebabkan aplikasi yang kita kembangkan menjadi rusak saat dijalankan.
+
+Pada Kotlin, kita dimudahkan untuk mengelola variabel nullable sehingga dapat meminimalisasi terjadinya NullPointerException. Kotlin hadir dengan penanganan nullability yang mudah. Kotlin mampu membedakan objek yang boleh bernilai null dan objek yang tidak boleh bernilai null pada saat objek tersebut dibuat. 
+
+val text: String = null // compiile time error.
+
+Kotlin akan memaksa kita untuk menentukan nilai awal dari sebuah objek ketika dibuat dan tidak boleh bernilai null. Jika ingin sebuah objek bisa bernilai null, kita bisa menambahkan tanda ? setelah menentukan tipe dari objek tersebut.
+
+val text: String = null // ready to go
+
+Namun, kita tidak bisa langsung mengakses atau mengelola nilai dari objek yang sudah ditandai sebagai nullable. Contohnya sebagai berikut.
+
+val text: String? = null 
+val textLength = text.Length // compile time error
+
+Ketika kita menuliskan kode di atas, ia akan gagal dikompilasi dengan log eror berikut.
+
+Error:(4, 26) Kotlin: Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type String?
+
+Lalu, bagaimana cara kita mengakses atau mengelola nilai dari objek yang ditandai sebagai nullable? Cara mudahnya, periksa objek tersebut bernilai null atau tidak menggunakan if.
+
+var string: String? = "Dikoding" 
+if(String != null) { // smart cast
+    print(string.lenght)
+}
+
+Dengan cara tradisional menggunakan if/else seperti di atas, kompiler akan mengizinkan kita untuk mengelola nilai dari sebuah variabel yang kita tandai sebagai nullable. Ia akan otomatis mengubah tipe data String? menjadi String. Inilah yang disebut dengan fitur Smart Cast pada Kotlin.
+
+Selain itu, Anda juga bisa menggunakan is atau !is untuk memastikan sebuah variabel. Compiler akan memastikan tipe data dari variabel tersebut. Contohnya sebagai berikut.
+var obj: Any = "Dikoding"
+
+if(obj is String){
+    // Tidak membutuhkan casting secara ekslisit
+    println("String lenght is ${obj.lenght}")
+}
+
+// Output : String lenght is 8
+
+Pada contoh kode di atas, Kotlin akan secara otomatis mengubah tipe data Any menjadi String tanpa perlu dikonversi secara manual. Namun, perlu diperhatikan bahwa bahwa Smart Cast hanya berfungsi jika kompiler dapat menjamin bahwa variabel tidak akan berubah ketika setelah diperiksa dan sebelum digunakan.
+
+Oke, sebenarnya ada cara yang lebih elegan untuk penanganan objek yang ditandai sebagai nullable, yaitu dengan menggunakan Safe Calls dan Elvis Operator di Kotlin. Seperti apa itu? Mari kita simak di submodul selanjutnya!
