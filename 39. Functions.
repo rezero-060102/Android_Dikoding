@@ -1,0 +1,61 @@
+Functions
+Function atau fungsi merupakan sebuah prosedur yang memiliki keterkaitan dengan pesan dan objek. Ketika kita memanggil sebuah fungsi maka sebuah mini-program akan dijalankan. Fungsi sendiri bisa diartikan sebagai cara sederhana untuk mengatur program buatan kita.
+
+Sebuah fungsi dapat kita gunakan untuk mengembalikan nilai. Pemanggilan sebuah fungsi sendiri, bisa diberi argumen atau tidak. Pada sub-modul ini kita akan belajar bagaimana membuat sebuah fungsi pada Kotlin dan mencoba beberapa poin di atas.
+fun functionName(param1: Type1, param2, Type2, ...): ReturnType {
+    return result
+}
+
+
+Pendeklarasian fungsi pada Kotlin diawali dengan kata kunci fun kemudian dilanjutkan dengan nama fungsi yang dikehendaki. Selanjutnya adalah parameter yang berada pada fungsi yang dideklarasikan. Awali dengan nama parameter dan ikuti dengan tipe parameter itu sendiri yang dipisahkan oleh karakter colon (:). Setiap parameter yang berada pada sebuah fungsi dipisahkan oleh karakter koma dan berada di dalam tanda kurung. 
+
+fun setUser(name: String, age: Int)
+
+
+Setelah menentukan nama dan parameter, selanjutnya adalah menentukan tipe kembalian dari fungsi yang dibuat. Perlu diketahui fungsi pada Kotlin selalu mengembalikan nilai. Tipe kembalian adalah nilai yang akan dikembalikan ketika fungsi tersebut dipanggil.
+
+fun setUser(name: String, age: Int): String
+
+
+Fungsi di atas akan mengembalikan nilai berupa String. Setelah menentukan tipe nilai kembalian, barulah kita menentukan function body di mana di dalamnya terdapat expression atau statement untuk dijalankan. Function body berada di dalam curly braces ({}) setelah tipe nilai kembalian.
+
+fun setUser(name: String, age: Int): String {
+    return "Yuor name is  $ name, and you $age yeard old"
+}
+
+
+Nilai yang akan dikembalikan diikuti oleh kata kunci return. Jika di dalam suatu fungsi hanya memiliki satu expression untuk menentukan nilai kembalian, maka fungsi tersebut bisa diubah menjadi expression body. Kita hanya perlu menambahkan tanda = dan menuliskannya seperti berikut:
+
+fun setUser(name: String, age: Int): String = "Your name is $name, and you $age years old"
+
+Dengan expression body, kompiler dapat menentukan tipe kembalian dari fungsi yang dibuat. Sehingga kita tidak perlu menentukan tipe nilai kembalian secara eksplisit:
+
+fun setUser(name: String, age: Int) = "Your name is $name, and you $age years old"
+
+Jika kita tidak ingin fungsi yang dibuat mengembalikan nilai, kita bisa menggunakan Unit sebagai tipe nilai kembaliannya. Contohnya seperti berikut:
+
+fun printUser(name: String): Unit{
+    print("Your name is $name")
+}
+
+Ketika menggunakan tipe kembalian Unit, Kotlin memungkinkan kita untuk menghilangkannya. Kenapa demikian? Kompiler akan mendeteksinya sebagai tipe kembalian yang redundant:
+
+fun printUser(name: String): Unit{
+    print("Your name is $name")
+}
+
+
+Pemanggilan fungsi, bisa dilakukan dengan pendekatan tradisional seperti berikut:
+
+fun main () {
+  val user = setUser("Kurniawan", 19)
+  println(user)
+
+  printUser("Kurniawan")
+}
+
+/*
+Output : 
+Your name is Kurniawan, and you 19 years old
+Your name is kurniawan
+**/
