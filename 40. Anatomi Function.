@@ -1,0 +1,99 @@
+// Perbaikan nanti.
+
+Anatomi Function
+Pada materi sebelumnya, kita sudah belajar tentang function (fungsi). Mulai dari bagaimana cara kita mendeklarasinya, menentukan apakah fungsi tersebut dapat mengembalikan nilai, serta melampirkan sebuah argumen ketika fungsi tersebut digunakan. 
+
+Pada sub-modul ini kita akan membahas lebih dalam tentang bagian apa saja yang terdapat dalam sebuah fungsi. Pada dasarnya sebuah fungsi memiliki 2 (dua) bagian utama yaitu function header dan function body.
+
+            function Hearder
+private fun sum(valueA: Int, valueB: Int): Int
+
+            function Body
+// another magic
+    return valueA + valueB
+    }
+
+
+Function Header
+Function header adalah bagian yang merupakan konstruksi dari sebuah fungsi untuk menentukan perilakunya akan seperti apa. Di dalam function header terdapat visibility modifier, kata kunci fun, nama, daftar parameter dan nilai kembalian dari fungsi tersebut.
+
+                Function header
+private fun sum(valueA: Int, valueB: Int): Int
+
+Visibility Modifier
+Visibility modifier atau tingkatan akses merupakan bagian spesifik dari sebuah bahasa pemrograman yang ditujukan untuk mengatur bagaimana hak akses dari sebuah kelas, fungsi, properti dan variabel.
+
+            visibiluty modifier
+private fun sum(valueA: Int, valueB: Int){
+      // another magic
+
+      return valueA + valueB
+}
+
+Secara default ketika kita membuat sebuah fungsi baru, ia akan memiliki modifier public. Artinya fungsi tersebut dapat diakses dari luar kelas. Sedangkan contoh pada ilustrasi di atas adalah sebuah fungsi yang memiliki modifier private. Maka akses dari fungsi tersebut terbatas hanya untuk kelas di mana fungsi tersebut dideklarasi.
+
+Terdapat beberapa visibility modifier yang akan kita pelajari bersama pada sub-modul Object Orientation Programming nanti.
+
+
+
+Function Name
+Setelah visibility modifier, selanjutnya adalah kata kunci fun . Ini digunakan untuk menandakan jika baris kode tersebut merupakan sebuah fungsi yang kemudian diikuti oleh nama dari fungsi tersebut.
+
+                function Name
+private fun sum(valueA: Int, valueB: Int){
+      // another magic
+
+      return valueA + valueB
+}
+
+
+Nama dari sebuah fungsi merupakan sebuah identifier yang akan memudahkan kita untuk menggunakan fungsi tersebut. Perlu diketahui bahwa kita tidak bisa memberikan nama yang sama untuk beberapa fungsi.
+
+Untuk penamaan dari sebuah fungsi sendiri menggunakan format penulisan camelCase. Nama dari fungsi tersebut diawali dengan huruf kecil dan huruf besar untuk kata berikutnya. Ini merupakan standar penulisan resmi yang sudah ditentukan.
+
+
+Function Parameter
+Ketika kita mendeklarasikan sebuah fungsi baru, kita bisa atau tanpa menetapkan parameter tersebut. Parameter adalah data atau nilai yang disematkan ketika fungsi tersebut dipanggil. Nantinya parameter akan diproses di dalam fungsi tersebut. Kita bisa melampirkan nilai konstan atau variabel untuk sebuah fungsi ketika ia dipanggil.
+            function Hearder
+private fun sum(valueA: Int, valueB: Int): Int
+
+            function parameter
+private fun sum(valueA: Int, valueB: Int){
+      // another magic
+
+      return valueA + valueB
+}
+
+Parameter dari sebuah fungsi terdiri dari nama dan tipe dari parameter itu sendiri. Ia digunakan untuk menentukan nilai atau variabel apa yang dapat dilampirkan. Setiap parameter dipisahkan oleh tanda (,). Catatan: setiap parameter bersifat read-only, sehingga kita hanya diijinkan untuk menggunakan nilainya untuk diproduksi.
+
+
+
+Function return type
+Terakhir adalah return type. Setiap fungsi yang kita deklarasi sejatinya akan selalu mengembalikan dan nilai yang akan dikembalikan bisa kita gunakan untuk keperluan lain. Misalnya untuk dijadikan sebagai argumen untuk fungsi lainnya.
+
+                    function Return Type
+
+private fun sum(valueA: Int, valueB: Int){
+      // another magic
+
+      return valueA + valueB
+}
+
+
+Lalu apakah tipe ini harus ditentukan setiap deklarasi sebuah fungsi? Tentu tidak. Jika kita tidak menentukan return type, secara implisit fungsi tersebut akan mengembalikan nilai dengan tipe Unit, yaitu return type yang tidak mengembalikan nilai signifikan.
+
+
+Function Body
+Setelah function header, selanjutnya adalah function body, yang ditandai dengan curly braces. Di dalamnya kita akan menempatkan sebuah logika kode baik itu sebuah expression atau statement. Seperti yang dijelaskan pada sub-modul pengenalan, jika kita menetapkan sebuah fungsi dapat mengembalikan nilai, maka kita wajib menambah sebuah baris kode yang diawali dengan kata kunci return yang diikuti oleh expression untuk menetapkan nilai yang akan dikembalikan.
+
+Sebaliknya, jika kita tidak ingin mengembalikan nilai, kita tidak perlu menambahkannya seperti yang disebutkan di atas.
+                Function Body
+          
+private fun sum(valueA: Int, valueB: Int){
+      // another magic
+
+      return valueA + valueB
+}
+
+
+Setiap fungsi yang kita deklarasikan, memiliki ruang lingkup tersendiri. Contohnya saat kita mendeklarasi sebuah variabel di dalamnya, variabel tersebut akan menjadi variabel lokal untuk fungsi itu sendiri. Dengan demikian, variabel tersebut tidak dapat diakses dari fungsi lainnya meskipun berada di dalam satu kelas yang sama.
