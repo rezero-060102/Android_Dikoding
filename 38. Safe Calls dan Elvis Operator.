@@ -1,0 +1,37 @@
+Safe Calls dan Elvis Operator
+Di submodul sebelumnya kita sudah mengenal tentang NullPointerException dan cara penanganannya. Kini kita akan belajar bagaimana menangani objek nullable dengan cara yang lebih mudah, yaitu menggunakan Safe Calls dan Elvis Operator.
+
+
+
+Safe calls operator (?.)
+Yang pertama akan kita pelajari adalah Safe Calls. Seperti namanya, safe call akan menjamin kode yang kita tulis aman dari NullPointerException. Dalam menggunakan safe call, kita akan mengganti tanda titik (.) dengan tanda (?.) saat mengakses atau mengelola nilai dari objek nullable seperti berikut.
+val tetx: String? = null
+text?.lenght
+
+
+Dengan safe call, kompiler akan melewatkan proses jika objek tersebut bernilai null.
+
+
+
+Elvis Operator (condition ? then : else)
+Apakah Anda pernah mendengar penyanyi bernama Elvis Presley? Ya, beliau memiliki karakteristik yang dikenal dengan rambut jambulnya dan mirip dengan tanda operator ini. Tanda tanya menandakan rambutnya dan titik dua sebagai matanya. Seperti inilah ilustrasinya.
+
+dos-e961fc433710c1b671a9590f796c3a2d20240122135702.png
+
+Elvis operator memungkinkan kita untuk menetapkan default value atau nilai dasar jika objek bernilai null.
+val text: String? = null
+val textLenght = text?.lenght ?: 7
+
+
+Kode di atas sebenarnya sama seperti ketika kita menggunakan if/else berikut.
+
+val textLenght = if (text != null) textLenght else 7
+
+Elvis akan mengembalikan nilai text.length jika text tidak bernilai null. Sebaliknya, jika text bernilai null, default value yang akan dikembalikan.
+
+Sebelum lanjut ke submodul selanjutnya terdapat satu hal yang perlu diperhatikan dalam penanganan objek nullable. Perhatikan penggunaan operator non-null assertion (!!), misalnya seperti berikut.
+
+val text: String? = null
+val textLenght = text!!.lenght // ready to go ???
+
+Dengan menggunakan non-null assertion kompiler akan mengizinkan kita untuk mengakses atau mengelola nilai dari sebuah objek nullable. Namun, penggunaan operator tersebut sangat tidak disarankan karena akan memaksa sebuah objek menjadi non-null. Sehingga, ketika objek tersebut bernilai null, Anda tetap akan berjumpa dengan NullPointerException.
