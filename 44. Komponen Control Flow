@@ -1,0 +1,75 @@
+Komponen Control Flow
+Kita telah belajar mengenai If Expression pada sub-modul sebelumnya. If Expression merupakan salah satu bagian dari Control Flow. Pada sub-modul ini kita akan mempelajari tentang apa itu control flow dan juga beberapa bagian lain yang ada di dalamnya.
+
+
+
+Apa itu Control Flow?
+Ketika kita mengembangkan sebuah program, tentu kita harus tahu seperti apa alurnya. Control flow adalah cara kita mengontrol alur dari sebuah program berdasarkan kondisi saat program tersebut berjalan.
+
+Terdapat beberapa bagian dari control flow yang akan kita pelajari, antara lain:
+
+When Expression
+
+Expression & Statement
+
+While and Do While
+
+Range and For Loop
+
+Break and Continue Labels
+
+
+
+Kita akan mempelajari seperti apa dan bagaimana cara menerapkan beberapa control flow di atas.
+
+Video Komponen Control Flow
+
+link:
+https://youtu.be/SOMdqHQTKao
+
+// Enumeration.
+// Enumeratioon merupakan salah satu fitur yang bisa kita gunakan untuk menyimpan
+// kumpulan objek yang telah didefinisikan menjadi tipe data konstanta.
+
+// Contoh :
+
+fun main() {
+    val colorRed = color.RED
+    val colorGreen = color.GREEN
+    val colorBlue = color.BLUE
+
+}
+
+enum class Color(val value: Int) {
+    RED(0xFF0000),
+    GREEN(0xFF000C),
+    BLUE(0xFF000FF),
+
+}
+
+when (Color){
+    Color.RED -> println("Color is Red")
+    Color.GREEN -> println("Color is green")
+    Color.BLUE -> println("Color is blue")
+
+}
+
+// Contoh 2 :
+fun main() {
+    val colorRed = Color.RED
+    val colorGreen = Color.GREEN
+    val colorBlue = Color.BLUE
+
+    // Contoh penggunaan `when` dengan variabel `colorRed`
+    when (colorRed) {
+        Color.RED -> println("Color is Red")
+        Color.GREEN -> println("Color is Green")
+        Color.BLUE -> println("Color is Blue")
+    }
+}
+
+enum class Color(val value: Int) {
+    RED(0xFF0000),
+    GREEN(0x00FF00),
+    BLUE(0x0000FF),
+}
