@@ -1,0 +1,26 @@
+Special Class dan Collection
+Pada materi sebelumnya, kita sudah belajar tentang cara membuat Class di Kotlin. Nah, pada materi ini, kita akan membahas tentang Special Class di Kotlin. Special Class adalah Class yang memiliki karakteristik khusus atau fitur yang tidak tersedia di Class biasa (reguler). 
+
+Tanpa disadari, sebenarnya kita sudah belajar beberapa jenis Special Class pada materi sebelumnya, seperti Abstract Class dan Interface. Nah, tahukah Anda bahwa sebenarnya ada banyak Class khusus lain yang disediakan oleh Kotlin? Apa sajakah itu? Berikut di antaranya.
+
+Data Class: dirancang khusus untuk menyimpan data. Otomatis terdapat fungsi equals(), hashCode(), toString(), dan copy(). 
+Nested Class: membuat Class di dalam Class tanpa akses ke kelas induk.
+Inner Class: membuat Class di dalam Class dengan akses ke kelas induk.
+Enum Class: tipe data dengan sekumpulan nilai konstan yang telah ditentukan.
+Sealed Class: digunakan untuk pembatasan hierarki class.
+Selain itu, ada juga Object yang bukan merupakan Class, tetapi memiliki peran dan karakteristik yang unik seperti Special Class lainnya.  
+
+
+
+Di bagian kedua pada modul ini, kita juga akan membahas Collection pada Kotlin. Collection merupakan sebuah struktur data yang digunakan untuk menyimpan banyak nilai sekaligus. Hal ini tentunya penting karena dalam pembuatan aplikasi, sering kali kita dihadapkan dengan data yang banyak. Misalnya, seperti membuat aplikasi yang menampilkan daftar kontak, daftar produk, atau opsi pekerjaan pada menu dropdown. Di sinilah peran Collection guna mempermudah mengelola dan mengorganisasi data tersebut.
+
+Kotlin menyediakan beberapa jenis Collection yang bervariasi, berikut di antaranya.
+
+List: untuk menyimpan nilai bebas dengan index (boleh sama).
+Set: untuk menyimpan nilai yang unik (tidak boleh sama).
+Map: untuk menyimpan dengan format key to value (key tidak boleh sama).
+
+
+Memahami Special Class maupun Collection berguna dalam mengelola aplikasi Anda supaya lebih mudah dan efisien. Untuk itu, mari kita mulai petualangan ini untuk mendalami setiap topik tersebut dengan penuh semangat dan rasa ingin tahu. Selamat belajar!
+
+
