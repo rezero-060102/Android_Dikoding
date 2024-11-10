@@ -1,0 +1,34 @@
+Object-Oriented Programming
+Pada sub-modul awal, kita sudah mengetahui bahwa Kotlin memberi dukungan luas untuk mengembangkan program berorientasi objek. Sebabnya, OOP masih menjadi salah satu paradigma atau teknik pemrograman yang banyak digunakan dalam pengembangan aplikasi. Dengan paradigma OOP, kita dapat mudah memvisualisasikan kode karena OOP sendiri mirip seperti skenario dalam kehidupan nyata. 
+
+20190430142436d1d3240f3e0d70090704499c40954776.png
+
+Visualisasi di atas mencontohkan gambaran umum OOP di mana terdapat sebuah blueprint mobil, komponen yang dimiliki mobil, dan kemampuan yang dapat dilakukan oleh mobil. Dalam OOP blueprint tersebut dikenal dengan Class (kelas), komponen dikenal dengan nama atribut, kemampuan yang dimiliki dikenal sebagai behaviour dan hasil realisasi dari sebuah blueprint tersebut disebut object. Anda juga melihat gambaran OOP melalui ilustrasi berikut.
+
+dos-8c6a1f7c5cd2282b64079d015f452ed020240124131028.png
+
+Visualisasi di atas mencontohkan gambaran umum dari konsep OOP, di mana terdapat sebuah blueprint Kucing, atribut yang dimiliki Kucing, dan kemampuan yang dapat dilakukan oleh Kucing. Dalam paradigma Object-Oriented Programming (OOP), class merupakan sebuah blueprint yang dapat dikembangkan untuk membuat sebuah objek. Blueprint ini merupakan sebuah template yang di dalamnya menjelaskan perilaku dari objek itu (berupa properti ataupun function). Dalam dunia pemrograman khususnya dalam paradigma OOP, kita sering membuat banyak objek dengan jenis yang sama. Dengan membuat blueprint ini, kita dapat mengurangi duplikasi kode dalam membuat objek yang serupa.
+
+
+
+4 Pilar dalam OOP
+Sebelum mempelajari OOP lebih jauh, ada hal penting yang perlu Anda perhatikan, yakni 4 pilar dalam OOP. Mengapa itu menjadi penting? Coba bayangkan sebuah perusahaan besar seperti Google yang menangani ratusan bahkan ribuan karyawannya. Dalam hal ini tentunya Google memiliki serangkaian aturan dan kebijakan yang tepat agar mencapai tujuan. Selaras dengan hal tersebut, ketika mengembangkan sebuah perangkat lunak, pastinya kita akan memiliki jumlah sistem yang banyak. Oleh karena itu, kita wajib menerapkan sebuah aturan dan kebijakan dalam pengembangan tersebut guna menghindari kompleksitas.
+
+dos-5f4d023721bb8085d9fa90094f2c087d20240212151736.png
+
+Untuk mencapainya, terdapat beberapa teknik yang dapat kita gunakan seperti berikut.
+
+Inheritance
+Pewarisan adalah konsep di mana sebuah objek dapat mewarisi sifat atau perilaku dari objek lain. Analoginya seperti hubungan keluarga, di mana anak dapat mewarisi sifat atau karakteristik tertentu dari orang tuanya. Pewarisan memungkinkan untuk mendefinisikan objek baru berdasarkan objek yang sudah ada.
+
+Encapsulation
+Enkapsulasi diibaratkan sebuah kantong yang menyimpan sesuatu. Dalam pemrograman, enkapsulasi berfungsi untuk mengumpulkan data dan metode yang berhubungan ke dalam sebuah objek. Saat menggunakan encapsulation, data dapat diisolasi dan tidak dapat diakses langsung dari luar. Dengan begini, kita cukup menggunakan data tersebut tanpa harus tahu proses yang terjadi di dalamnya.
+
+Abstraction
+Abstraksi dapat dilakukan dengan menghilangkan kompleksitas dan detail yang tidak perlu dari suatu objek sehingga hanya menampilkan informasi penting saja. Sebagai contoh, saat mengendarai mobil, pengemudi tidak perlu tahu detail bagaimana mesin bekerja, tetapi hanya perlu memahami cara menggunakan pedal gas, rem, dan setir. Abstraksi memudahkan pemrograman dengan menyembunyikan detail implementasi yang kompleks.
+
+Polymorphism
+Polimorfisme memungkinkan objek dengan tipe yang berbeda untuk diproses dengan cara yang serupa. Ini mirip dengan kemampuan manusia untuk beradaptasi dengan berbagai situasi. Dalam pemrograman, polimorfisme dapat dilihat melalui metode-metode yang memiliki nama yang sama, tetapi perilaku yang berbeda tergantung pada objek yang memanggilnya.
+
+
+Pada modul selanjutnya, kita akan membahas secara detail tentang object, class, attribute, dan behaviour yang ada pada OOP.  Selain itu, kita akan belajar penerapan masing-masing pilar OOP yang sudah dijelaskan secara lebih detail. Menarik, bukan? Yuk kita pelajari bersama!
