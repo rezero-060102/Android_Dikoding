@@ -1,0 +1,76 @@
+Expressions dan Statements
+Ketika mempelajari sebuah bahasa pemrograman, kita selalu dihadapkan dengan istilah expressions dan statement. Ini adalah 2 (dua) istilah yang kadang disalahpahami. 
+
+Untuk lebih mudah memahaminya, marilah kita lihat contoh kode If sebagai statement berikut.
+if (now > openOffice) {
+    print("Office already open")
+} else {
+    print("Office close")
+}
+
+Pada contoh kode di atas, if dikatakan sebagai statement karena ia tidak mengembalikan nilai apapun, hanya sebagai percabangan pada bahasa Kotlin.
+
+Namun, yang menarik If pada bahasa Kotlin juga bisa digunakan sebagai expression. Yang dimaksud dengan expression adalah statement yang dapat mengembalikan nilai dan bisa kita simpan ke dalam sebuah variabel seperti contoh berikut.
+val office = if (now > openOffice) "Office already open" else "Office close"
+print(office)
+
+
+Pada kode di atas, If akan mengembalikan nilai kedalam variabel office. Apabila kondisi pada if terpenuhi, variabel office akan berisi "Office already open". Namun ketika kondisinya tidak terpenuhi, ia akan berisi "Office close".
+
+Jadi, sudah paham kan perbedaan antara statement dan expression?
+
+Nah, perlu Anda ketahui bahwa di dalam sebuah expression juga bisa terdapat sebuah expression lagi. Contohnya seperti berikut.
+fun main() {
+    sum(1 , 1 * 4)
+}
+ 
+fun sum(value1: Int, value2: Int) = value1 + value2
+
+
+Pada kode diatas 1 * 4 merupakan sebuah expression yang ada pada pemanggilan fungsi sum() alias fungsi yang mengembalikan nilai. Setiap fungsi selalu mengembalikan nilai. Alhasil, pemanggilan sebuah fungsi merupakan sebuah expression.
+
+Contoh lain dari statement adalah inisialisasi sebuah variabel seperti berikut.
+fun main() {
+    val value1 = 10
+    val value2 = 10
+ 
+    sum(value1, value2)
+}
+ 
+fun sum(value1: Int, value2: Int) = value1 + value2
+
+
+Pada kode di atas, deklarasi variabel value1 dan value2 merupakan sebuah statement, sedangkan pemanggilan fungsi sum merupakan sebuah expression.
+
+
+Daftar Modul
+34% Selesai
+
+Persiapan Belajar
+Pendahuluan
+Persiapan Membangun dan Menjalankan Program Kotlin
+Kotlin Fundamental
+Control Flow
+1/9
+Komponen Control Flow
+Expressions dan Statements
+When Expressions
+While dan Do While
+Range
+For Loop
+Break dan Continue
+Rangkuman dari Control Flow
+Kuis Control Flow
+Kotlin Object-Oriented Programming
+0/22
+Special Class dan Collection
+0/18
+Kotlin Functional Programming
+0/13
+Kotlin Generics
+0/7
+Berkenalan dengan Coroutines
+0/16
+Penutup
+0/3
+Ex
