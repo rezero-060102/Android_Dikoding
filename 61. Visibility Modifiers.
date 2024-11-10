@@ -1,0 +1,116 @@
+Visibility Modifiers
+Kali ini kita akan mengenal beberapa tentang visibility modifiers atau hak akses pada Kotlin. Tentunya, tidak semua properti dan method pada sebuah kelas memiliki hak akses publik. Ada beberapa yang hanya dapat diakses dari dalam dan ada yang dapat diakses dari luar kelasnya. Dengan menentukan hak akses tersebut, kita dapat membatasi akses data pada sebuah kelas, inilah yang disebut dengan encapsulation pada salah satu pilar OOP.
+
+Berikut macam-macam hak akses dan penjelasan singkatnya yang dapat digunakan pada Kotlin:
+
+Public: Hak akses yang cakupannya paling luas. Anggota yang diberi modifier ini dapat diakses dari manapun.
+
+Private: Hak akses yang cakupannya paling terbatas. Anggota yang menerapkannya hanya dapat diakses pada scope yang sama.
+
+Protected: Hak akses yang cakupannya terbatas pada hirarki kelas. Anggota hanya dapat diakses pada kelas turunannya atau kelas itu sendiri.
+
+Internal: Hak akses yang cakupannya terbatas pada satu modul. Anggota yang menggunakannya tidak dapat diakses diluar dari modulnya tersebut.
+
+Semua modifier tersebut bisa digunakan untuk kelas, objek, konstruktor, fungsi, beserta properti yang ada di dalamnya. Kecuali modifier protected yang hanya bisa digunakan untuk anggota di dalam sebuah kelas dan interface. Protected tidak bisa digunakan pada package member seperti kelas, objek, dan yang lainnya. Setelah mengetahui pentingnya hak akses, selanjutnya kita akan membahas bagaimana kita menentukan hak akses public, private, protected dan internal pada Kotlin.
+
+
+
+Public
+Berbeda dengan bahasa pemrograman umumnya, default modifier pada Kotlin adalah public. Ketika sebuah anggota memiliki hak akses public maka anggota tersebut dapat diakses dari luar kelasnya melalui sebuah objek kelas tersebut.
+
+Pada pembahasan sebelumnya kita sudah memiliki sebuah kelas Animal dengan properti publik seperti name, age, weight dan isMammal. Properti tersebut dapat kita akses dari luar kelas Animal.
+
+20190429171924c871aeea325dad57f899bd1964051bb8.png
+
+Dari completion suggestion terlihat bahwa properti tersebut dapat kita akses di luar dari kelasnya. 
+
+Private
+Ketika suatu anggota memiliki hak akses private, maka anggota tersebut tidak dapat diakses dari luar scope-nya. Untuk menggunakan modifier private kita perlu menambahkan keyword private seperti contoh berikut:
+
+private val name: String,
+
+Mari kita coba ubah hak akses pada seluruh properti kelas Animal menjadi private.
+
+class Animal(
+    private val name: String, 
+    private val weight: Double, 
+    private val age: Int, 
+    private val isMammal: Boolean
+)
+ 
+fun main() {
+    val dicodingCat = Animal("Dicoding Miaw", 2.5, 2)
+    println("Nama: ${dicodingCat.name}, Berat: ${dicodingCat.weight}, Umur: ${dicodingCat.age}, mamalia: ${dicodingCat.isMammal}")
+}
+
+Dengan menggunakan hak akses private, maka kita tidak diizinkan untuk mengakses properti pada kelas Animal tersebut  dari luar kelasnya. Anda akan berjumpa dengan eror Cannot access '[PROPERTY]': it is private in 'Animal'. Satu satunya cara untuk mengakses properti private dari sebuah kelas adalah dengan menambahkan fungsi getter dan setter secara manual. Fungsi getter dan setter sebenarnya dihasilkan secara otomatis oleh Kotlin ketika properti tersebut memiliki hak akses public tetapi tidak untuk private. Untuk penulisan getter dan setter pada hak akses private sama seperti fungsi pada umumnya:
+
+fun getName() : String {
+    return name
+}
+
+fun setName(newName: String) {
+    name = newName
+}
+
+Fungsi getName() bertujuan untuk mengembalikan nilai name yang memiliki tipe data String. Kemudian fungsi setName() bertujuan untuk mengubah nilai properti name dengan nilai baru. Fungsi setName() membutuhkan satu parameter bertipe String yang nantinya akan dimasukkan nilainya ke dalam properti name.
+
+Mari kita coba menerapkannya.
+
+class Animal(private var name: String, private val weight: Double, private val age: Int, private val isMammal: Boolean = true) {
+ 
+    fun getName() : String {
+        return name
+    }
+ 
+    fun setName(newName: String) {
+        name = newName
+    }
+ 
+}
+ 
+fun main() {
+    val dicodingCat = Animal("Dicoding Miaw", 2.5, 2)
+    println(dicodingCat.getName())
+    dicodingCat.setName("Gooose")
+    println(dicodingCat.getName())
+}
+ 
+/*
+    output:
+        Dicoding Miaw
+        Gooose
+*/
+
+Pada kode di atas, terlihat bahwa kita berhasil mengubah nilai properti name dari nilai awal yang kita inisialisasikan pada konstruktor. Ia menjadi nilai baru yang kita tentukan dengan menggunakan fungsi setName(). 
+
+
+
+Protected
+Hak akses protected mirip seperti private, namun pembatasannya lebih luas dalam sebuah hirarki kelas. Hak akses protected digunakan ketika kita menginginkan sebuah anggota dari induk kelas dapat diakses hanya oleh kelas yang merupakan turunannya. Perhatikan kode di bawah ini untuk contoh penggunaan hak akses protected.
+
+open class Animal(val name: String, protected val weight: Double)
+ 
+class Cat(pName: String, pWeight: Double) : Animal(pName, pWeight)
+
+Pada kode tersebut, properti weight pada kelas Animal memiliki hak akses protected. Kita tetap bisa mengaksesnya dari kelas Cat yang termasuk dalam hirarki kelas Animal. Namun kita tidak dapat mengakses properti tersebut secara langsung dari luar hirarki kelasnya. Eror akan terjadi jika kita melakukan hal tersebut.
+
+open class Animal(val name: String, protected val weight: Double)
+ 
+class Cat(pName: String, pWeight: Double) : Animal(pName, pWeight)
+
+
+fun main() {
+    val cat = Cat("Dicoding Miaw", 2.0)
+    println("Nama Kucing: ${cat.name}")
+    println("Berat Kucing: ${cat.weight}") // error: expecting a top level declaration
+}
+
+
+
+Internal
+Internal merupakan hak akses baru yang diperkenalkan pada Kotlin. Hak akses ini membatasi suatu anggota untuk dapat diakses hanya pada satu modul. Berikut ini contoh penggunaan hak akses internal:
+
+internal class Animal(val name: String)
+
+Pada contoh di atas, kelas Animal telah ditetapkan sebagai kelas internal, maka kelas tersebut hanya dapat diakses dari modul yang sama. Hak akses ini sangat berguna ketika kita mengembangkan sebuah aplikasi yang memiliki beberapa modul di dalamnya.
