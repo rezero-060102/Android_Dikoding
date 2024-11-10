@@ -1,0 +1,48 @@
+Object Everywhere
+Pada sub-modul Data Types telah disebutkan bahwa pada Kotlin semua bertindak sebagai objek di mana kita bisa memanggil member function dan properti dari sebuah variabel. Objek merupakan hasil realisasi dari sebuah blueprint atau class yang tentunya memiliki fungsi dan juga properti sama seperti blueprint-nya. Artinya, dengan membuat objek kita dapat mengakses fungsi dan properti yang terdapat pada kelas tersebut.
+
+Pada Kotlin, nilai primitif seperti String, Integer, Char, Boolean merupakan sebuah Object. Hal ini berbeda dengan bahasa pemrograman lain. Maka dari itu, terdapat sebuah istilah yang terkenal di  Kotlin, yaitu “Object Everywhere”. Perhatikan kode berikut:
+
+val someString = "Dicoding"
+
+Pada kode tersebut kita melakukan pembuatan variabel yang juga merupakan sebuah objek dengan nama someString. Objek tersebut merupakan realisasi dari kelas String, maka objek someString memiliki fungsi dan properti yang merupakan anggota dari kelas String.
+
+202007010844593d92b258aea10a4c158d1ecd6089c5f5.png
+
+Dari completion suggestion yang tersedia pada IntelliJ Idea, kita bisa melihat beberapa fungsi yang dapat digunakan oleh objek someString. Kita bisa menggunakan fungsi reverse() untuk membuat urutan huruf disusun secara terbalik, fungsi toUpperCase() yang dapat membuat huruf menjadi kapital atau fungsi toLowerCase() yang dapat membuat menjadi huruf kecil.
+
+fun main() {
+    val someString = "Dicoding"
+    println(someString.reversed())
+    println(someString.uppercase())
+    println(someString.lowercase())
+}
+ 
+/*
+Output:
+gnidociD
+DICODING
+dicoding
+*/
+
+Kita juga dapat mengubah tipe data dengan mengakses fungsi yang tersedia dari sebuah objek String. 
+
+fun main() {
+    val someString = "123"
+    val someInt = someString.toInt()
+    val someOtherString = "12.34"
+    val someDouble = someOtherString.toDouble()
+ 
+    println(someInt is Int)
+    println(someDouble is Double)
+}
+ 
+/*
+Output:
+true
+true
+*/
+
+Hasil dari output kode menunjukan nilai true pada kedua variabel tersebut, yang artinya kita telah berhasil mengubah suatu tipe data String ke tipe data lainnya dengan menggunakan fungsi yang terdapat pada objek String.
+
+Mungkin seperti itulah gambaran mengenai objek. Penting digarisbawahi bahwa objek merupakan realisasi dari sebuah blueprint yang tentunya memiliki properti dan fungsi yang sama dengan blueprint-nya. Salah satu kegunaan objek adalah untuk mengakses berbagai properti dan fungsi pada kelas.
