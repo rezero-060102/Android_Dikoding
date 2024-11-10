@@ -1,0 +1,109 @@
+Penggunaan Data Class
+Sebelum kita masuk ke dalam pembahasan tentang apa saja yang bisa data class lakukan, mari kita perhatikan dulu kode berikut:
+
+class User(val name : String, val age : Int)
+
+Kode di atas merupakan sebuah kelas yang umumnya digunakan untuk menampung sebuah data. Kelas tersebut memiliki sebuah konstruktor yang berisi beberapa properti yang bisa kita akses, baik itu create maupun read. Selanjutnya, perhatikan juga kelas berikut:
+
+data class DataUser(val name : String, val age : Int)
+
+Kelas hampir sama dengan sebelumnya, namun memiliki keyword data yang menandakan bahwa kelas tersebut merupakan sebuah data class. Lalu, apakah perbedaan antara keduanya? Untuk mengetahuinya, bukalah Intellij IDEA dan buat sebuah berkas Kotlin dengan nama DataClasses.kt. Ketikkan kedua kelas tadi di dalamnya dan buat juga fungsi main sebagai tempat di mana kita akan mencoba mengelola atau mengoperasikan kedua kelas tersebut.
+
+class User(val name : String, val age : Int)
+ 
+data class DataUser(val name : String, val age : Int)
+ 
+fun main(){
+ 
+}
+
+Untuk mengetahui perbedaan yang pertama, kita akan menggunakan fungsi println() untuk menampilkan 2 buah objek yang akan dibuat dari kelas User dan DataUser. Tambahkan kode berikut di dalam fungsi main():
+
+val user = User("nrohmen", 17)
+val dataUser = DataUser("nrohmen", 17)
+
+println(user)
+println(dataUser)
+
+Output : 
+User@34a245ab
+DataUser(name=nrohmen, age=17)
+
+Jalankan fungsi main dan lihatlah hasil yang ditampilkan pada konsol:
+
+oo.User@4d7e1886
+DataUser(name=nrohmen, age=17)
+Bisa kita perhatikan, bahwa objek user menghasilkan teks oo.User@4d7e1886 dimana oo merupakan nama package tempat kelas User berada. User adalah nama dari kelas itu sendiri, dan @4d7e1886 adalah memory address dari kelas tersebut. Sedangkan, objek dataUser menghasilkan teks DataUser(name=nrohmen, age=17), yaitu nama kelas disertai dengan semua properti di dalamnya dan value dari properti tersebut. 
+
+Dengan begitu, Anda bisa langsung mengetahui semua informasi dari dataUser hanya dengan melihat value dari properti yang ada. Mengapa demikian? Karena seperti yang sudah disampaikan sebelumnya,  data class akan secara otomatis menghasilkan fungsi toString() di dalamnya. Tanpa data class, kita perlu membuat fungsi toString() secara manual untuk mendapatkan informasi seperti yang diberikan oleh objek dataUser. Sebagai contoh, untuk menampilkan informasi yang jelas dari objek user, maka kita perlu menambahkan fungsi toString() seperti berikut:
+
+class User(val name : String, val age : Int){
+ 
+    override fun toString(): String {
+        return "User(name=$name, age=$age)"
+    }
+}
+
+Dengan menambahkan fungsi toString() seperti di atas, maka objek user akan bisa menghasilkan teks yang sama dengan objek dataUser. Coba jalankan kembali fungsi main().
+
+User(name=nrohmen, age=17)
+DataUser(name=nrohmen, age=17)
+
+Selanjutnya, kelebihan lain dari data class adalah ia sudah memiliki fungsi equals() secara otomatis. Maka jika Anda ingin melakukan komparasi konten antara 2 buah objek, lakukanlah dengan mudah seperti contoh di bawah ini:
+
+fun main(){
+    val dataUser = DataUser("nrohmen", 17)
+    val dataUser2 = DataUser("nrohmen", 17)
+    val dataUser3 = DataUser("dimas", 24)
+ 
+    println(dataUser.equals(dataUser2))
+    println(dataUser.equals(dataUser3))
+}
+
+Konsol akan langsung memberi tahu apakah kedua objek tersebut sama atau tidak ketika Anda menjalankan fungsi main():
+
+true
+false
+
+Lain halnya jika kita melakukan komparasi pada 2 buah objek yang bukan dari data class. Kita tidak bisa mendapatkan hasil yang akurat karena konsol akan selalu menghasilkan nilai false. Sebagai contoh, perhatikanlah kode berikut:
+
+fun main(){
+    val user = User("nrohmen", 17)
+    val user2 = User("nrohmen", 17)
+    val user3 = User("dimas", 24)
+ 
+    println(user.equals(user2))
+    println(user.equals(user3))
+}
+
+Maka hasilnya akan sama saja, false semua. Hal ini karena dia tidak membandingkan kontennya, melainkan lokasi object (referensi) pada memory. 
+
+false
+false
+
+Dan jika Anda menginginkan hasil yang akurat seperti pada data class, maka Anda perlu membuat fungsi equals() secara manual:
+
+class User(val name : String, val age : Int){
+ 
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+ 
+        other as User
+ 
+        if (name != other.name) return false
+        if (age != other.age) return false
+ 
+        return true
+    }
+ 
+    override fun hashCode(): Int {
+        var result = name.hashCode()
+        result = 31 * result + age
+        return result
+    }
+}
+
+Anda perlu menuliskan beberapa boilerplate code di atas untuk mendapatkan hasil yang sesuai. Belum lagi ketika Anda menambahkan fungsi equals(), Anda juga perlu menambahkan fungsi hashCode().
+
+
