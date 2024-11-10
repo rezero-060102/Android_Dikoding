@@ -1,0 +1,94 @@
+Range
+- https://www.youtube.com/watch?v=Ta5wBJsC39s
+Seperti yang disampaikan sebelumnya, Range merupakan salah satu tipe yang unik pada kotlin. Kita dapat menentukan nilai awal dan nilai akhir pada Range. Range direpresentasikan dengan operator .. atau dengan fungsi rangeTo() dan downTo().
+
+Terdapat beberapa cara untuk membuat Range di Kotlin. Pertama, seperti berikut:
+
+val rangeInt = 1..10
+
+Kode diatas menggunakan operator .. untuk membuat Range. Variabel rangeInt di atas mencakup nilai 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Jarak antara dua nilai yang dicakup, ditentukan oleh step. Secara default, step bernilai 1. Untuk mendapatkan step kita bisa menggunakan properti step seperti contoh berikut:
+
+fun main() {
+    val rangeInt = 1..10
+    print(rangeInt.step)
+}
+ 
+/*
+   output: 1
+*/
+
+Dan untuk mengubah nilai dari step bisa dilakukan ketika kita menginisialisasi nilai yang dicakup Range itu sendiri:
+
+fun main() {
+    val rangeInt = 1..10 step 2
+    rangeInt.forEach {
+        print("$it ")
+    }
+    println(rangeInt.step)
+}
+ 
+/*
+   output: 1 3 5 7 9 2
+*/
+
+Pada kode di atas kita menentukan nilai step adalah 2, maka nilai yang dicakup variabel rangeInt adalah 1, 3, 5, 7, 9.
+
+Selanjutnya adalah menggunakan fungsi rangeTo():
+
+val rangeInt = 1.rangeTo(10)
+
+Kode di atas, operator .. digantikan dengan fungsi rangeTo() untuk membuat Range . Nilai yang dicakup pada kode di atas sama seperti kode sebelumnya ketika menggunakan operator ...
+
+Kita juga bisa menentukan nilai yang dicakup pada Range dengan urutan terbalik seperti berikut:
+
+val downInt = 10.downTo(1)
+
+Kode di atas menggunakan fungsi downTo() untuk menentukan nilai dengan urutan terbalik. Variabel downInt di atas mencakup nilai 10, 9, 8, 7, 6, 5, 4, 3, 2, 1.
+
+Kita juga bisa memeriksa apakah suatu nilai ada pada cakupan nilai Range.
+
+fun main() {
+    val tenToOne = 10.downTo(1)
+    if (7 in tenToOne) {
+        println("Value 7 available")
+    }
+}
+/*
+   output: Value 7 available
+*/
+
+Pada kode di atas kita menggunakan kata kunci in untuk memeriksa apakah 7 berada diantara kisaran 1 sampai 10. Expression yang dievaluasi pada if di atas sama seperti ketika menggunakan expression berikut:
+
+
+fun main() {
+    if (1 <= 7 && 7 <= 10){
+        println("Value 7 available")
+    }
+}
+/*
+   output: Value 7 available
+*/
+
+Nah,  di atas kita telah memeriksa apakah suatu nilai ada pada nilai cakupan Range. Sebaliknya, kita juga bisa memeriksa apakah suatu nilai tidak ada pada nilai cakupan Range tersebut. Kita bisa menggunakan kata kunci !in seperti ini:
+
+fun main() {
+    val tenToOne = 10.downTo(1)
+    if (11 !in tenToOne) {
+        println("No value 11 in Range ")
+    }
+}
+/*
+   output: No value 11 in Range
+*/
+
+Range pada Kotlin mendukung beberapa tipe integral seperti IntRange, LongRange dan CharRange. Sehingga selain nilai numerik, kita juga bisa menentukan tipe Character sebagai nilai yang dicakup oleh Range:
+
+val rangeChar = 'A'.rangeTo('F')
+
+Nilai pada variable rangeChar di atas mencakup A, B, C, D, E, F
+
+.
+
+Sebagai referensi lebih lanjut mengenai beberapa konsep Kotlin yang sudah dipelajari, Anda dapat melihat video berikut.
+
+Kotlin under the hood: Understand the internals (Google I/O'19)
