@@ -1,0 +1,64 @@
+Membuat Kelas
+Untuk mendefinisikan kelas dalam Kotlin, Anda cukup gunakan kata kunci class diikuti dengan nama kelas yang akan dibuat. Mari kita buat contoh kelas pada Kotlin.
+
+class Animal
+
+Sangat mudah, bukan? Sekarang kita tambahkan properti dan method pada kelas tersebut.
+
+class Animal() {
+    var name: String = "Kucing"
+    var weight: Double = 3.2
+    var age: Int = 2
+    var isMammal: Boolean = true
+   
+    fun eat(){
+        println("$name makan!")
+    }
+ 
+    fun sleep() {
+        println("$name tidur!")
+    }
+}
+
+Pada kelas Animal di atas, kita bisa melihat bahwa di dalamnya terdapat 4 properites dan 2 method Lalu, bagaimana cara membuat sebuah objek dari kelas tersebut? Anda bisa perhatikan struktur kode berikut.
+
+val nameOfObject = NameOfClass()
+
+Sama seperti variabel, Anda bisa gunakan val atau var diikuti dengan nama objek yang akan dibuat. Setelah itu, gunakan tanda = untuk menunjukkan bahwa kita akan menginisialisasi suatu objek dan panggil nama kelas dengan tanda kurung di akhir. Tanda kurung tersebut menunjukan bahwa kita membuat sebuah objek baru. Di dalam tanda kurung, kita dapat menambahkan nilai properti sesuai yang dibutuhkan pada primary constructor kelasnya.
+
+Jika kita coba membuat objek dari kelas yang sudah kita buat, kodenya akan terlihat seperti ini.
+
+val dicodingCat = Animal()
+
+Mari kita coba buat kode secara keseluruhan dengan ditambahkan fungsi cetak untuk melihat nilai properti dalam objeknya.
+
+val dicodingCat = Animal()
+println("Nama: ${dicodingCat.name}, Berat: ${dicodingCat.weight}, Umur: ${dicodingCat.age}, mamalia: ${dicodingCat.isMammal}" )
+dicodingCat.eat()
+dicodingCat.sleep()
+
+// Mengubah Properti dari class dicodingCat
+dicodingCat.name = "Kucing Oren"
+dicodingCat.weight = 6.0
+dicodingCat.age = 3
+println("Nama: ${dicodingCat.name}, Berat: ${dicodingCat.weight}, Umur: ${dicodingCat.age}, mamalia: ${dicodingCat.isMammal}" )
+dicodingCat.eat()
+dicodingCat.sleep()
+
+Output :
+
+Nama: Kucing, Berat: 3.2, Umur: 2, mamalia: true
+Kucing makan!
+Kucing tidur!
+Nama: Kucing Oren, Berat: 6.0, Umur: 3, mamalia: true
+Kucing Oren makan!
+Kucing Oren tidur!
+
+Dengan menjalankan program tersebut, outputnya sebagai berikut.
+
+Nama: Kucing, Berat: 3.2, Umur: 2, mamalia: true
+Kucing makan!
+Kucing tidur!
+Nama: Kucing Oren, Berat: 6.0, Umur: 3, mamalia: true
+Kucing Oren makan!
+Kucing Oren tidur!
