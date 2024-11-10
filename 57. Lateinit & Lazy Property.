@@ -1,0 +1,92 @@
+Lateinit & Lazy Property
+- https://kotlinlang.org/docs/properties.html#late-initialized-properties-and-variables
+- https://www.youtube.com/watch?v=s5qn5QhFntY
+
+Seperti yang Anda pelajari sebelumnya, Anda dapat membuat variabel atau property dengan cara menginisialisasi nilainya secara langsung seperti ini.
+
+val name: String = "Dicoding Miaw"
+
+Lalu, bagaimana jika kita tidak ingin menginisialisasi nilainya secara langsung? Misalnya, ada sebuah kondisi yang menyebabkan nilainya baru akan diinisialisasi nanti setelah mendapatkan data dari constructor atau karena kita perlu memakai variabel tersebut di fungsi lain atau yang biasa disebut dengan global variable.
+
+Masalahnya, Anda tidak bisa menggunakan pendekatan seperti dalam bahasa pemrograman Java yang bisa menuliskan variabel saja tanpa nilai seperti contoh kode di bawah ini. Hal ini karena setiap variabel di Kotlin harus diinisialisasi di awal.
+
+val name: String // Error! Variable 'name' must be initialized
+
+Nah, salah satu alternatif solusi yang bisa dipakai adalah mengisinya dengan nilai null terlebih dahulu seperti berikut.
+
+var name: String? = null
+fun main() {
+    name = "Dicoding Miaw"
+    print(name?.length)
+}
+
+Output : 13
+
+Namun, pendekatan ini memerlukan safe call operator (?.) setiap kali mengakses property atau fungsi di dalamnya. Tentunya ini menambah pekerjaan untuk mengecek apakah variabel tersebut null atau tidak, padahal kita sudah yakin bahwa variabel tersebut sudah pasti ada nilainya nanti.
+
+
+Lalu, bagaimana supaya supaya variabel tersebut tidak null, tetapi tetap bisa diinisialisasi di lain waktu?
+
+Untuk mengatasinya, Kotlin memiliki mekanisme untuk menunda proses inisialisasi sampai variabel tersebut benar-benar dibutuhkan, yakni dengan menggunakan lateinit dan lazy. Mari kita bedah satu per satu!
+
+
+
+Lateinit
+Lateinit merupakan keyword yang ditambahkan sebelum variabel untuk membuat proses inisialisasi bisa ditunda. Berikut ini contohnya.
+
+lateinit var name: String
+fun main() {
+    name = "Dicoding Miaw"
+    print(name.length)
+}
+
+Output : 13
+
+Catatan:
+Hal yang perlu diperhatikan adalah lateinit harus disandingkan dengan keyword var (tidak bisa menggunakan val). Hal ini berbeda dengan Lazy property yang nanti akan dibahas.
+
+
+
+Kita juga dapat memeriksa apakah variabel tersebut sudah diinisialisasi dengan menggunakan fungsi isInitialized seperti ini.
+
+lateinit var name: String
+fun main() {
+    name = "Dicoding Miaw"
+    if (::name.isInitialized)
+    	print(name.length)
+    else
+        print("Not Initialized")
+} // 13
+
+Jika mencoba untuk mengakses variabel yang belum terinisialisasi, Anda akan mendapat error “Exception in thread "main" kotlin.UninitializedPropertyAccessException: lateinit property name has not been initialized”.
+
+
+
+Lazy property
+Selain menggunakan keyword lateinit, kita juga bisa menggunakan lazy property untuk membuat property yang bukan null dan menunda inisialisasi. Berikut ini contoh kodenya.
+
+val name: String by lazy {
+    "Dicoding Miaw"
+}
+fun main() {
+    print(name.length)
+} // 13
+
+Catatan:
+Dalam menggunakan lazy property, Anda harus menggunakan keyword val. Hal ini karena nilainya hanya dapat diinisialisasi satu kali.
+
+
+
+Jika dilihat proses inisialisasi harus di dalam block lazy, tidak bisa di tempat lain. Lalu, apa bedanya dengan inisialisasi seperti biasanya? Nah, hal ini terkait peningkatan performa dengan mengatur memori.
+
+Membuat object String seperti ini memang tidak membutuhkan memori yang banyak. Namun, bayangkan jika yang diinisialisasi adalah class yang sangat kompleks, tentunya ini akan memakan memori dan menghabiskan waktu di awal untuk program bisa berjalan. Nah, dengan menggunakan lazy initialization, variabel tersebut baru akan diinisialisasi ketika benar-benar dibutuhkan saja.
+
+Untuk eksplorasi lebih lanjut, Anda juga dapat membaca beberapa referensi berikut.
+
+Late-initialized properties and variables | Kotlin Documentation
+
+Built-in delegates - Kotlin Vocabulary
+
+
+
+Oke, sampai sini mungkin Anda bertanya-tanya, “apa fungsi dari keyword by?” Mari kita jawab rasa penasaran tersebut dengan mempelajari property delegation pada materi selanjutnya. Tetap semangat, ya!
