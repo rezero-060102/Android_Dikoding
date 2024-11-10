@@ -1,0 +1,111 @@
+While dan Do While
+
+Bayangkan ketika kita ditugaskan untuk mencetak beberapa baris teks yang sama ke dalam konsol seperti berikut:
+
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+
+Kita pasti langsung terpikir akan menulis programnya seperti berikut:
+
+fun main() {
+    println("Hello World")
+    println("Hello World")
+    println("Hello World")
+    println("Hello World")
+    println("Hello World")
+}
+
+Think! Bagaimana jika teks yang harus ditampilkan berjumlah banyak? Tentu kita tidak mungkin menuliskan fungsi println() sesuai dengan jumlah yang kita ingin tampilkan. 
+
+Nah, untuk mengatasinya kita bisa menggunakan perulangan. Perulangan adalah proses perulangan blok yang sama tanpa henti sampai kondisi yang diberikan tidak terpenuhi atau bernilai false. 
+
+Perulangan terdiri dari While, Do While dan For Loop. Sub-modul ini akan membahas While dan Do While. Sementara For Loop akan dibahas terpisah pada sub-modul berikutnya.
+
+While
+Untuk menggunakan While, kita membutuhkan kata kunci while, lanjut ke kondisi di dalam tanda kurung, dan diakhiri oleh blok body dari while itu sendiri. Berikut adalah contoh dari penggunaan While:
+
+fun main() {
+    var counter = 1
+    while (counter <= 7){
+        println("Hello, World!")
+        counter++
+    }
+}
+/*
+   output :
+       Hello, World!
+       Hello, World!
+       Hello, World!
+       Hello, World!
+       Hello, World!
+       Hello, World!
+       Hello, World!
+*/
+
+Perhatikan kondisi dari While di atas, selama nilai dari variabel counter kurang dari sama dengan 7 maka kode yang di dalamnya akan terus dilakukan. Lalu ketika kondisi tersebut sudah tak terpenuhi maka proses perulangan akan dihentikan.
+
+While bersifat Entry Controlled Loop. Artinya, kondisi yang diberikan akan dievaluasi terlebih dahulu. Jika kondisi tersebut terpenuhi maka proses perulangan akan dijalankan.
+
+Jika kondisi yang diberikan tidak terpenuhi sejak awal maka proses perulangan tidak akan dijalankan. Untuk mengujinya Anda bisa menulis dan menjalankan kode berikut:
+
+fun main() {
+    var counter = 8
+    while (counter <= 7){
+        println("Hello, World!")
+        counter++
+    }
+}
+
+Dengan While kita tidak perlu menuliskan fungsi println() secara berulang untuk mencetak teks ke dalam konsol seperti contoh kasus di awal.
+
+Do While
+Selain menggunakan While, kita juga bisa menggunakan Do While untuk melakukan perulangan seperti berikut:
+
+fun main() {
+    var counter = 1
+    do {
+        println("Hello, World!")
+        counter++
+    } while (counter <= 7)
+}
+ 
+/*
+   output:
+       Hello, World!
+       Hello, World!
+       Hello, World!
+       Hello, World!
+       Hello, World!
+       Hello, World!
+       Hello, World!
+*/
+Hello, World!
+Hello, World!
+Hello, World!
+Hello, World!
+Hello, World!
+Hello, World!
+Hello, World!
+**/
+
+Berbeda dengan While, Do While bersifat Exit Controlled Loop di mana proses perulangan akan langsung dijalankan di awal. Jika telah selesai, barulah kondisi yang diberikan akan dievaluasi.
+
+
+
+Saat menggunakan While dan Do While perhatikan infinite loop, yaitu kondisi di mana proses perulangan berlangsung terus menerus sampai aplikasi menjadi crash. Contoh dari infinite loop adalah seperti berikut:
+
+fun main() {
+    var value = 'A'
+    do {
+        print(value)
+    } while (value <= 'Z')
+}
+
+Infinite loop terjadi jika kondisi yang diberikan selamanya terpenuhi atau bernilai true.
+
+While dan Do While sendiri tidak dapat digunakan untuk melakukan perulangan pada rentan angka. Untuk melakukannya kita bisa menggunakan For Loop yang akan kita pelajari pada sub-modul selanjutnya.
+
+
