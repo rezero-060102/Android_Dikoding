@@ -1,0 +1,117 @@
+Property Delegation
+- https://www.youtube.com/watch?v=6P20npkvcb8
+Pengelolaan properti kelas baik itu memberikan atau mengubah sebuah nilai dapat didelegasikan kepada kelas lain. Dengan ini kita dapat meminimalisir boilerplate dalam penulisan getter dan setter (jika properties menggunakan var) pada setiap kelas yang kita buat. Sebagai contoh, kita memiliki tiga buah kelas yang di dalamnya memiliki satu properti String. Jika kita ingin menerapkan getter dan setter pada setiap properti kelasnya, maka kita perlu menuliskan getter dan setter tersebut pada seluruh kelas. Hal tersebut dapat mengurangi efisiensi dalam menuliskan kode karena terlalu banyak kode yang harus kita tulis secara berulang. Solusinya, kita perlu membuat sebuah kelas yang memang bertugas untuk mengatur atau mengelola fungsi getter dan setter untuk sebuah properti kelas. Teknik tersebut pada Kotlin dinamakan Delegate.
+
+Sebelum mendelegasikan sebuah properti kita perlu membuat kelas delegasi terlebih dahulu. Mari kita buat sebuah kelas delegasi.
+
+import kotlin.reflect.KProperty
+ 
+class DelegateName {
+    private var value: String = "Default"
+ 
+    operator fun getValue(classRef: Any?, property: KProperty<*>) : String {
+        println("Fungsi ini sama seperti getter untuk properti ${property.name} pada class $classRef")
+        return value
+    }
+ 
+    operator fun setValue(classRef: Any?, property: KProperty<*>, newValue: String){
+        println("Fungsi ini sama seperti setter untuk properti ${property.name} pada class $classRef")
+        println("Nilai ${property.name} dari: $value akan berubah menjadi $newValue")
+        value = newValue
+    }
+}
+
+Kemudian untuk mendelegasikan sebuah properti kelas, kita gunakan keyword by dalam menginisialisasi properti tersebut kemudian diikuti dengan namanya. Perhatikan kode berikut:
+
+class Animal {
+    var name: String by DelegateName()
+}
+
+Dengan begitu nilai properti name dikelola melalui kelas DelegateName. Kita dapat mendelegasikan banyak properti yang terdapat pada banyak kelas kepada satu kelas Delegate saja. Perhatikan kode berikut untuk untuk lebih jelasnya:
+
+class Animal {
+    var name: String by DelegateName()
+}
+ 
+class Person {
+    var name: String by DelegateName()
+}
+ 
+class Hero {
+    var name: String by DelegateName()
+}
+
+Mari kita membuat sebuah objek, ubah dan akses nilai propertinya pada setiap kelas, kemudian jalankan. Maka hasilnya akan seperti pada kode berikut:
+
+fun main() {
+    val animal = Animal()
+    animal.name = "Dicoding Miaw"
+    println("Nama Hewan: ${animal.name}")
+ 
+    val person = Person()
+    person.name = "Dimas"
+    println("Nama Orang: ${person.name}")
+ 
+    val hero = Hero()
+    hero.name = "Gatotkaca"
+    println("Nama Pahlawan: ${hero.name}")
+}
+ 
+
+Pada contoh di atas, delegasi hanya dapat digunakan oleh properti yang memiliki tipe data String. Namun kita juga dapat membuat sebuah delegasi kelas umum yang dapat digunakan oleh seluruh tipe data dengan memanfaatkan tipe data Any.
+
+import kotlin.reflect.KProperty
+
+class DelegateGenericClass {
+    private var value: Any = "Default"
+ 
+    operator fun getValue(classRef: Any, property: KProperty<*>): Any {
+        println("Fungsi ini sama seperti getter untuk properti ${property.name} pada class $classRef")
+        return value
+    }
+ 
+    operator fun setValue(classRef: Any, property: KProperty<*>, newValue: Any) {
+        println("Nilai ${property.name} dari: $value akan berubah menjadi $newValue")
+        value = newValue
+    }
+}
+ 
+class Animal {
+    var name: Any by DelegateGenericClass()
+    var weight: Any by DelegateGenericClass()
+    var age: Any by DelegateGenericClass()
+}
+
+Kemudian mari kita membuat sebuah objek dari kelas Animal, ubah dan akses nilai propertinya kemudian jalankan. Maka hasilnya akan seperti pada kode berikut:
+
+fun main(){
+    val animal = Animal()
+    animal.name = "Dicoding cat"
+    animal.weight = 6.2
+    animal.age = 1
+ 
+    println("Nama: ${animal.name}")
+    println("Berat: ${animal.weight}")
+    println("Umur: ${animal.age} Tahun")
+}
+ 
+/*
+output:
+    Nilai name dari: Default akan berubah menjadi Dicoding cat
+    Nilai weight dari: Default akan berubah menjadi 6.2
+    Nilai age dari: Default akan berubah menjadi 1
+    Fungsi ini sama seperti getter untuk properti name pada class Animal@17f052a3
+    Nama: Dicoding cat
+    Fungsi ini sama seperti getter untuk properti weight pada class Animal@17f052a3
+    Berat: 6.2
+    Fungsi ini sama seperti getter untuk properti age pada class Animal@17f052a3
+    Umur: 1 Tahun
+*/
+
+Perhatikan kode diatas, kita telah memberikan nilai pada setiap properti dengan tipe data yang berbeda. Tetapi dengan DelegateGenericClass(), pengelolaan properti dapat digunakan pada seluruh tipe data properti. 
+
+
+
+Sip! Itulah penjelasan terkait property delegation yang bakal sering Anda temui ketika membuat aplikasi Android nanti. Jika tertarik untuk mendalami lebih lanjut, Anda dapat melihat beberapa referensi berikut.
+
+How to Kotlin - from the lead Kotlin language designer (Google I/O '18)
