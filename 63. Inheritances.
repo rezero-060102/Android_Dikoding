@@ -1,0 +1,204 @@
+Inheritances
+Dalam gambaran dunia nyata, banyak objek yang berbeda tetapi punya kesamaan atau kemiripan tertentu. Contohnya Kucing dan Kambing memiliki banyak kesamaan karena objek tersebut merupakan hewan. Kucing merupakan hewan mamalia, begitu juga dengan kambing. Mungkin yang membedakan objek tersebut adalah cara mereka mencari makanan dan jenis makanan yang dimakan. Sama halnya pada OOP, beberapa objek yang berbeda bisa saja memiliki kesamaan dalam hal tertentu. Di situlah konsep inheritance atau pewarisan yang merupakan salah satu pilar dari OOP harus diterapkan. Pewarisan dapat mencegah kita melakukan perulangan kode. Untuk lebih memahaminya lihatlah contoh bagan pada sebuah kelas berikut:
+
+Cat		
++ name: String
+
++ furColor: String
+
++ weight: Double
+
++ age: Integer
+
++ numberOfFeet: Integer
+
++ isCarnivore: Boolean
+
+Fish
++ name: String
+
++ scaleColor: String
+
++ weight: Double
+
++ age: Integer
+
++ numberOfFin: Integer
+
++ isCarnivore: Boolean
+
+Snake
++ name: String
+
++ skinColor: String
+
++ weight: Double
+
++ age: Integer
+
++ isToxic: Boolean
+
++ isCarnivore: Boolean
+
+- eat()
+
+- sleep()
+
+- playWithHuman()
+
+- eat()
+
+- sleep()
+
+- swim()
+
+- eat()
+
+- sleep()
+
+- bite()
+
+Pada bagan tersebut dapat kita lihat pada kelas Cat, Fish dan Snake memiliki beberapa properti yang sama seperti name, weight, age, isCarnivore dan juga memiliki beberapa fungsi yang sama seperti eat() dan sleep().  Jika kita ubah diagram kelas Kucing menjadi sebuah kode maka akan menjadi seperti ini:
+
+class Cat(val name: String, val furColor: String, val weight: Double, val age: Integer, val numberOfFeet: Integer, val isCarnivore: Boolean) {
+    fun eat(){
+        println("$name sedang makan!")
+    }
+ 
+    fun sleep() {
+        println("$name sedang tidur!")
+    }
+ 
+    fun playWithHuman() {
+        println("$name bermain dengan Manusia!")
+    }
+}
+
+Tidak ada masalah dengan kode tersebut, tetapi ketika kita akan membuat kelas dari diagram lainnya contohnya Fish maka kita harus menuliskan ulang properti seperti name, weight, age dan properti atau fungsi yang sama lainnya. Hal ini dapat mengurangi efisiensi dalam menuliskan kode. 
+
+Dengan teknik inheritance, kita bisa mengelompokkan properti dan fungsi yang sama. Caranya , buat sebuah kelas baru yang nantinya akan diturunkan sifatnya pada sebuah kelas:
+
+Animal
++ name: String
+
++ weight: Double
+
++ age: Integer
+
++ isCarnivore: Boolean
+
+- eat()
+
+- sleep()
+
+Cat		Snake
++ furColor: String
+
++ numberOfFeet: Integer
+- playWithHuman()
+
+
+
+Fish
++ scaleColor: String
+
++ numberOfFin: Integer
+- swim()
+
+
+Snake
++ skinColor: String
+
++ isToxic: Boolean
+- bite()
+
+
+Ketika kelas Animal telah dibuat, kelas lainnya dapat melakukan extends pada kelas tersebut. Dalam pewarisan, kelas Animal (main class) dapat disebut sebagai super atau parent class. Kelas yang melakukan extends pada kelas tersebut disebut child class. Dalam Kotlin untuk melakukan extends pada sebuah kelas dapat dilakukan dengan tanda : seperti contoh berikut:
+
+class ChildClass : ParentClass {
+ 
+}
+
+Mari kita buat kelas Animal yang akan berperan sebagai parent class seperti berikut: 
+
+open class Animal(val name: String, val weight: Double, val age: Int, val isCarnivore: Boolean){
+ 
+    open fun eat(){
+        println("$name sedang makan!")
+    }
+ 
+    open fun sleep(){
+        println("$name sedang tidur!")
+    }
+}
+
+Untuk membuat sebuah super atau parent class kita akan membutuhkan open class. Kelas pada Kotlin secara default bersifat final, oleh karena itu kita harus mengubahnya menjadi open class sebelum melakukan extends kelas tersebut. 
+
+Ubahlah kelas Cat dengan melakukan extends pada kelas Animal seperti berikut:
+
+class Cat(pName: String, pWeight: Double, pAge: Int, pIsCarnivore: Boolean, val furColor: String, val numberOfFeet: Int)
+    : Animal(pName, pWeight, pAge, pIsCarnivore) {
+ 
+    fun playWithHuman() {
+        println("$name bermain bersama Manusia !")
+    }
+ 
+    override fun eat(){
+        println("$name sedang memakan ikan !")
+    }
+ 
+    override fun sleep() {
+        println("$name sedang tidur di bantal !")
+    }
+}
+
+Perhatikan bahwa pada kode di atas kita menggunakan keyword override untuk mengambil alih atau mengganti implementasi fungsi dari parent class. Jika dilihat, itu artinya sebuah fungsi dengan nama yang sama bisa memiliki perilaku yang berbeda. Masih ingatkah konsep apakah ini? Ya, betul! Ini juga termasuk salah satu bagian dari konsep Polymorphism. Kita menyebutnya dengan teknik Overriding. 
+
+Berbeda dengan Overloading yang dalam penentuan keputusan pemanggilan fungsi dibuat selama proses kompilasi (compile time), keputusan pemanggilan fungsi pada Overriding dibuat saat program sedang berjalan (runtime). Hal ini karena kompiler tidak tahu objek manakah yang memanggil fungsi tersebut, apakah Animal atau Cat sampai program tersebut dijalankan.
+
+Dengan begitu, kita dapat mengubah implementasi pada kelas Cat sesuai dengan preferensi yang kita mau dan menampilkan hasil yang berbeda ketika fungsi turunan dari parent class diambil.
+
+fun main(){
+    val dicodingCat = Cat("Dicoding Miaw", 3.2, 2, true, "Brown", 4)
+ 
+    dicodingCat.playWithHuman()
+    dicodingCat.eat()
+    dicodingCat.sleep()
+}
+ 
+/*
+output:
+    Dicoding Miaw bermain bersama Manusia !
+    Dicoding Miaw sedang memakan ikan !
+    Dicoding Miaw sedang tidur di bantal !
+*/
+
+Lalu, bagaimana jika Anda tidak ingin mengambil alih penuh, tetapi hanya ingin menambahkan implementasi dari yang sudah di parent class? Jawabannya adalah dengan menggunakan keyword super.
+
+open class Animal(val name: String){
+    open fun eat(){
+        println("$name sedang makan!")
+    }
+}
+
+
+class Cat(pName: String) : Animal(pName) {
+    override fun eat(){
+        super.eat()
+        println("$name sedang memakan ikan !")
+    }
+}
+
+
+fun main(){
+    val dicodingCat = Cat("Dicoding Miaw") 
+    dicodingCat.eat()
+}
+ 
+/*
+output:
+    Dicoding Miaw sedang makan!
+    Dicoding Miaw sedang memakan ikan !
+*/
+
+Dengan begitu, kedua implementasi, baik di parent class (kelas induk) maupun di subclass (kelas turun) tetap dijalankan. Anda akan sering menemukan konsep seperti ini ketika membuat aplikasi Android nanti. Jadi, pahami baik baik yah!
