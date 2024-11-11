@@ -1,0 +1,176 @@
+Singleton Object, Companion Object, & Anonymous Class
+- https://kotlinlang.org/docs/object-declarations.html#object-declarations-overview
+- https://www.youtube.com/watch?v=KUk6k865Vgg
+- https://kotlinlang.org/docs/fun-interfaces.html
+
+Singleton Object
+Dalam dunia Kotlin, sebuah Class dapat diinisialisasi berkali-kali di tempat dan waktu yang berbeda-beda. Lalu, bagaimana jika kita menginginkan tanpa adanya duplikasi Class dalam penggunaanya? Di sinilah kita perlu memahami konsep Singleton. Singleton merupakan pattern yang berguna untuk memastikan suatu object hanya memiliki satu instance dengan satu titik akses global.
+
+Uniknya, pembuatan Singleton dalam bahasa Kotlin sangatlah simpel dan mudah karena cukup menggunakan keyword object seperti berikut ini.
+
+object CentralLibrary {
+    fun borrowBookById(id: Int) {
+        print("Book with $id has been borrowed")
+    }
+}
+
+Sekilas kodenya memang mirip dengan Class biasanya, tetapi ketahuilah bahwa tidak ada penggunaan constructor dalam pembuatan object karena Kotlin sudah menanganinya.
+
+Oke, selanjutnya mari kita lihat perbedaan dalam penggunaannya pada kode di bawah ini.
+
+object CentralLibrary {
+    fun borrowBookById(id: Int) {
+        print("Book with $id has been borrowed")
+    }
+}
+
+fun main() {
+    CentralLibrary.borrowBookById(21)
+}
+
+Berbeda dengan class biasanya, Anda tidak perlu membuat instance (inisialisasi) terlebih dahulu untuk menggunakan object. Anda bisa memanggil fungsi maupun property yang ada di dalamnya secara langsung. Menariknya, kita bisa memanggilnya di mana pun dan akan mengembalikan object yang sama setiap waktu.
+
+
+
+Companion Object
+Berbeda dengan class, Anda tidak dapat membuat inner object secara langsung di dalam class. Untuk mengatasinya, Anda perlu menambahkan Companion Object seperti berikut.
+
+class Library {
+    companion object{
+        fun borrowBookById(id: Int) {
+            println("Book with $id has been borrowed")
+        }
+    }
+}
+
+fun main() {
+    Library.Companion.borrowBookById(21)
+    Library.borrowBookById(21)
+}
+
+Alhasil, Anda dapat memanggil fungsi yang di dalam Companion Object secara langsung dari kelas lain. Anda juga dapat menghapus penggunaan Companion seperti contoh pemanggilan kedua, yakni cukup Library.borrowBookById(21).
+
+Companion Object juga biasa digunakan dalam kasus penulisan konstanta. Konstanta adalah nilai tetap yang didefinisikan di awal ketika kompilasi dan tidak dapat diubah selama runtime. Dalam bahasa pemrograman lain, kita biasanya menggunakan static untuk mendefinisikannya. Namun, karena Kotlin tidak mengenal static, Anda bisa menggunakan keyword const val. Sayangnya, const val hanya bisa dideklarasikan di top level atau di dalam object. Di sinilah Companion Object berperan untuk mengatasinya.
+
+class MyLibrary {
+    // Const 'val' are only allowed on top level, in named objects, or in companion objects
+    // const val LIBRARY_NAME = "Dicoding Library" 
+    
+    fun totalBook() {
+        print("Total book in $LIBRARY_NAME is unlimited")
+    }
+    
+    companion object{
+        const val LIBRARY_NAME = "Dicoding Library"
+    }
+}
+
+fun main() {
+    val name = MyLibrary.LIBRARY_NAME
+}
+
+Catatan:
+Perhatikan bahwa semua penamaan konstanta sebaiknya menggunakan huruf kapital sesuai konvensi. Selain itu, best-practice penempatan companion object juga sebaiknya diletakkan di bagian paling bawah dari class tersebut.
+
+Lalu, apa bedanya antara const val dengan val pada umumnya? 
+
+Hal yang paling terlihat adalah kondisi ketika mendeklarasikannya. Val didefinisikan ketika runtime, sedangkan const val harus didefinisikan ketika compile time. Jadi, const val harus didefinisikan secara langsung, bukan dalam bentuk pemanggilan fungsi.
+
+const val LIBRARY_NAME = "Dicoding Library" // OK
+const val LIBRARY_NAME_A = LIBRARY_NAME.lowercase() // Const 'val' initializer should be a constant value
+val LIBRARY_NAME_B = LIBRARY_NAME.lowercase() // OK
+
+Kedua adalah lokasi ketika dideklarasikan. Val bisa Anda letakkan di mana saja, sedangkan const val hanya bisa dideklarasikan pada top level file atau berada dalam object. 
+
+Const val dapat meningkatkan kinerja dengan menghilangkan komputasi ketika runtime, sedangkan val nilainya perlu dievaluasi ketika runtime.
+
+
+Anonymous Class
+Seperti namanya, yang dimaksud dengan anonymous adalah class yang tak memiliki nama. Alih-alih mendefinisikan class menggunakan keyword class, Anda bisa langsung mendefinisikan isi dari sebuah class dengan menggunakan keyword object.
+
+Supaya lebih paham, perhatikan contoh kode di bawah ini.
+
+interface IFly {
+    fun fly()
+}
+
+fun flyWithWings(bird: IFly) {
+    bird.fly()
+}
+
+class Bird : IFly {
+    override fun fly() {
+        println("The Bird flying")
+    }
+}
+
+fun main() {
+    flyWithWings(Bird())
+}
+
+Nah, sekarang kita coba ubah kode tersebut dengan menggunakan anonymous class. 
+
+interface IFly {
+    fun fly()
+}
+
+fun flyWithWings(bird: IFly) {
+    bird.fly()
+}
+
+fun main() {
+    flyWithWings(object : IFly {
+        override fun fly() {
+            println("The Bird flying")
+        }
+    })
+}
+
+Perhatikan bahwa kita tidak membuat class Bird lagi, tetapi langsung mendefinisikan isi dari kelas tersebut dengan menggunakan keyword object. Jika dilihat, memang tidak ada nama yang diberikan untuk object yang dibuat ini, inilah yang disebut dengan Anonymous Class. 
+
+
+
+Function (SAM) Interface
+Ada hal menarik dari implementasi anonymous class, yakni Anda dapat menggunakan function interface untuk membuat kode Anda lebih ringkas dan bisa dibaca dengan mudah. Function Interface atau biasa disebut Single Abstract Method (SAM) Interface adalah sebuah interface yang memiliki satu method abstract. Anda cukup menambahkan keyword “fun” sebelum keyword “interface” .
+
+fun interface IFly {
+    fun fly()
+}
+
+Alih-alih menuliskan keyword object dan override fungsi di dalamnya berkali-kali, Anda dapat meringkas penulisannya dengan SAM Conversion. Berikut adalah contoh kode ketika Anda menggunakan SAM Conversion.
+
+flyWithWings(object : IFly {
+    override fun fly() {
+        println("The Bird flying")
+    }
+})
+
+Dengan memanfaatkan Kotlin SAM conversion, Anda dapat mengubahnya menjadi seperti ini.
+
+flyWithWings {
+    println("The Bird flying")
+}
+
+Akhirnya, penggunaan Functional (SAM) Interface yang hanya menggunakan kurung kurawal telah menggantikan semua kode yang tidak diperlukan. Yang perlu menjadi catatan adalah cara ini hanya bisa dilakukan pada interface yang hanya memiliki member satu fungsi saja, sesuai dengan namanya yakni Single Abstract Method (SAM).
+
+Anda akan sering menemui konsep seperti ketika memasuki dunia pemrograman Android untuk melakukan perintah tertentu ketika ada aksi, seperti ketika tombol ditekan. 
+
+myButton.setOnClickListener(object : OnClickListener{
+    override fun onClick(p0: View?) {
+        //melakukan perintah tertentu
+    }
+})
+//menggunakan SAM Interface
+myButton.setOnClickListener {
+    //melakukan perintah tertentu
+}
+
+Untuk mempelajari lebih pada materi ini, Anda juga dapat melihat referensi berikut ini.
+
+Object expressions and declarations | Kotlin Documentation
+
+Object - Kotlin Vocabulary
+
+Functional (SAM) interfaces﻿
+
+
