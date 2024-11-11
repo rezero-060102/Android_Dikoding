@@ -1,0 +1,24 @@
+Menyalin dan Memodifikasi Data Class
+Data class juga memungkinkan kita untuk menyalin sebuah objek dengan sangat mudah hanya dengan memanfaatkan fungsi copy() di dalamnya. Untuk mencobanya, buatlah objek baru dari kelas DataUser seperti berikut:
+
+fun main(){
+    val dataUser = DataUser("nrohmen", 17)
+    val dataUser2 = DataUser("nrohmen", 17)
+    val dataUser3 = DataUser("dimas", 24)
+    val dataUser4 = dataUser.copy()
+ 
+    println(dataUser4)
+}
+
+Jalankan fungsi main() dan seharusnya nilai dari dataUser4 akan sama dengan nilai dari dataUser. Menariknya, dengan fungsi copy() kita juga bisa memodifikasi objek tersebut dengan nilai yang baru. Sebagai contoh, kita akan mengubah nilai dari properti age menjadi 18. Cukup tuliskan kode seperti berikut:
+
+val dataUser5 = dataUser.copy(age = 18)
+
+
+Maka seharusnya konsol akan menampilkan teks berikut:
+
+DataUser(name=nrohmen, age=18)
+
+Tanpa data class, untuk melakukan tugas seperti ini kita memerlukan sebuah instance baru untuk mengubah nilai dari suatu objek. Dengan demikian kita harus memodifikasi properti yang kita maksud. Tugas ini akan berulang dan membuat kode yang kita tulis, jauh dari paradigma clean code. 
+
+
