@@ -1,0 +1,95 @@
+Nested Class & Inner Class
+- https://kotlinlang.org/docs/nested-classes.html
+
+Nested Class
+Satu hal yang menarik ketika membuat Class di dalam Kotlin adalah Nested Class. Artinya, Anda bisa membuat Class baru di dalam sebuah Class. Berikut ini contohnya.
+
+class House {
+    class Room {
+
+    }
+}
+
+fun main() {
+    val room = House.Room()
+}
+
+Tanpa perlu penambahan keyword apa pun, Anda dapat membuat Class di dalam Class dengan mudah. Pada contoh kode di atas, House sebagai outer class dan Room sebagai member class. 
+
+Hal ini berguna untuk mengorganisasi class dalam sebuah project supaya menjadi lebih baik. Apabila suatu class memang hanya digunakan oleh satu class lain saja dan keduanya memiliki hubungan yang erat, lebih baik dibuat nested class untuk meningkatkan enkapsulasi dan membuat kode lebih bersih.
+
+Hal yang perlu diperhatikan adalah member class tidak dapat mengakses property yang ada di outer class. Apabila Anda mencoba membuat kode seperti contoh di bawah ini, kode akan menampilkan error pada bagian buildingArea.
+
+class House {
+    // Properti outer class
+    val buildingArea = 100
+    class Room {
+
+        val totalRooms = 4
+        fun measureRoomArea() {
+            // Member class tidak dapat mengakses properti pada outer class
+            print(buildingArea/totalRooms)
+        }
+    }
+}
+
+Lalu, bagaimana jika Anda ingin mengakses properti pada outer class tersebut? Di sinilah Inner Class memainkan perannya.
+
+
+
+Inner Class
+Berbeda dengan Nested Class, penggunaan Inner Class memungkinkan kita untuk mengakses member (property dan method) dari outer class-nya.
+
+dos-0b6acfda5fb5dd025b4f49086a114a5620240209164503.jpeg
+
+Untuk membuat inner class, Anda hanya perlu menambahkan keyword inner pada member class. Dengan begitu, ia dapat mengakses properti yang ada di outer class. Berikut ini contohnya.
+
+class House {
+    // Properti outer class
+    val buildingArea = 100
+    inner class Room {
+        val totalRooms = 4
+        fun measureRoomArea() {
+            // Inner class dapat mengakses properti pada outer class
+            print(buildingArea/totalRooms)
+        }
+    }
+}
+
+fun main() {
+    val house = House()
+    val room = house.Room()
+    room.measureRoomArea() 
+}
+
+Hore! Sekarang Anda sudah bisa mengakses buildingArea yang berada di outer class dari dalam inner class. 
+
+Catatan:
+Perhatikan bahwa untuk mengakses fungsi yang di dalam inner class, Anda perlu menginisialisasi outer class terlebih dahulu. 
+
+
+
+Lalu, apa yang terjadi jika outer class dan inner class memiliki nama property yang sama. Pada dasarnya, jika Anda hanya memanggil nama property, Kotlin akan mengambil property dari inner class terlebih dahulu. Namun, apabila ingin mengambil property dari outer class, Anda bisa menggunakan qualified this.
+
+class House {
+    // Properti atau anggota outer class
+    val buildingArea = 100
+    val totalRooms = 4
+
+    inner class Room {
+        // Properti atau anggota inner class
+        val totalRooms = 4
+        fun measureRoomArea() {
+            // Inner class dapat mengakses properti atau anggota outer class
+            print(buildingArea/this@House.totalRooms)
+        }
+    }
+}
+
+
+Untuk melihat dokumentasi dari class ini, Anda dapat melihatnya pada tautan berikut.
+
+Nested and inner classes | Kotlin Documentation
+
+Oke, Anda sudah mempelajari salah satu special class pada Kotlin, yakni Inner Class. Mari kita beranjak ke special class lain. Sampai jumpa!
+
