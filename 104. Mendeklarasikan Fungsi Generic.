@@ -1,0 +1,46 @@
+Mendeklarasikan Fungsi Generic
+Setelah deklarasi generic pada sebuah kelas, sekarang kita akan belajar cara mendeklarasikan generic pada sebuah fungsi. Generic pada sebuah fungsi dibutuhkan ketika kita membuat sebuah fungsi yang berhubungan dengan List. Misalnya, list yang dapat digunakan untuk berbagai tipe dan tidak terpaku pada tipe tertentu. 
+
+Fungsi generic memiliki tipe parameternya sendiri yang ditentukan ketika fungsi tersebut dipanggil. Cara mendeklarasikannya sedikit berbeda dengan kelas generic. Tipe parameter yang berada di dalam angle bracket harus ditempatkan sebelum nama fungsi yang ditentukan.
+
+fun <T> run(): T {
+    /*...*/
+}
+
+Contoh penerapan fungsi generic bisa kita lihat pada deklarasi fungsi slice yang merupakan extensions function dari kelas List berikut.
+
+public fun <T> List<T>.slice(indices: Iterable<Int>): List<T> {
+    /*...*/
+}
+
+Tipe parameter pada fungsi slice() digunakan sebagai receiver dan return type. Ketika fungsi tersebut dipanggil dari sebuah List dengan tipe tertentu, kita bisa menentukan tipe argumennya secara spesifik.
+
+fun main() {
+    val numbers = (1..100).toList()
+    print(numbers.slice<Int>(1..10))
+}
+ 
+/*
+   output : [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+*/
+
+Berikut penjelasan dari kode di atas.
+
+(1..100) adalah sebuah sebuah nilai range atau jangkuan, di sini berarti nilai yang ada adalah 1 sampai 100.
+toList() adalah extension function yang membuat sebuah kumpulan nilai Int menjadi sebuah List.
+Variabel number adalah sebuah List yang terdiri dari kumpulan angka 1-100.
+.slice<Int> adalah sebuah extension function yang sudah dijelaskan di atas. 
+Jadi, ketika kode tersebut dijalankan hasilnya adalah [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]. Mengapa tidak dimulai dari nilai 1? Hal itu karena nilai pertama dalam List adalah indeks ke-0. Dalam kode slice tersebut, kita menggunakan indeks ke-1 sampai 10 sehingga yang muncul dimulai dari angka 2. 
+
+Seperti yang telah disebutkan sebelumnya, jika semua nilai yang berada di dalamnya memiliki tipe yang sama, kita bisa menyederhanakan. Caranya, hapus tipe parameter dalam pemanggilan slice<Int> tersebut.
+
+fun main() {
+    val numbers = (1..100).toList()
+    print(numbers.slice(1..10))
+}
+ 
+/*
+   output : [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+*/
+
+
