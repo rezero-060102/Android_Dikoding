@@ -1,4 +1,6 @@
 Kotlin Standard Library 
+- https://kotlinlang.org/docs/scope-functions.html
+
 Kotlin hadir dengan berbagai fitur menarik yang sudah kita bahas pada sub-modul sebelumnya. Salah satu fitur yang selanjutnya perlu kita ketahui adalah standard function library, yaitu sebuah extension functions dari sebuah objek yang menggunakan lambda sebagai argumen atau yang disebut sebagai higher-order function.
 
 
