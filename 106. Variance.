@@ -1,0 +1,97 @@
+Variance
+Sebelumnya kita telah mempelajari bagaimana generic bekerja, cara penerapannya, serta menentukan batasan tipe argumen terhadap tipe parameter. Selanjutnya, kita akan belajar salah satu konsep dari generic yaitu variance.
+
+Apa itu variance? Variance adalah konsep yang menggambarkan bagaimana sebuah tipe yang memiliki subtipe yang sama dan tipe argumen yang berbeda saling berkaitan satu sama lain. Variance dibutuhkan ketika kita ingin membuat kelas atau fungsi generic dengan batasan yang tidak akan mengganggu dalam penggunaannya. Sebagai contoh, mari kita buat beberapa kelas seperti berikut.
+
+abstract class Vehicle(wheel: Int)
+class Car(speed: Int) : Vehicle(4)
+class MotorCycle(speed: Int) : Vehicle(2)
+
+Kemudian jalankan kode seperti berikut.
+
+fun main() {
+    val car = Car(200)
+    val motorCycle = MotorCycle(100)
+    var vehicle: Vehicle = car
+    vehicle = motorCycle
+}
+
+Bisa kita perhatikan pada kode di atas, variabel car dan motorcycle merupakan subtipe dari Vehicle sehingga kita bisa melakukan assignment antara dua variabel tersebut supaya kode dapat sukses dikompilasi.
+
+Selanjutnya, mari kita masukkan salah satu kelas yang merupakan subtipe dari kelas Vehicle di atas ke dalam generic list.
+
+fun main() {
+    val carList = listOf(Car(100) , Car(120))
+    val vehicleList = carList
+}
+
+Dari contoh di atas, kita melihat variance menggambarkan keterkaitan antara carList dan vehicleList di mana Car merupakan subtipe dari Vehicle. 
+
+Nah, itu adalah contoh sederhana bagaimana variance bekerja. Lalu, bagaimana cara membuat kelas generic yang memiliki variance? Caranya sama seperti ketika kita membuat generic kelas pada umumnya. Namun, untuk tipe parameternya, kita membutuhkan kata kunci out untuk covariant atau kunci in untuk contravariant.
+
+
+
+Covariant
+Contoh deklarasi generic dengan covariant bisa kita lihat saat kelas List pada Kotlin dideklarasikan seperti berikut.
+
+interface List<out E> : Collection<E> {
+    operator fun get(index: Int): E
+}
+
+Ketika kita menandai sebuah tipe parameter dengan kata kunci out, nilai dari tipe parameter tersebut hanya bisa diproduksi seperti menjadikanya sebagai return type. Serta tidak dapat dikonsumsi seperti menjadikannya sebagai tipe argumen untuk setiap fungsi di dalam kelas tersebut. 
+
+
+
+Contravariant
+Berbanding terbalik dengan saat kita menandainya dengan kata kunci out, bagaimana saat kita menandainya dengan dengan kata kunci in ?  Nilai dari tipe parameter tersebut bisa dikonsumsi dengan menjadikannya sebagai tipe argumen untuk setiap fungsi yang ada di dalam kelas tersebut dan tidak untuk diproduksi. Contoh dari deklarasinya bisa kita lihat pada kelas Comparable pada Kotlin berikut.
+
+interface Comparable<in T> {
+    operator fun compareTo(other: T): Int
+}
+
+Perbedaan Contravarian dan Covariant
+Mari kita analogikan konsep covariant dan contravariant dalam Kotlin dengan sebuah contoh sederhana terkait hewan dan kandangnya.
+
+Covariant
+
+Analogi:
+Bayangkan Anda memiliki sebuah kandang hewan (Contoh: Kandang<Binatang>). Lalu, Anda ingin menyimpan subjenis binatang di dalamnya.
+
+Implementasi Kotlin Covariant:
+Dengan covariant, Anda dapat menggunakan subjenis binatang sebagai substitusi di kandang, seperti Kandang<Kucing> bisa digunakan sebagai Kandang<Binatang> karena Kucing adalah jenis binatang.
+
+open class Binatang 
+class Kucing : Binatang 
+ 
+class Kandang<out T : Binatang>(private val hewan: T) {    
+  fun dapatkanHewan(): T {        
+    return hewan    
+  } 
+} 
+ 
+val kandangKucing: Kandang<Kucing> = Kandang(Kucing()) 
+val kandangBinatang: Kandang<Binatang> = kandangKucing // Covariant, dapat di-substitute
+
+
+Contravariant
+
+Analogi:
+Sekarang, bayangkan Anda memiliki seorang penjaga kandang (Contoh: PenjagaKandang<Binatang>). Lalu, Anda ingin penjaga tersebut untuk mengurus kandang-kandang yang berisi subjenis binatang.
+
+Implementasi Kotlin Contravariant:
+Dengan contravariant, Anda dapat menggunakan PenjagaKandang<Binatang> untuk mengurus PenjagaKandang<Kucing> karena penjaga yang bisa mengurus semua jenis binatang juga dapat mengurus jenis binatang tertentu.
+
+open class Binatang 
+class Kucing : Binatang 
+ 
+class PenjagaKandang<in T : Binatang> {    
+  fun urusKandang(hewan: T) {        
+    // Melakukan sesuatu dengan kandang yang berisi hewan    
+  } 
+} 
+ 
+val penjagaBinatang: PenjagaKandang<Binatang> = PenjagaKandang<Binatang>() 
+val penjagaKucing: PenjagaKandang<Kucing> = penjagaBinatang // Contravariant, dapat di-substitute
+Dengan analogi ini, Anda akan lebih mudah memahami konsep covariant dan contravariant dalam Kotlin. Covariant mengizinkan substitusi dengan turunan, sementara contravariant mengizinkan substitusi dengan superclass.
+
+
