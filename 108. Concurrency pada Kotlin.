@@ -1,0 +1,46 @@
+Concurrency pada Kotlin
+- https://youtu.be/YKtYEFCmdx4
+
+Memasuki modul terakhir, kita akan mempelajari dasar concurrency pada Kotlin hingga alasan developer menggunannya. Concurrency merupakan sebuah topik yang cukup dalam. Jika dibahas secara menyeluruh, mungkin tidak akan cukup di materi ini. Maka dari itu, modul ini adalah pengantarnya. Diharapkan setelah memahami materi ini, Anda dapat mengetahui gambaran tentang concurrency dan perbedaannya jika dibandingkan dengan concurrency di bahasa pemrograman lainnya.
+
+
+
+Apa itu Concurrency?
+Concurrency adalah beberapa proses yang terjadi secara bersamaan dalam suatu sistem. Concurrency merupakan suatu fenomena alami yang umum terjadi. Seperti halnya di dunia nyata, dalam membangun sebuah kode Anda akan menemui banyak proses yang dilakukan secara bersamaan. Dengan demikian, memahami concurrency adalah kunci untuk memudahkan Anda menghadapi berbagai peristiwa atau proses, baik dalam kode atau kehidupan nyata. Agar lebih mudah memahami cara kerja conccurency, lihatlah ilustrasi berikut.
+
+20190429102422dcee0d5cb3bf291b3e9b6766a42a00e9.png
+
+
+
+Arus lalu lintas bisa menjadi ilustrasi yang tepat untuk menggambarkan proses concurrency. Mari kita coba kupas bagian-bagian dalam gambar di atas.
+
+Mobil diibaratkan sebuah proses.
+Jalan raya diibarakan sebuah jalur/thread untuk proses itu berjalan.
+Perempatan ini adalah titik pertemuan antar proses-proses tersebut.
+Lalu lintas paralel di jalan yang berbeda akan menimbulkan interaksi dan potensi masalah yang kecil antar pengendara (proses). Lalu lintas paralel ini mirip dengan jalan tol yang memisahkan antara jalur satu dengan jalur yang berlawanan. Berbeda dengan lalu lintas yang padat, biasanya kita menjumpainya di persimpangan seperti gambar di atas. 
+
+Ketika berada dalam keadaan tersebut, pastinya interaksi dan potensi masalah di antara pengendara akan menjadi lebih besar, bahkan membutuhkan koordinasi yang lebih. Contohnya, dalam lalu lintas yang kacau balau, potensi kecelakaan akan lebih besar dan efeknya dapat menimbulkan kemacetan. 
+
+Hal ini juga berlaku dalam sebuah sistem aplikasi, proses paralel yang tidak saling berinteraksi hanya akan menyebabkan masalah concurrency sederhana. Berbeda dengan proses yang saling berinteraksi, bahkan hingga berbagi sumber daya. Masalahnya tentu akan menjadi lebih kompleks. 
+
+Aspek terpenting ketika  berurusan dengan concurrency adalah Anda perlu mendeteksi dan merespon peristiwa eksternal yang terjadi dalam urutan acak. Selain itu, pastikan peristiwa tersebut dapat ditanggapi dalam interval waktu seminimal mungkin.
+
+Faktor eksternal sering jadi pendorong dibutuhkannya concurrency. Dalam kehidupan sehari-hari, banyak hal yang terjadi secara bersamaan dan harus ditangani secara real-time oleh sistem. Oleh karena itu, sistem harus "reactive" alias dituntut untuk menanggapi proses yang dihasilkan secara eksternal. Proses tersebut dapat terjadi pada waktu dan urutan yang tak bisa ditentukan. Membangun sistem konvensional untuk mengatasi tugas tersebut, tentunya sangat rumit. 
+
+Di dunia komputer, concurrency umumnya disandingkan dengan banyaknya core atau inti dari prosesor (CPU). Sebuah komputer memiliki mekanisme sequential atau berurutan untuk menjalankan tugas. Prosesor akan menjalankan satu perintah pada satu waktu. Dengan concurrency, kita bisa memanfaatkan kinerja prosesor dengan lebih optimal. Concurrency memungkinkan sebuah sistem bisa dikendalikan dengan mudah. Contohnya suatu fungsi bisa dijalankan, dihentikan, ataupun dipengaruhi oleh fungsi lain yang berjalan secara bersamaan. 
+
+
+
+Kapan Harus Menggunakan Concurrency?
+Setiap aplikasi yang mempunyai proses yang cukup memakan waktu sebaiknya menggunakan concurrency. Proses tersebut seperti kompresi video, mengambil data dari server, komputasi, caching banyak data, dan lain sebagainya. Concurrency berguna untuk mencegah terjadinya blocking proses di thread utama. Oleh karena itu, sebisa mungkin hindari terjadinya blocking proses karena akan berdampak buruk terhadap pengalaman user dalam menggunakan aplikasi.
+
+
+
+
+Video Concurrency pada Kotlin
+
+Anda bisa melihat penejelasan terkait Concurrency secara langsung melalui video berikut.
+
+
+
+
