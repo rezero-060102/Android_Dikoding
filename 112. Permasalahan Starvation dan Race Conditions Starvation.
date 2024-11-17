@@ -1,0 +1,20 @@
+Permasalahan Starvation dan Race Conditions
+Starvation
+Starvation merupakan sebuah kondisi yang biasanya terjadi setelah deadlock. Kondisi deadlock sering kali menyebabkan sebuah proses kekurangan sumber daya sehingga mengalami starvation atau kelaparan. Pada kondisi seperti ini, thread tak dapat akses reguler ke sumber daya bersama dan membuat proses terhenti.
+
+Selain deadlock, hal lain yang bisa mengakibatkan starvation adalah ketika terjadi kesalahan sistem. Akibatnya, ada ketimpangan dalam pembagian sumber daya. Sebagai contoh, ketika satu proses bisa mendapat sumber daya, namun tidak dengan proses lain. Biasanya, kesalahan seperti itu disebabkan oleh algoritma penjadwalan (scheduling algorithm) yang kurang tepat atau bisa juga karena resource leak atau kebocoran sumber daya.
+
+Salah satu contoh kesalahan algoritma penjadwalan bisa dilihat ketika sebuah sistem multitasking dirancang dengan tidak baik. Apa akibatnya? Dua tugas pertama selalu beralih, sementara yang ketiga tidak pernah berjalan. Tugas ketiga itulah yang bisa dikatakan menderita starvation.
+
+Salah satu solusi untuk starvation adalah dengan menerapkan algoritma penjadwalan dengan antrian prioritas (process priority) dan juga menerapkan teknik aging atau penuaan. Aging merupakan sebuah teknik yang secara bertahap meningkatkan prioritas sebuah proses yang menunggu dalam sistem pada waktu yang cukup lama.
+
+
+
+Race Conditions
+Pada pembahasan sebelumnya, kita sudah menyinggung istilah race conditions. Kondisi seperti apakah itu? Race condition merupakan masalah umum pada concurrency, yaitu kondisi di mana terdapat banyak thread yang mengakses data yang dibagikan bersama dan mencoba mengubahnya secara bersamaan. Ini bisa terjadi ketika kode concurrent yang dituliskan untuk berjalan secara sekuensial. Artinya, sebuah perintah akan selalu dijalankan dalam urutan tertentu.
+
+Ketika race condition terjadi, maka sistem bisa saja melakukan proses yang tidak semestinya. Pada saat itu bug akan muncul. Race condition dikenal sebagai masalah yang sulit untuk direproduksi dan di-debug, karena hasil akhirnya tidak deterministik dan tergantung pada waktu relatif dari thread yang menghalangi. Masalah yang muncul pada production bisa jadi tidak ditemukan pada saat debug. Oleh karena itu, lebih baik menghindari race condition dengan cara berhati-hati saat merencanakan sebuah sistem. Ini lebih baik daripada harus berusaha memperbaikinya setelah itu. Lebih repot. 
+
+Contoh sederhana dari race condition bisa kita lihat pada aplikasi perbelanjaan online. Katakanlah Anda menemukan barang yang ingin Anda beli di sebuah toko online. Pada halaman deskripsi, tampil informasi bahwa stok barang hanya sisa 1 (satu). Lalu Anda langsung mengambil keputusan dengan menekan tombol beli. Pada saat yang sama, ada pengguna lain yang ternyata lebih dahulu membelinya. Kondisi seperti inilah yang mengakibatkan sebuah state atau keadaan, berubah tanpa Anda sadari. Jika sistem tidak dirancang sedemikian rupa, maka masalah tak terduga, bisa mengemuka.
+
+
